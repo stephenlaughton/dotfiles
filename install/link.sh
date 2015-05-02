@@ -1,7 +1,9 @@
 #!/bin/bash
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+PARENTDIR=$( dirname "$DIR" )
 echo "----------- we are in $DIR"
+echo "----------- parent is $PARENTDIR"
 
 OLDDOTFILES=$HOME/.old_dotfiles
 
@@ -18,5 +20,9 @@ for file in $linkables ; do
     echo "Moving any existing dotfiles from ~ to $OLDDOTFILES"
     mv $target $OLDDOTFILES
     echo "creating symlink for $file"
-    ln -s $DIR/$file $target
+    ln -s $PARENTDIR/$file $target
 done
+
+# link dotfiles dir to ~/.dotfiles/
+echo "linking this directory to $HOME/.dotfiles"
+ln -s $PARENTDIR $HOME/.dotfiles
