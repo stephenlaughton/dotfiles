@@ -48,10 +48,12 @@ source $(brew --prefix nvm)/nvm.sh
 
 source `brew --prefix`/etc/profile.d/z.sh
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # Base16 Shell
-# if [ -z "$THEME" ]; then
+if [ -z "$THEME" ]; then
     export THEME="base16-atelierheath"
-# fi
+fi
 if [ -z "$BACKGROUND" ]; then
     export BACKGROUND="dark"
 fi

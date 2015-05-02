@@ -144,3 +144,13 @@ function light() {
 function dark() {
     export BACKGROUND="dark" && reload!
 }
+
+# list and change theme
+function themes() {
+    basename `ls  **/.config/base16-shell/*.dark.sh`
+    echo "Current theme is $THEME"
+}
+
+function theme() {
+    export THEME="base16-$1" && reload!
+}
