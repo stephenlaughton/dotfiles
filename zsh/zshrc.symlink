@@ -39,11 +39,6 @@ fi
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
-if [[ -d ~/.rvm ]]; then
-    PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
-    source ~/.rvm/scripts/rvm
-fi
-
 # alias git to hub
 eval "$(hub alias -s)"
 
@@ -52,7 +47,6 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 source `brew --prefix`/etc/profile.d/z.sh
-
 
 # Base16 Shell
 # if [ -z "$THEME" ]; then

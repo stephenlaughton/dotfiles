@@ -29,9 +29,9 @@ alias du='du -h -c' # calculate disk usage for a folder
 alias rake="noglob rake"
 
 # Applications
-alias mou='open -a Mou.app'
-alias mark='open -a Marked.app'
-alias ios='open -a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
+# alias mou='open -a Mou.app'
+# alias mark='open -a Marked.app'
+# alias ios='open -a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
