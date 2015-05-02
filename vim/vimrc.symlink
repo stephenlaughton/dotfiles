@@ -454,4 +454,4 @@ source ~/.vim/plugins.vim
 "     let g:airline_theme='solarized'
 " endif
 
-call ApplyLocalSettings(expand('.'))
+" call ApplyLocalSettings(expand('.'))
