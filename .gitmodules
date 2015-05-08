@@ -4,3 +4,6 @@
 [submodule ".config/base16-shell"]
 	path = .config/base16-shell
 	url = git@github.com:chriskempson/base16-shell.git
+[submodule "zsh/zprezto.symlink"]
+	path = zsh/zprezto.symlink
+	url = git://github.com/stephenlaughton/prezto.git

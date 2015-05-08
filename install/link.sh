@@ -23,6 +23,17 @@ for file in $linkables ; do
     ln -s $PARENTDIR/$file $target
 done
 
+# create symlinks for prezto files
+echo "create symlinks for prezto files"
+preztolinkables=$( ls -1 -d **/runcoms/z* )
+for file in $preztolinkables ; do
+    target="$HOME/.$( basename $file )"
+    echo "Moving any existing dotfiles from ~ to $OLDDOTFILES"
+    mv $target $OLDDOTFILES
+    echo "creating symlink for $file"
+    ln -s $PARENTDIR/$file $target
+done
+
 # link dotfiles dir to ~/.dotfiles/
 echo "linking this directory to $HOME/.dotfiles"
 ln -s $PARENTDIR $HOME/.dotfiles
