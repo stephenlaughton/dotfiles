@@ -14,26 +14,30 @@ echo "...done"
 
 # move any existing dotfiles into .old_dotfiles and then link
 echo "moving any old dotfiles into .old_dotfiles and creating symlinks"
+pwd
 linkables=$( ls -1 -d **/*.symlink )
+echo $linkables
 for file in $linkables ; do
     target="$HOME/.$( basename $file ".symlink" )"
     echo "Moving any existing dotfiles from ~ to $OLDDOTFILES"
     mv $target $OLDDOTFILES
     echo "creating symlink for $file"
-    ln -s $PARENTDIR/$file $target
+    ln -fhs $PARENTDIR/$file $target
 done
 
 # create symlinks for prezto files
 echo "create symlinks for prezto files"
-preztolinkables=$( ls -1 -d **/runcoms/z* )
+pwd
+preztolinkables=$( ls -1 -d zsh/zprezto.symlink/runcoms/z* )
+echo $preztolinkables
 for file in $preztolinkables ; do
     target="$HOME/.$( basename $file )"
     echo "Moving any existing dotfiles from ~ to $OLDDOTFILES"
     mv $target $OLDDOTFILES
     echo "creating symlink for $file"
-    ln -s $PARENTDIR/$file $target
+    ln -fhs $PARENTDIR/$file $target
 done
 
 # link dotfiles dir to ~/.dotfiles/
 echo "linking this directory to $HOME/.dotfiles"
-ln -s $PARENTDIR $HOME/.dotfiles
+ln -fhs $PARENTDIR $HOME/.dotfiles
