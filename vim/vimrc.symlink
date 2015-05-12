@@ -5,17 +5,12 @@
 " load plugins from vundle
 source ~/.vim/plugins.vim
 
-" " Abbreviations
-" abbr funciton function
-" abbr teh the
-" abbr tempalte template
-" 
-" set nocompatible " not compatible with vi
-" set autoread " detect when a file is changed
-" 
-" " make backspace behave in a sane manner
-" set backspace=indent,eol,start
-" 
+set nocompatible " not compatible with vi
+set autoread " detect when a file is changed
+ 
+" make backspace behave in a sane manner
+set backspace=indent,eol,start
+ 
 " " set a map leader for more key combos
 " let mapleader = ','
 " let g:mapleader = ','
