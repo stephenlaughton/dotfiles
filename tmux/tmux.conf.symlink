@@ -78,7 +78,9 @@ bind -t vi-copy 'v' begin-selection
 bind -t vi-copy 'y' copy-selection
 
 # Restore Sessions
+set -g @continuum-boot 'on'
 set -g @continuum-restore 'on'
+set -g @continuum-boot-options 'iterm'
 
 # Initializes TMUX plugin manager.
 # Keep this line at the very bottom of tmux.conf.
