@@ -12,7 +12,6 @@ set -g @tpm_plugins '              \
   tmux-plugins/tpm                 \
   tmux-plugins/tmux-sensible       \
   tmux-plugins/tmux-resurrect      \
-  tmux-plugins/tmux-continuum      \
   tmux-plugins/tmux-sessionist     \
   tmux-plugins/tmux-sidebar        \
   tmux-plugins/tmux-pain-control   \
@@ -76,11 +75,6 @@ unbind p
 bind p paste-buffer
 bind -t vi-copy 'v' begin-selection
 bind -t vi-copy 'y' copy-selection
-
-# Restore Sessions
-set -g @continuum-boot 'on'
-set -g @continuum-restore 'on'
-set -g @continuum-boot-options 'iterm'
 
 # Initializes TMUX plugin manager.
 # Keep this line at the very bottom of tmux.conf.

@@ -11,11 +11,11 @@ set autoread " detect when a file is changed
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
  
-" " set a map leader for more key combos
-" let mapleader = ','
-" let g:mapleader = ','
-" 
-" set history=10000 " change history to 1000
+" set a map leader for more key combos
+let mapleader = ','
+let g:mapleader = ','
+ 
+set history=10000 " change history to 1000
 " " set textwidth=80
 " 
 " " Tab control
