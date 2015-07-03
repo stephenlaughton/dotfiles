@@ -18,7 +18,8 @@ Plugin 'tpope/vim-commentary'
 " Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-surround'
 Plugin 'benmills/vimux'
-" Plugin 'bling/vim-airline'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 " Plugin 'tpope/vim-fugitive'
 " Plugin 'tpope/vim-repeat'
@@ -41,7 +42,7 @@ Plugin 'scrooloose/syntastic'
 " Plugin 'gbigwood/Clippo'
 " Plugin 'vim-scripts/matchit.zip'
 " Plugin 'gregsexton/MatchTag'
-" Plugin 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
+Plugin 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 " Plugin 'sickill/vim-pasta'
 " Plugin 'junegunn/goyo.vim'
 
