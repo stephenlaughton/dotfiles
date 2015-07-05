@@ -22,14 +22,6 @@ set -g @tpm_plugins '              \
   tmux-plugins/tmux-battery        \
 '
 
-# STATUS BAR
-set -g status-bg black
-set -g status-fg white
-set -g window-status-current-fg 'yellow'
-set -g status-left '#[fg=green]#{session_name} #[fg=white]|'
-set -g status-right-length 60
-set -g status-right 'Online: #{online_status} batt: #{battery_icon} #{battery_percentage} #{battery_remain} | %a %h-%d %H:%M '
-
 ######################
 #### Key Bindings ####
 ######################
@@ -89,3 +81,11 @@ bind -t vi-copy 'y' copy-selection
 # Initializes TMUX plugin manager.
 # Keep this line at the very bottom of tmux.conf.
 run-shell '~/.tmux/plugins/tpm/tpm'
+##############################
+### Color & Style Settings ###
+##############################
+
+set-option -g update-environment "BACKGROUND"
+
+if '[[ "$BACKGROUND" == dark ]]' 'source ~/.dotfiles/tmux/dark_theme.conf'
+if '[[ "$BACKGROUND" == light ]]' 'source ~/.dotfiles/tmux/light_theme.conf'

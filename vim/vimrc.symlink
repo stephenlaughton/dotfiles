@@ -174,9 +174,9 @@ nmap <leader><space> :%s/\s\+$<cr>
 " shortcut to save
 nmap <leader>, :w<cr>
  
-" " disable Ex mode
-" noremap Q <NOP>
-" 
+" disable Ex mode
+noremap Q <NOP>
+ 
 " " set paste toggle
 " set pastetoggle=<F6>
 " 
@@ -409,33 +409,36 @@ let g:ctrlp_working_path_mode = 'ra'
 " nmap <leader>m :MarkedOpen!<cr>
 " nmap <leader>mq :MarkedQuit<cr>
 " 
-" " toggle syntastic
-" nmap <leader>s :SyntasticToggleMode<cr>
-" 
+" toggle syntastic
+nmap <leader>s :SyntasticToggleMode<cr>
+ 
 " " allow es5 mode when looking at TypeScript
 " let g:syntastic_typescript_tsc_args = '--module amd --target ES5 --noImplicitAny'
 " let g:syntastic_typescript_checkers = ['tslint']
 " let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 " 
-" " CtrlP ignore patterns
-" " let g:ctrlp_custom_ignore = {
-" "             \ 'dir': '\.git$\|node_modules$\|bower_components$\|\.hg$\|\.svn$',
-" "             \ 'file': '\.exe$\|\.so$'
-" "             \ }
-" " only show files that are not ignored by git
-" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-" 
-" " search the nearest ancestor that contains .git, .hg, .svn
-" let g:ctrlp_working_path_mode = 2
-" 
-" 
-" " airline options
-" let g:airline_powerline_fonts=1
-" let g:airline_left_sep=''
-" let g:airline_right_sep=''
-" let g:airline_theme='base16'
-" 
-" " don't hide quotes in json files
+" CtrlP ignore patterns
+let g:ctrlp_custom_ignore = {
+             \ 'dir': '\.git$\|node_modules$\|bower_components$\|\.hg$\|\.svn$',
+             \ 'file': '\.exe$\|\.so$'
+             \ }
+" only show files that are not ignored by git
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" search the nearest ancestor that contains .git, .hg, .svn
+let g:ctrlp_working_path_mode = 2
+ 
+ 
+" airline options
+let g:airline_powerline_fonts=1
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_theme='base16'
+ 
+" tmuxline options
+let g:tmuxline_powerline_separators = 0
+
+ " don't hide quotes in json files
 " let g:vim_json_syntax_conceal = 0
 " 
 " 
