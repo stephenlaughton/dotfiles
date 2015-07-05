@@ -74,11 +74,11 @@ endif
 "     " autocmd! BufEnter * call ApplyLocalSettings(expand('<afile>:p:h'))
 " endif
 " 
-" " code folding settings
-" set foldmethod=syntax " fold based on indent
-" set foldnestmax=10 " deepest fold is 10 levels
-" set nofoldenable " don't fold by default
-" set foldlevel=1
+" code folding settings
+set foldmethod=syntax " fold based on indent
+set foldnestmax=10 " deepest fold is 10 levels
+set nofoldenable " don't fold by default
+set foldlevel=1
 " 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User Interface
@@ -104,10 +104,10 @@ set cmdheight=1 " command bar height
 " set nolazyredraw " don't redraw while executing macros
 " 
 " set magic " Set magic on, for regex
-" 
-" set showmatch " show matching braces
-" set mat=2 " how many tenths of a second to blink
-" 
+ 
+set showmatch " show matching braces
+set mat=2 " how many tenths of a second to blink
+ 
 " " error bells
 " set noerrorbells
 " set visualbell
@@ -211,9 +211,9 @@ map <leader>evp :e! ~/.vim/plugins.vim<cr>
 " nmap <leader>[ <<
 " nmap <leader>] >>
 " 
-" " switch between current and last buffer
-" nmap <leader>. <c-^>
-" 
+" switch between current and last buffer
+nmap <leader>. <c-^>
+ 
 " " enable . command in visual mode
 " vnoremap . :normal .<cr>
 " 
@@ -230,13 +230,13 @@ map <leader>evp :e! ~/.vim/plugins.vim<cr>
 " " scroll the viewport faster
 " nnoremap <C-e> 3<C-e>
 " nnoremap <C-y> 3<C-y>
-" 
-" " moving up and down work as you would expect
-" nnoremap <silent> j gj
-" nnoremap <silent> k gk
-" nnoremap <silent> ^ g^
-" nnoremap <silent> $ g$
-" 
+ 
+" moving up and down work as you would expect
+nnoremap <silent> j gj
+nnoremap <silent> k gk
+nnoremap <silent> ^ g^
+nnoremap <silent> $ g$
+ 
 " " search for word under the cursor
 " nnoremap <leader>/ "fyiw :/<c-r>f<cr>
 " 
@@ -392,6 +392,7 @@ let NERDTreeIgnore = ['\.js.map$']
 nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
+nmap <silent> <leader>n :NERDTreeTabsToggle<cr>
 
 map fuzzyfinder (CtrlP) plugin
 nmap <silent> <leader>t :CtrlP<cr>
@@ -399,13 +400,13 @@ nmap <silent> <leader>r :CtrlPBuffer<cr>
 let g:ctrlp_map='<leader>t'
 let g:ctrlp_dotfiles=1
 let g:ctrlp_working_path_mode = 'ra'
-" 
-" " Fugitive Shortcuts
-" nmap <silent> <leader>gs :Gstatus<cr>
-" nmap <leader>ge :Gedit<cr>
-" nmap <silent><leader>gr :Gread<cr>
-" nmap <silent><leader>gb :Gblame<cr>
-" 
+
+" Fugitive Shortcuts
+nmap <silent> <leader>gs :Gstatus<cr>
+nmap <leader>ge :Gedit<cr>
+nmap <silent><leader>gr :Gread<cr>
+nmap <silent><leader>gb :Gblame<cr>
+
 " nmap <leader>m :MarkedOpen!<cr>
 " nmap <leader>mq :MarkedQuit<cr>
 " 
@@ -430,13 +431,11 @@ let g:ctrlp_working_path_mode = 2
  
  
 " airline options
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts = 1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_theme='base16'
- 
-" tmuxline options
-let g:tmuxline_powerline_separators = 0
+let g:airline#extensions#tabline#enabled = 1 
 
  " don't hide quotes in json files
 " let g:vim_json_syntax_conceal = 0
