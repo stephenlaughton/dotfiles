@@ -8,7 +8,8 @@ set -g mode-keys vi
 set -g mouse-resize-pane on
 set -g mouse-select-pane on
 set -g mouse-select-window on
-set -g aggressive-resize off
+
+set-window-option -g aggressive-resize off
 
 # TPM
 set -g @tpm_plugins '              \
@@ -83,7 +84,7 @@ bind -t vi-copy 'y' copy-selection
 ### Color & Style Settings ###
 ##############################
 
-# if '[[ "$BACKGROUND" == dark ]]' 'source ~/.dotfiles/tmux/dark_theme.conf'
+source ~/.dotfiles/tmux/$TMUX_BACKGROUND.conf
 # if '[[ "$BACKGROUND" == light ]]' 'source ~/.dotfiles/tmux/light_theme.conf'
 
 # Initializes TMUX plugin manager.
