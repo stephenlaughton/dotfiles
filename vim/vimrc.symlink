@@ -169,7 +169,7 @@ inoremap jk <esc>
 nmap <leader><space> :%s/\s\+$<cr>
 
 " wipout buffer
-nmap <silent> <leader>b :bw<cr>
+nmap <silent> <leader>b :bd<cr>
 
 " shortcut to save
 nmap <leader>s :w<cr>
