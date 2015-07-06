@@ -172,7 +172,7 @@ nmap <leader><space> :%s/\s\+$<cr>
 nmap <silent> <leader>b :bw<cr>
 
 " shortcut to save
-nmap <leader>, :w<cr>
+nmap <leader>s :w<cr>
 
 " disable Ex mode
 noremap Q <NOP>
@@ -212,7 +212,8 @@ nmap <leader>l :set list!<cr>
 " nmap <leader>] >>
 "
 " switch between current and last buffer
-nmap <leader>. <c-^>
+nmap <silent> <leader>. :bp<cr>
+nmap <silent> <leader>, :bn<cr>
 
 " " enable . command in visual mode
 " vnoremap . :normal .<cr>
@@ -409,7 +410,7 @@ nmap <silent><leader>gb :Gblame<cr>
 " nmap <leader>mq :MarkedQuit<cr>
 "
 " toggle syntastic
-nmap <leader>s :SyntasticToggleMode<cr>
+nmap <leader>S :SyntasticToggleMode<cr>
 
 " " allow es5 mode when looking at TypeScript
 " let g:syntastic_typescript_tsc_args = '--module amd --target ES5 --noImplicitAny'

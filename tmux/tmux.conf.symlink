@@ -78,6 +78,10 @@ bind p paste-buffer
 bind -t vi-copy 'v' begin-selection
 bind -t vi-copy 'y' copy-selection
 
+# Initializes TMUX plugin manager.
+# Keep this line at the very bottom of tmux.conf.
+run-shell '~/.tmux/plugins/tpm/tpm'
+
 ##############################
 ### Color & Style Settings ###
 ##############################
@@ -85,7 +89,4 @@ bind -t vi-copy 'y' copy-selection
 if '[[ "$BACKGROUND" == dark ]]' 'source ~/.dotfiles/tmux/dark_theme.conf'
 if '[[ "$BACKGROUND" == light ]]' 'source ~/.dotfiles/tmux/light_theme.conf'
 
-# Initializes TMUX plugin manager.
-# Keep this line at the very bottom of tmux.conf.
-run-shell '~/.tmux/plugins/tpm/tpm'
 
