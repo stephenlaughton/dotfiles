@@ -9,20 +9,20 @@ set -g mouse-resize-pane on
 set -g mouse-select-pane on
 set -g mouse-select-window on
 
-set-window-option -g aggressive-resize off
-
 # TPM
 set -g @tpm_plugins '              \
   tmux-plugins/tpm                 \
   tmux-plugins/tmux-sensible       \
   tmux-plugins/tmux-resurrect      \
   tmux-plugins/tmux-sessionist     \
-  tmux-plugins/tmux-sidebar        \
   tmux-plugins/tmux-pain-control   \
   tmux-plugins/tmux-cpu            \
   tmux-plugins/tmux-online-status  \
   tmux-plugins/tmux-battery        \
 '
+
+set -g @online_icon "✔︎"
+set -g @offline_icon "✘"
 
 ######################
 #### Key Bindings ####
@@ -84,9 +84,11 @@ bind -t vi-copy 'y' copy-selection
 ### Color & Style Settings ###
 ##############################
 
-source ~/.dotfiles/tmux/$TMUX_BACKGROUND.conf
-# if '[[ "$BACKGROUND" == light ]]' 'source ~/.dotfiles/tmux/light_theme.conf'
+# source ~/.dotfiles/tmux/$TMUX_BACKGROUND.conf
+if '[[ $TMUX_BACKGROUND == light ]]' 'source ~/.dotfiles/tmux/light.conf'
+if '[[ $TMUX_BACKGROUND == dark ]]' 'source ~/.dotfiles/tmux/dark.conf'
 
 # Initializes TMUX plugin manager.
 # Keep this line at the very bottom of tmux.conf.
 run-shell '~/.tmux/plugins/tpm/tpm'
+
