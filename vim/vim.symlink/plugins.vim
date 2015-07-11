@@ -50,6 +50,9 @@ Plugin 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 " Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
+Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
 
 " colorschemes
 Plugin 'chriskempson/base16-vim'
