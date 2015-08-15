@@ -169,7 +169,7 @@ inoremap jk <esc>
 nmap <leader><space> :%s/\s\+$<cr>
 
 " wipout buffer
-nmap <silent> <leader>b :bd<cr>
+nmap <silent> <leader>x :bd<cr>
 
 " shortcut to save
 nmap <leader>s :w<cr>
@@ -212,8 +212,8 @@ nmap <leader>l :set list!<cr>
 " nmap <leader>] >>
 "
 " switch between current and last buffer
-nmap <silent> <leader>. :bp<cr>
-nmap <silent> <leader>, :bn<cr>
+nmap <silent> <leader>, :bp<cr>
+nmap <silent> <leader>. :bn<cr>
 
 " " enable . command in visual mode
 " vnoremap . :normal .<cr>
@@ -394,9 +394,9 @@ nmap <silent> <leader>y :NERDTreeTabsFind<cr>
 nmap <silent> <leader>n :NERDTreeTabsToggle<cr>
 
 map fuzzyfinder (CtrlP) plugin
-nmap <silent> <leader>t :CtrlP<cr>
+nmap <silent> <leader>t :CtrlPMixed<cr>
 nmap <silent> <leader>r :CtrlPBuffer<cr>
-let g:ctrlp_map='<leader>t'
+let g:ctrlp_map='<leader>p'
 let g:ctrlp_dotfiles=1
 let g:ctrlp_working_path_mode = 'ra'
 
@@ -436,7 +436,7 @@ let g:airline_right_sep=''
 let g:airline_theme='base16'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#left_alt_sep = ' '
 
 " " neocomplete setup
 " " Disable AutoComplPop.
