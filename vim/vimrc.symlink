@@ -16,70 +16,30 @@ let mapleader = "\<Space>"
 let g:mapleader = "\<Space>"
 
 set history=10000 " change history to 1000
-" " set textwidth=80
-"
-" " Tab control
-" set noexpandtab " insert tabs rather than spaces for <Tab>
-" set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-" set tabstop=4 " the visible width of tabs
-" set softtabstop=4 " edit as if the tabs are 4 characters wide
-" set shiftwidth=4 " number of spaces to use for indent and unindent
-" set shiftround " round indent to a multiple of 'shiftwidth'
-"
+set textwidth=80
+
+" Tab control
+set noexpandtab " insert tabs rather than spaces for <Tab>
+set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
+set tabstop=4 " the visible width of tabs
+set softtabstop=4 " edit as if the tabs are 4 characters wide
+set shiftwidth=4 " number of spaces to use for indent and unindent
+set shiftround " round indent to a multiple of 'shiftwidth'
+
 if has('mouse')
     set mouse=a
     set ttymouse=xterm2
 endif
-"
-" set clipboard=unnamed
-"
-" " faster redrawing
-" set ttyfast
-"
-" " highlight conflicts
-" match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
-"
-" " file type specific settings
-" if has('autocmd') && !exists('autocommands_loaded')
-"     let autocommands_loaded = 1
-"     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-"     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-"     autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
-"     autocmd FileType html setlocal ts=4 sts=4 sw=4 noexpandtab indentkeys-=*<return>
-"     autocmd FileType jade setlocal ts=2 sts=2 sw=2 noexpandtab
-"     autocmd FileType *.md.js :call SyntasticReset<cr>
-"     autocmd FileType markdown,textile setlocal textwidth=0 wrapmargin=0 wrap spell
-"     autocmd FileType .xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
-"     "autocmd WinEnter * setlocal cursorline
-"     "autocmd WinLeave * setlocal nocursorline
-"
-"     " automatically resize panes on resize
-"     autocmd VimResized * exe 'normal! \<c-w>='
-"     autocmd BufWritePost .vimrc source %
-"     autocmd BufWritePost .vimrc.local source %
-"     " save all files on focus lost, ignoring warnings about untitled buffers
-"     autocmd FocusLost * silent! wa
-"
-"     autocmd BufNewFile,BufRead *.ejs set filetype=html
-"     autocmd BufNewFile,BufRead *.ino set filetype=c
-"     autocmd BufNewFile,BufRead *.svg set filetype=xml
-"
-"     " make quickfix windows take all the lower section of the screen when there
-"     " are multiple windows open
-"     autocmd FileType qf wincmd J
-"
-"     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-"     let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'stylus', 'html']
-"
-"     " autocmd! BufEnter * call ApplyLocalSettings(expand('<afile>:p:h'))
-" endif
-"
+
+" faster redrawing
+set ttyfast
+
 " code folding settings
 set foldmethod=syntax " fold based on indent
 set foldnestmax=10 " deepest fold is 10 levels
 set nofoldenable " don't fold by default
 set foldlevel=1
-"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => User Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -94,25 +54,19 @@ set scrolloff=3 " lines of text around cursor
 set shell=$SHELL
 set cmdheight=1 " command bar height
 
-" set title " set terminal title
-"
-" " Searching
-" set ignorecase " case insensitive searching
-" set smartcase " case-sensitive if expresson contains a capital letter
-" set hlsearch
-" set incsearch " set incremental search, like modern browsers
-" set nolazyredraw " don't redraw while executing macros
-"
-" set magic " Set magic on, for regex
+set title " set terminal title
+
+" Searching
+set ignorecase " case insensitive searching
+set smartcase " case-sensitive if expresson contains a capital letter
+set hlsearch
+set incsearch " set incremental search, like modern browsers
+set nolazyredraw " don't redraw while executing macros
+
+set magic " Set magic on, for regex
 
 set showmatch " show matching braces
 set mat=2 " how many tenths of a second to blink
-
-" " error bells
-" set noerrorbells
-" set visualbell
-" set t_vb=
-" set tm=500
 
 " switch syntax highlighting on
 syntax on
@@ -135,17 +89,16 @@ set showbreak=… " show ellipsis at breaking
 set autoindent " automatically set indent of new line
 set smartindent
 
-" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" " => Files, backups, and undo
-" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-" "set nobackup
-" "set nowritebackup
-" "set noswapfile
-" set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-" set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-"
-"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups, and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set nobackup
+set nowritebackup
+set noswapfile
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => StatusLine
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -177,12 +130,6 @@ nmap <leader>s :w<cr>
 " disable Ex mode
 noremap Q <NOP>
 
-" " set paste toggle
-" set pastetoggle=<F6>
-"
-" " toggle paste mode
-" map <leader>v :set paste!<cr>
-
 " edit ~/.vimrc
 map <leader>ev :e! ~/.vimrc<cr>
 " edit vim plugins
@@ -191,12 +138,6 @@ map <leader>evp :e! ~/.vim/plugins.vim<cr>
 " map <leader>evf :e! ~/.vim/functions.vim<cr>
 " " edit gitconfig
 " map <leader>eg :e! ~/.gitconfig<cr>
-"
-" " clear highlighted search
-" noremap <space> :set hlsearch! hlsearch?<cr>
-"
-" " activate spell-checking alternatives
-" nmap ;s :set invspell spelllang=en<cr>
 
 " toggle invisible characters
 set invlist
@@ -204,30 +145,11 @@ set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 highlight SpecialKey ctermbg=none " make the highlighting of tabs less annoying
 set showbreak=↪
 nmap <leader>l :set list!<cr>
-"
-" " Textmate style indentation
-" vmap <leader>[ <gv
-" vmap <leader>] >gv
-" nmap <leader>[ <<
-" nmap <leader>] >>
-"
+
 " switch between current and last buffer
 nmap <silent> <leader>, :bp<cr>
 nmap <silent> <leader>. :bn<cr>
 
-" " enable . command in visual mode
-" vnoremap . :normal .<cr>
-"
-" map <silent> <C-h> :call WinMove('h')<cr>
-" map <silent> <C-j> :call WinMove('j')<cr>
-" map <silent> <C-k> :call WinMove('k')<cr>
-" map <silent> <C-l> :call WinMove('l')<cr>
-"
-" map <leader>wc :wincmd q<cr>
-"
-" " toggle cursor line
-" nnoremap <leader>i :set cursorline!<cr>
-"
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
@@ -238,145 +160,14 @@ nnoremap <silent> k gk
 nnoremap <silent> ^ g^
 nnoremap <silent> $ g$
 
-" " search for word under the cursor
-" nnoremap <leader>/ "fyiw :/<c-r>f<cr>
-"
-" " inoremap <tab> <c-r>=Smart_TabComplete()<CR>
-"
-" map <leader>r :call RunCustomCommand()<cr>
-" " map <leader>s :call SetCustomCommand()<cr>
-" let g:silent_custom_command = 0
-"
-" " helpers for dealing with other people's code
-" nmap \t :set ts=4 sts=4 sw=4 noet<cr>
-" nmap \s :set ts=4 sts=4 sw=4 et<cr>
-"
-" nmap <leader>w :setf textile<cr> :Goyo<cr>
-"
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " " => Functions
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-" " Window movement shortcuts
-" " move to the window in the direction shown, or create a new window
-" function! WinMove(key)
-"     let t:curwin = winnr()
-"     exec "wincmd ".a:key
-"     if (t:curwin == winnr())
-"         if (match(a:key,'[jk]'))
-"             wincmd v
-"         else
-"             wincmd s
-"         endif
-"         exec "wincmd ".a:key
-"     endif
-" endfunction
-"
-" " recursively search up from dirname, sourcing all .vimrc.local files along the way
-" function! ApplyLocalSettings(dirname)
-"     " convert windows paths to unix style
-"     let l:curDir = substitute(a:dirname, '\\', '/', 'g')
-"
-"     " walk to the top of the dir tree
-"     let l:parentDir = strpart(l:curDir, 0, strridx(l:curDir, '/'))
-"     if isdirectory(l:parentDir)
-"         call ApplyLocalSettings(l:parentDir)
-"     endif
-"
-"     " now walk back down the path and source .vimsettings as you find them.
-"     " child directories can inherit from their parents
-"     let l:settingsFile = a:dirname . '/.vimrc.local'
-"     if filereadable(l:settingsFile)
-"         exec ':source' . l:settingsFile
-"     endif
-" endfunction
-"
-" " smart tab completion
-" function! Smart_TabComplete()
-"     let line = getline('.')                         " current line
-"
-"     let substr = strpart(line, -1, col('.')+1)      " from the start of the current
-"     " line to one character right
-"     " of the cursor
-"     let substr = matchstr(substr, '[^ \t]*$')       " word till cursor
-"     if (strlen(substr)==0)                          " nothing to match on empty string
-"         return '\<tab>'
-"     endif
-"     let has_period = match(substr, '\.') != -1      " position of period, if any
-"     let has_slash = match(substr, '\/') != -1       " position of slash, if any
-"     if (!has_period && !has_slash)
-"         return '\<C-X>\<C-P>'                         " existing text matching
-"     elseif ( has_slash )
-"         return '\<C-X>\<C-F>'                         " file matching
-"     else
-"         return '\<C-X>\<C-O>'                         " plugin matching
-"     endif
-" endfunction
-"
-" " execute a custom command
-" function! RunCustomCommand()
-"     up
-"     if g:silent_custom_command
-"         execute 'silent !' . s:customcommand
-"     else
-"         execute '!' . s:customcommand
-"     endif
-" endfunction
-"
-" function! SetCustomCommand()
-"     let s:customcommand = input('Enter Custom Command$ ')
-" endfunction
 
 function! TrimWhiteSpace()
 	%s/\s\+$//e
 endfunction
 
-" function! HiInterestingWord(n)
-"     " Save our location.
-"     normal! mz
-"
-"     " Yank the current word into the z register.
-"     normal! "zyiw
-"
-"     " Calculate an arbitrary match ID.  Hopefully nothing else is using it.
-"     let mid = 86750 + a:n
-"
-"     " Clear existing matches, but don't worry if they don't exist.
-"     silent! call matchdelete(mid)
-"
-"     " Construct a literal pattern that has to match at boundaries.
-"     let pat = '\V\<' . escape(@z, '\') . '\>'
-"
-"     " Actually match the words.
-"     call matchadd("InterestingWord" . a:n, pat, 1, mid)
-"
-"     " Move back to our original location.
-"     normal! `z
-" endfunction
-"
-" nnoremap <silent> <leader>1 :call HiInterestingWord(1)<cr>
-" nnoremap <silent> <leader>2 :call HiInterestingWord(2)<cr>
-" nnoremap <silent> <leader>3 :call HiInterestingWord(3)<cr>
-" nnoremap <silent> <leader>4 :call HiInterestingWord(4)<cr>
-" nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
-" nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
-"
-" hi def InterestingWord1 guifg=#000000 ctermfg=16 guibg=#ffa724 ctermbg=214
-" hi def InterestingWord2 guifg=#000000 ctermfg=16 guibg=#aeee00 ctermbg=154
-" hi def InterestingWord3 guifg=#000000 ctermfg=16 guibg=#8cffba ctermbg=121
-" hi def InterestingWord4 guifg=#000000 ctermfg=16 guibg=#b88853 ctermbg=137
-" hi def InterestingWord5 guifg=#000000 ctermfg=16 guibg=#ff9eb8 ctermbg=211
-" hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
-"
-" function! HtmlUnEscape()
-"   silent s/&lt;/</eg
-"   silent s/&gt;/>/eg
-"   silent s/&amp;/\&/eg
-" endfunction
-"
-" nnoremap <silent> <leader>u :call HtmlUnEscape()<cr>
-"
-"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -406,17 +197,9 @@ nmap <leader>ge :Gedit<cr>
 nmap <silent><leader>gr :Gread<cr>
 nmap <silent><leader>gb :Gblame<cr>
 
-" nmap <leader>m :MarkedOpen!<cr>
-" nmap <leader>mq :MarkedQuit<cr>
-"
 " toggle syntastic
 nmap <leader>S :SyntasticToggleMode<cr>
 
-" " allow es5 mode when looking at TypeScript
-" let g:syntastic_typescript_tsc_args = '--module amd --target ES5 --noImplicitAny'
-" let g:syntastic_typescript_checkers = ['tslint']
-" let g:syntastic_javascript_checkers = ['jshint', 'jscs']
-"
 " CtrlP ignore patterns
 let g:ctrlp_custom_ignore = {
              \ 'dir': '\.git$\|node_modules$\|bower_components$\|\.hg$\|\.svn$',
@@ -438,51 +221,15 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = ' '
 
-" " neocomplete setup
-" " Disable AutoComplPop.
-" let g:acp_enableAtStartup = 0
-" " Use neocomplete.
-" let g:neocomplete#enable_at_startup = 1
-" " Use smartcase.
-" let g:neocomplete#enable_smart_case = 1
-" " Plugin key-mappings.
-" inoremap <expr><C-g>     neocomplete#undo_completion()
-" inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" " Recommended key-mappings.
-" " <CR>: close popup and save indent.
-" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-" function! s:my_cr_function()
-"     return neocomplete#close_popup() . "\<CR>"
-" endfunction
-" " <TAB>: completion.
-" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" " <C-h>, <BS>: close popup and delete backword char.
-" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" inoremap <expr><C-y>  neocomplete#close_popup()
-" inoremap <expr><C-e>  neocomplete#cancel_popup()
-
-" " neosnippet setup
-" " Plugin key-mappings.
-" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" " SuperTab like snippets behavior.
-" imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-" 	    \ "\<Plug>(neosnippet_expand_or_jump)"
-" 	    \: pumvisible() ? "\<C-n>" : "\<TAB>"
-" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-" 	    \ "\<Plug>(neosnippet_expand_or_jump)"
-" 	    \: "\<TAB>"
-
 " UltiSnips setup
 let g:UltiSnipsExpandTrigger = '<c-l>'
 let g:UltiSnipsJumpForwardTrigger = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 let g:UltiSnipsListSnippets = '<c-m>'
 
+" Rails Completions
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_rails = 1
 
 " don't hide quotes in json files
 " let g:vim_json_syntax_conceal = 0
