@@ -7,3 +7,6 @@
 [submodule "zsh/zprezto.symlink"]
 	path = zsh/zprezto.symlink
 	url = https://github.com/stephenlaughton/prezto.git
+[submodule "tmux/tmux.symlink/plugins/tpm"]
+	path = tmux/tmux.symlink/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
