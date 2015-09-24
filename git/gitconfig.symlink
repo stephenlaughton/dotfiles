@@ -1,7 +1,7 @@
 # gitconfig
 [user]
-    name = Stephen Laughton
-    email = stephenlaughton@mixdog.io
+	name = Stephen Laughton
+	email = slaughton@xydrone.com
 [github]
     user = stephenlaughton
 [init]
@@ -83,7 +83,7 @@
     status = auto
     branch = auto
     interactive = auto
-    ui = auto
+	ui = true
 [color "branch"]
     current = green bold
     local = green
@@ -101,7 +101,7 @@
     branch = yellow
 [push]
     # push will only do the current branch, not all branches
-    default = current
+	default = simple
 [branch]
     # set up 'git pull' to rebase instead of merge
     autosetuprebase = always
