@@ -20,3 +20,4 @@ Icon
 # typescript command garbage
 tscommand*.txt
 *.cfg
+*.codekit
