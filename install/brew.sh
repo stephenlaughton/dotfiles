@@ -37,6 +37,7 @@ apm install file-icons
 apm install pigments
 apm install vim-mode
 brew cask install brackets
+brew cask install carbon-copy-cloner
 brew cask install codekit
 brew cask install daisydisk
 brew cask install dash
