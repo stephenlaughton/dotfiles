@@ -10,16 +10,16 @@ source install/link.sh
 if [ "$(uname)" == "Darwin" ]; then
     echo "running on OSX"
 
-    # echo "installing homebrew"
-    # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    echo "installing homebrew"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-    # echo "brewing all the things"
+    echo "brewing all the things"
     source install/brew.sh
 
-    # echo "updating OSX settings"
-    # source installosx.sh
+    echo "updating OSX settings"
+    source installosx.sh
 
-    # echo "installing node (from nvm)"
+    echo "installing node (from nvm)"
     nvm install stable
     nvm alias default stable
 fi
