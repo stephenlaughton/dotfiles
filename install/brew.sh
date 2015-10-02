@@ -49,7 +49,6 @@ brew cask install flux
 brew cask install github
 brew cask install gitter
 brew cask install google-chrome
-brew cask install google-chrome-canary
 brew cask install handbrake 
 brew cask install istat-menus
 brew cask install iterm2
