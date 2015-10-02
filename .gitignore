@@ -1,3 +1,8 @@
 .netrwhist
 vim/vim.symlink/bundle/
 tmux/tmux.symlink/plugins/
+atom/atom.symlink/compile-cache
+atom/atom.symlink/packages
+atom/atom.symlink/.apm
+atom/atom.symlink/.node-gyp
+
