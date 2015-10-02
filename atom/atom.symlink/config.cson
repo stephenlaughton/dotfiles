@@ -3,11 +3,7 @@
     userId: "a134b2b5-741f-907c-1d3a-92ac15f2c256"
   welcome:
     showOnStartup: false
-  core:
-    themes: [
-      "one-dark-ui"
-      "base16-syntax"
-    ]
+  core: {}
   editor:
     invisibles: {}
     showIndentGuide: true
