@@ -26,4 +26,6 @@ fi
 
 
 # echo "configuring zsh as default shell"
+sudo -s
+echo $(which zsh) >> /etc/shells
 chsh -s $(which zsh)
