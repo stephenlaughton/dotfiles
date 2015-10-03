@@ -8,6 +8,7 @@ brew install zsh
 
 # cask!
 brew install caskroom/cask/brew-cask
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # apps
 brew cask install 1password
@@ -60,6 +61,7 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew install awscli
 
     # dev casks
+    export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
     brew cask install brackets
     brew cask install codekit
     brew cask install dash
