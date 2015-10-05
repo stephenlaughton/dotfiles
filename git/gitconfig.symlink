@@ -1,7 +1,7 @@
 # gitconfig
 [user]
     name = Stephen Laughton
-    email = stephenlaughton@mixdog.io
+    email = stephenlaughton@gmail.com
 [github]
     user = stephenlaughton
 [init]
