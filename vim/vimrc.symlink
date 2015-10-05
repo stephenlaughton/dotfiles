@@ -266,3 +266,11 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 " Close popup by <Space>.
 inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
+" Tmux Navigator setup
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <Left> :TmuxNavigateLeft<cr>
+nnoremap <silent> <Down> :TmuxNavigateDown<cr>
+nnoremap <silent> <Up> :TmuxNavigateUp<cr>
+nnoremap <silent> <Right> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>

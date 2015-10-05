@@ -45,6 +45,7 @@ Plugin 'chriskempson/base16-vim'
 
 " JavaScript
 Plugin 'marijnh/tern_for_vim'
-
+" HTML
+Plugin 'mattn/emmet-vim'
 call vundle#end()
 filetype plugin indent on

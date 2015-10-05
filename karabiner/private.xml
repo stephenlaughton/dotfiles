@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <include once="true" path="{{ ENV_Karabiner_Resources }}/include/checkbox/vi_mode.xml" />
+  <item>
+    <name>Simultaneous jk for Esc</name>
+    <identifier>private.jk_to_esc</identifier>
+    <autogen>__SimultaneousKeyPresses__ KeyCode::J, KeyCode::K, KeyCode::ESCAPE</autogen>
+    </item>
+</root>

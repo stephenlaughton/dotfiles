@@ -1,0 +1,34 @@
+"*":
+  "exception-reporting":
+    userId: "a134b2b5-741f-907c-1d3a-92ac15f2c256"
+  welcome:
+    showOnStartup: false
+  core: {}
+  editor:
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    backUpBeforeSaving: true
+    fontSize: 12
+  emmet: {}
+  "vim-mode": {}
+  "base16-syntax":
+    scheme: "Flat"
+  "one-dark-ui":
+    layoutMode: "Compact"
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+    backspaceTriggersAutocomplete: true
+  "disable-keybindings":
+    prefixKeys: [
+      "ctrl-k"
+    ]
+  preview:
+    _analyticsUserId: "db10dc41-f99c-41a6-a37b-6c4a67be3bb0"
+  "atom-beautify":
+    _analyticsUserId: "e9a1d0f2-2aff-4d5f-8fa3-23769715396f"
+  linter:
+    showErrorPanel: false
+    lintOnFly: false
+  "atom-ternjs": {}
