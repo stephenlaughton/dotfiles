@@ -17,7 +17,9 @@
     scheme: "Flat"
   "one-dark-ui":
     layoutMode: "Compact"
-  "autocomplete-plus": {}
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+    backspaceTriggersAutocomplete: true
   "disable-keybindings":
     prefixKeys: [
       "ctrl-k"
@@ -29,7 +31,4 @@
   linter:
     showErrorPanel: false
     lintOnFly: false
-  "preview-plus":
-    htmlp: true
-    livePreview: true
-  "browser-plus": {}
+  "atom-ternjs": {}
