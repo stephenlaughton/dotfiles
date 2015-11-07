@@ -32,7 +32,21 @@
     _analyticsUserId: "db10dc41-f99c-41a6-a37b-6c4a67be3bb0"
   "atom-beautify":
     _analyticsUserId: "e9a1d0f2-2aff-4d5f-8fa3-23769715396f"
+    html_indent_inner_html: true
+    js_eval_code: true
+    js_space_after_anon_function: true
+    language_html_beautify_on_save: true
+    language_js_beautify_on_save: true
+    language_json_beautify_on_save: true
+    language_css_beautify_on_save: true
+    language_ruby_beautify_on_save: true
+    language_python_beautify_on_save: true
+    language_sass_beautify_on_save: true
   linter:
-    showErrorPanel: false
     lintOnFly: false
   "atom-ternjs": {}
+  minimap:
+    plugins:
+      "git-diff": true
+    absoluteMode: true
+  "atom-typescript": {}
