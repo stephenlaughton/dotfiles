@@ -48,5 +48,4 @@
   minimap:
     plugins:
       "git-diff": true
-    absoluteMode: true
   "atom-typescript": {}
