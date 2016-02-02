@@ -8,7 +8,8 @@ Plugin 'gmarik/vundle'
 
 " utilities
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/syntastic'
 
 Plugin 'scrooloose/nerdtree'
