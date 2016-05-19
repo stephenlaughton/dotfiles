@@ -1,51 +1,52 @@
 "*":
-  "exception-reporting":
-    userId: "a134b2b5-741f-907c-1d3a-92ac15f2c256"
-  welcome:
-    showOnStartup: false
-  core:
-    themes: [
-      "one-dark-ui"
-      "base16-syntax"
-    ]
-  editor:
-    invisibles: {}
-    showIndentGuide: true
-    showInvisibles: true
-    softWrap: true
-    backUpBeforeSaving: true
-    fontSize: 12
-  emmet: {}
-  "vim-mode": {}
-  "base16-syntax":
-    scheme: "Flat"
-  "one-dark-ui":
-    layoutMode: "Compact"
-  "autocomplete-plus":
-    confirmCompletion: "enter"
-    backspaceTriggersAutocomplete: true
-  "disable-keybindings":
-    prefixKeys: [
-      "ctrl-k"
-    ]
-  preview:
-    _analyticsUserId: "db10dc41-f99c-41a6-a37b-6c4a67be3bb0"
   "atom-beautify":
     _analyticsUserId: "e9a1d0f2-2aff-4d5f-8fa3-23769715396f"
     html_indent_inner_html: true
     js_eval_code: true
     js_space_after_anon_function: true
+    language_css_beautify_on_save: true
     language_html_beautify_on_save: true
     language_js_beautify_on_save: true
     language_json_beautify_on_save: true
-    language_css_beautify_on_save: true
-    language_ruby_beautify_on_save: true
     language_python_beautify_on_save: true
+    language_ruby_beautify_on_save: true
     language_sass_beautify_on_save: true
+  "atom-ternjs": {}
+  "atom-typescript": {}
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
+    confirmCompletion: "enter"
+  "base16-syntax":
+    scheme: "Flat"
+  core:
+    themes: [
+      "one-dark-ui"
+      "base16-syntax"
+    ]
+  "disable-keybindings":
+    prefixKeys: [
+      "ctrl-k"
+    ]
+  editor:
+    backUpBeforeSaving: true
+    fontSize: 12
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+  emmet: {}
+  "exception-reporting":
+    userId: "a134b2b5-741f-907c-1d3a-92ac15f2c256"
   linter:
     lintOnFly: false
-  "atom-ternjs": {}
   minimap:
     plugins:
       "git-diff": true
-  "atom-typescript": {}
+      "git-diffDecorationsZIndex": 0
+  "one-dark-ui":
+    layoutMode: "Compact"
+  preview:
+    _analyticsUserId: "db10dc41-f99c-41a6-a37b-6c4a67be3bb0"
+  "vim-mode": {}
+  welcome:
+    showOnStartup: false

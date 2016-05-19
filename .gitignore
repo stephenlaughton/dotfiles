@@ -6,4 +6,4 @@ atom/atom.symlink/packages
 atom/atom.symlink/.apm
 atom/atom.symlink/.node-gyp
 atom/atom.symlink/storage
-atom/atom.symlink/blog-store
+atom/atom.symlink/blob-store
