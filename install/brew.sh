@@ -6,19 +6,12 @@ brew install git
 brew install vim --with-lua
 brew install zsh
 
-# cask!
-brew install caskroom/cask/brew-cask
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+# get cask versions also
+brew tap caskroom/versions
 
 # apps
 brew cask install 1password
 brew cask install appcleaner
-brew cask install atom
-apm install atom-beautify
-apm install emmet
-apm install file-icons
-apm install pigments
-apm install vim-mode
 brew cask install carbon-copy-cloner
 brew cask install daisydisk
 brew cask install dropbox
@@ -28,7 +21,6 @@ brew cask install handbrake
 brew cask install istat-menus
 brew cask install iterm2
 brew cask install karabiner
-brew cask install mailbox
 brew cask install selfcontrol
 brew cask install skype
 brew cask install spectacle
@@ -58,14 +50,11 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew install z
     brew install chruby
     brew install ruby-install
-    brew install awscli
 
     # dev casks
-    export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+    brew cask install atom
     brew cask install brackets
-    brew cask install codekit
     brew cask install dash
-    brew cask install dockertoolbox
     brew cask install duet
     brew cask install firefox
     brew cask install opera
