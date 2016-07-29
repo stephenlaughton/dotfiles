@@ -59,5 +59,5 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew cask install firefox
     brew cask install opera
     brew cask install screenhero
-    brew cask install visual-studio-code
+    brew cask install visual-studio-code-insiders
 fi
