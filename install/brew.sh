@@ -24,7 +24,6 @@ brew cask install karabiner
 brew cask install selfcontrol
 brew cask install skype
 brew cask install spectacle
-brew cask install things
 brew cask install transmission
 brew cask install vlc
 
@@ -39,7 +38,6 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
 
     # development server setup
     brew install nginx
-    brew install dnsmasq
 
     # development tools
     brew install hub
@@ -47,17 +45,15 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew install tmux
     brew install highlight
     brew install nvm
-    brew install z
     brew install chruby
     brew install ruby-install
+    brew install m-cli
 
     # dev casks
     brew cask install atom
-    brew cask install brackets
     brew cask install dash
     brew cask install duet
     brew cask install firefox
     brew cask install opera
-    brew cask install screenhero
     brew cask install visual-studio-code-insiders
 fi
