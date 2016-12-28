@@ -25,6 +25,7 @@ brew cask install spectacle
 brew cask install transmission
 brew cask install vlc
 brew cask install hammerspoon
+brew cask install alfred
 brew cask install logitech-options
 
 echo ""
