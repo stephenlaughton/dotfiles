@@ -15,17 +15,17 @@ brew cask install appcleaner
 brew cask install carbon-copy-cloner
 brew cask install daisydisk
 brew cask install dropbox
-brew cask install flux
 brew cask install google-chrome
 brew cask install handbrake
 brew cask install istat-menus
 brew cask install iterm2
-brew cask install karabiner
 brew cask install selfcontrol
 brew cask install skype
 brew cask install spectacle
 brew cask install transmission
 brew cask install vlc
+brew cask install hammerspoon
+brew cask install logitech-options
 
 echo ""
 echo "Install Extra Dev Stuff? (y/n)"
@@ -50,10 +50,8 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew install m-cli
 
     # dev casks
-    brew cask install atom
     brew cask install dash
     brew cask install duet
     brew cask install firefox
-    brew cask install opera
     brew cask install visual-studio-code-insiders
 fi
