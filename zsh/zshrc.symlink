@@ -25,7 +25,7 @@ source ~/.brewaccess
 
 # Source functions.
 if [[ -s "$DOTFILES/zsh/functions.zsh" ]]; then
-  source "$DOTFILES/.zsh/functions.zsh"
+  source "$DOTFILES/zsh/functions.zsh"
 fi
 
 # Completions
