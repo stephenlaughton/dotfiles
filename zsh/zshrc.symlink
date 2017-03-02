@@ -1,0 +1,56 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+export DOTFILES=$HOME/.dotfiles
+
+# Set VSCode as editor
+export EDITOR="vim"
+export HOMEBREW_EDITOR="vim"
+export VISUAL="vim"
+
+# Set chruby
+source $(brew --prefix chruby)/share/chruby/chruby.sh
+source $(brew --prefix chruby)/share/chruby/auto.sh
+
+# Set NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# Source Homebrew Access Token
+source ~/.brewaccess
+
+# Source functions.
+if [[ -s "{$DOTFILES}/.zprezto/functions.zsh" ]]; then
+  source "{$DOTFILES}/.zprezto/functions.zsh"
+fi
+
+# Completions
+compinit
+
+# Base16 Shell
+if [ -z "$THEME" ]; then
+    export THEME="base16-flat"
+fi
+if [ -z "$BACKGROUND" ]; then
+    export BACKGROUND="dark"
+fi
+
+# Set TMUX theme
+if [[ -n "$TMUX" ]]; then
+
+    tmux setenv -g TMUX_BACKGROUND $BACKGROUND
+    tmux source-file ~/.tmux.conf
+    # if [[ $BACKGROUND == dark ]]; then
+
+    # else
+    #     tmux source-file ~/.dotfiles/tmux/light.conf
+    # fi
+fi
+
+BASE16_SHELL="$DOTFILES/.config/base16-shell/scripts/$THEME.sh"
+# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+source $BASE16_SHELL
