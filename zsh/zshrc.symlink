@@ -1,24 +1,39 @@
 # Dotfiles for paths
 export DOTFILES=$HOME/.dotfiles
 
-# Source Antigen.
-if [[ -s "$DOTFILES/zsh/antigen/antigen.zsh" ]]; then
-  source "$DOTFILES/zsh/antigen/antigen.zsh"
+# ================================================================
+# Plugins
+# ================================================================
+# load zplug if it doesn't exist
+if [[ ! -d ~/.zplug ]];then
+    git clone https://github.com/zplug/zplug ~/.zplug
+fi
+source ~/.zplug/init.zsh
+# Async for zsh, used by pure
+zplug "mafredri/zsh-async", from:github, defer:0
+# Load completion library for those sweet [tab] squares
+zplug "modules/completion", from:prezto
+# Up -> History search! Who knew it wasn't a built in?
+zplug "lib/key-bindings", from:oh-my-zsh
+# History defaults
+zplug "lib/history", from:oh-my-zsh
+# Adds useful aliases for things dealing with directories
+zplug "modules/directories", from:oh-my-zsh
+# gst, gco, gc -> All the git shortcut goodness
+zplug "plugins/git", from:oh-my-zsh, if:"hash git"
+# Syntax highlighting for commands
+zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:3
+# Theme!
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+# Actually install plugins, prompt user input
+if ! zplug check --verbose; then
+    printf "Install zplug plugins? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
 
-antigen use prezto
-antigen bundle zsh-users/prezto modules/terminal
-antigen bundle zsh-users/prezto modules/history
-antigen bundle zsh-users/prezto modules/directory
-antigen bundle zsh-users/prezto modules/utility
-antigen bundle zsh-users/prezto modules/completion
-antigen bundle zsh-users/prezto modules/git
-antigen bundle zsh-users/prezto modules/nvm
-antigen bundle zsh-users/prezto modules/homebrew
-antigen bundle zsh-users/prezto modules/history-substring-search
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen theme pure
-antigen apply
+zplug load
 
 # Set VSCode as editor
 export EDITOR="vim"
