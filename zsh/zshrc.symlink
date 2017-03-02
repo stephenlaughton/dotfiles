@@ -24,8 +24,8 @@ source $(brew --prefix nvm)/nvm.sh
 source ~/.brewaccess
 
 # Source functions.
-if [[ -s "{$DOTFILES}/.zprezto/functions.zsh" ]]; then
-  source "{$DOTFILES}/.zprezto/functions.zsh"
+if [[ -s "$DOTFILES/zsh/functions.zsh" ]]; then
+  source "$DOTFILES/.zsh/functions.zsh"
 fi
 
 # Completions
