@@ -1,11 +1,24 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
+# Dotfiles for paths
 export DOTFILES=$HOME/.dotfiles
+
+# Source Antigen.
+if [[ -s "$DOTFILES/zsh/antigen/antigen.zsh" ]]; then
+  source "$DOTFILES/zsh/antigen/antigen.zsh"
+fi
+
+antigen use prezto
+antigen bundle zsh-users/prezto modules/terminal
+antigen bundle zsh-users/prezto modules/history
+antigen bundle zsh-users/prezto modules/directory
+antigen bundle zsh-users/prezto modules/utility
+antigen bundle zsh-users/prezto modules/completion
+antigen bundle zsh-users/prezto modules/git
+antigen bundle zsh-users/prezto modules/nvm
+antigen bundle zsh-users/prezto modules/homebrew
+antigen bundle zsh-users/prezto modules/history-substring-search
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen theme pure
+antigen apply
 
 # Set VSCode as editor
 export EDITOR="vim"
@@ -21,7 +34,9 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 # Source Homebrew Access Token
-source ~/.brewaccess
+if [[ -s ~/.brewaccess ]]; then
+  source ~/.brewaccess
+fi
 
 # Source functions.
 if [[ -s "$DOTFILES/zsh/functions.zsh" ]]; then
