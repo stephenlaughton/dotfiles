@@ -11,16 +11,24 @@ fi
 source ~/.zplug/init.zsh
 # Async for zsh, used by pure
 zplug "mafredri/zsh-async", from:github, defer:0
+# Environment from prezto
+zplug "modules/environment", from:prezto
+# Terminal from prezto for window title etc.
+zplug "modules/terminal", from:prezto
+# Editor from prezto sets editor keybinding style
+zplug "modules/editor", from:prezto
+# History from prezto
+zplug "modules/history", from:prezto
+# Directory from prezto for not having to type cd etc.
+zplug "modules/directory", from:prezto
+# Spectrum from prezto for easy 256 colours
+zplug "modules/spectrum", from:prezto
+# Utility from prezto
+zplug "modules/utility", from:prezto
 # Load completion library for those sweet [tab] squares
 zplug "modules/completion", from:prezto
-# Up -> History search! Who knew it wasn't a built in?
-zplug "lib/key-bindings", from:oh-my-zsh
-# History defaults
-zplug "lib/history", from:oh-my-zsh
-# Adds useful aliases for things dealing with directories
-zplug "modules/directories", from:oh-my-zsh
 # gst, gco, gc -> All the git shortcut goodness
-zplug "plugins/git", from:oh-my-zsh, if:"hash git"
+zplug "modules/git", from:prezto
 # brew shortcuts
 zplug "modules/homebrew", from:prezto
 # Syntax highlighting for commands
@@ -48,7 +56,8 @@ source $(brew --prefix chruby)/share/chruby/auto.sh
 
 # Set NVM
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+source $(brew --prefix nvm)/nvm.sh --no-use
+alias node='nvm use; unalias node; node $@'
 
 # Source Homebrew Access Token
 if [[ -s ~/.brewaccess ]]; then
