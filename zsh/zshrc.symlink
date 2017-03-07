@@ -68,6 +68,8 @@ if [[ -s ~/.brewaccess ]]; then
   source ~/.brewaccess
 fi
 
+unalias g
+alias gcam='git commit -am'
 # Source functions.
 if [[ -s "$DOTFILES/zsh/functions.zsh" ]]; then
   source "$DOTFILES/zsh/functions.zsh"
