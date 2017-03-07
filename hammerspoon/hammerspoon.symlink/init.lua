@@ -38,6 +38,7 @@ hs.hotkey.bind({"cmd", "alt"}, "f", function()
   win:setFrame(max)
 end)
 
+i = 2
 hs.hotkey.bind({"cmd", "alt"}, "left", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -46,9 +47,14 @@ hs.hotkey.bind({"cmd", "alt"}, "left", function()
 
   f.x = max.x
   f.y = max.y
-  f.w = max.w / 2
+  f.w = max.w / ((i * 0.5) + 1)
   f.h = max.h
   win:setFrame(f)
+  if i < 3 then
+    i = i + 1
+   else
+    i = 1
+  end
 end)
 
 hs.hotkey.bind({"cmd", "alt"}, "right", function()
@@ -62,4 +68,9 @@ hs.hotkey.bind({"cmd", "alt"}, "right", function()
   f.w = max.w / 2
   f.h = max.h
   win:setFrame(f)
+  if i < 3 then
+    i = i + 1
+   else
+    i = 1
+  end
 end)

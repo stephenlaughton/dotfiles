@@ -15,6 +15,8 @@ zplug "mafredri/zsh-async", from:github, defer:0
 zplug "modules/environment", from:prezto
 # Terminal from prezto for window title etc.
 zplug "modules/terminal", from:prezto
+# Utility from prezto
+zplug "modules/utility", from:prezto
 # Editor from prezto sets editor keybinding style
 zplug "modules/editor", from:prezto
 # History from prezto
@@ -23,8 +25,6 @@ zplug "modules/history", from:prezto
 zplug "modules/directory", from:prezto
 # Spectrum from prezto for easy 256 colours
 zplug "modules/spectrum", from:prezto
-# Utility from prezto
-zplug "modules/utility", from:prezto
 # Load completion library for those sweet [tab] squares
 zplug "modules/completion", from:prezto
 # gst, gco, gc -> All the git shortcut goodness
@@ -32,7 +32,11 @@ zplug "modules/git", from:prezto
 # brew shortcuts
 zplug "modules/homebrew", from:prezto
 # Syntax highlighting for commands
-zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:3
+# zplug "modules/syntax-highlighting", from:prezto, defer:3
+# Search history
+zplug "modules/history-substring-search", from:prezto, defer:3
+# Auto-suggest previous commands
+zplug "modules/autosuggestions", from:prezto, defer:3
 # Theme!
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 # Actually install plugins, prompt user input
