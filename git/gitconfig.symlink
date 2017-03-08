@@ -115,7 +115,7 @@
 [core]
     excludesfile = ~/.gitignore_global
     pager = less -FXRS -x2
-	editor = code --wait --new-window
+	editor = code --wait
 [rerere]
     enabled = true
 [gitsh]
@@ -126,7 +126,7 @@
 [credential]
 	helper = store
 [difftool "default-difftool"]
-	cmd = code --wait --new-window --diff $LOCAL $REMOTE
+	cmd = code --wait --diff $LOCAL $REMOTE
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustexitcode = true

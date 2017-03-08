@@ -39,6 +39,7 @@ hs.hotkey.bind({"cmd", "alt"}, "f", function()
 end)
 
 i = 2
+j = 2
 hs.hotkey.bind({"cmd", "alt"}, "left", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -54,6 +55,11 @@ hs.hotkey.bind({"cmd", "alt"}, "left", function()
     i = i + 1
    else
     i = 1
+  end
+  if j > 1 then
+    j = j - 1
+   else
+    j = 3
   end
 end)
 
@@ -72,5 +78,10 @@ hs.hotkey.bind({"cmd", "alt"}, "right", function()
     i = i + 1
    else
     i = 1
+  end
+  if j > 1 then
+    j = j - 1
+   else
+    j = 3
   end
 end)

@@ -50,9 +50,9 @@ fi
 zplug load
 
 # Set VSCode as editor
-export EDITOR="vim"
+export EDITOR="code --wait"
 export HOMEBREW_EDITOR="vim"
-export VISUAL="vim"
+export VISUAL="code --wait"
 
 # Set chruby
 source $(brew --prefix chruby)/share/chruby/chruby.sh
