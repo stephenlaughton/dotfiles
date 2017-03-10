@@ -38,9 +38,12 @@ hs.hotkey.bind({"cmd", "alt"}, "f", function()
   win:setFrame(max)
 end)
 
-i = 2
-j = 2
-hs.hotkey.bind({"cmd", "alt"}, "left", function()
+local l = 2
+local r = 2
+local XY = {{x=1/3, y=2/3}, {x=1/2, y=1/2}, {x=2/3, y=1/3}}
+
+hs.hotkey.bind({"cmd", "alt"}, "h", function()
+  r = 2
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -48,40 +51,72 @@ hs.hotkey.bind({"cmd", "alt"}, "left", function()
 
   f.x = max.x
   f.y = max.y
-  f.w = max.w / ((i * 0.5) + 1)
+  f.w = max.w * XY[l].x
   f.h = max.h
   win:setFrame(f)
-  if i < 3 then
-    i = i + 1
+  if l < 3 then
+    l = l + 1
    else
-    i = 1
-  end
-  if j > 1 then
-    j = j - 1
-   else
-    j = 3
+    l = 1
   end
 end)
 
-hs.hotkey.bind({"cmd", "alt"}, "right", function()
+hs.hotkey.bind({"cmd", "alt"}, "l", function()
+  l = 2
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
 
-  f.x = max.x + (max.w / 2)
+  f.x = max.x + (max.w * XY[r].y)
   f.y = max.y
-  f.w = max.w / 2
+  f.w = max.w * XY[r].x
   f.h = max.h
   win:setFrame(f)
-  if i < 3 then
-    i = i + 1
+  if r < 3 then
+    r = r + 1
    else
-    i = 1
+    r = 1
   end
-  if j > 1 then
-    j = j - 1
+end)
+
+local u = 2
+local d = 2
+
+hs.hotkey.bind({"cmd", "alt"}, "k", function()
+  d = 2
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w
+  f.h = max.h * XY[u].x
+  win:setFrame(f)
+  if u < 3 then
+    u = u + 1
    else
-    j = 3
+    u = 1
+  end
+end)
+
+hs.hotkey.bind({"cmd", "alt"}, "j", function()
+  u = 2
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y + (max.h * XY[d].y)
+  f.w = max.w
+  f.h = max.h * XY[d].x
+  win:setFrame(f)
+  if d < 3 then
+    d = d + 1
+   else
+    d = 1
   end
 end)
