@@ -62,8 +62,7 @@ source $(brew --prefix chruby)/share/chruby/auto.sh
 
 # Set NVM
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh --no-use
-alias node='nvm use; unalias node; node $@'
+source $(brew --prefix nvm)/nvm.sh
 
 # Source Homebrew Access Token
 if [[ -s ~/.brewaccess ]]; then
@@ -71,7 +70,7 @@ if [[ -s ~/.brewaccess ]]; then
 fi
 
 unalias g
-alias gcam='git commit -am'
+alias gcam='git add . && git commit -am'
 # Source functions.
 if [[ -s "$DOTFILES/zsh/functions.zsh" ]]; then
   source "$DOTFILES/zsh/functions.zsh"
