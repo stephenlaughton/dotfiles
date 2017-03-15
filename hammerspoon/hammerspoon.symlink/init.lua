@@ -40,9 +40,11 @@ end)
 
 local l = 2
 local r = 2
+local u = 2
+local d = 2
 local XY = {{x=1/3, y=2/3}, {x=1/2, y=1/2}, {x=2/3, y=1/3}}
 
-hs.hotkey.bind({"cmd", "alt"}, "h", function()
+resizeLeft = function()
   r = 2
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -59,9 +61,9 @@ hs.hotkey.bind({"cmd", "alt"}, "h", function()
    else
     l = 1
   end
-end)
+end
 
-hs.hotkey.bind({"cmd", "alt"}, "l", function()
+resizeRight = function()
   l = 2
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -78,12 +80,9 @@ hs.hotkey.bind({"cmd", "alt"}, "l", function()
    else
     r = 1
   end
-end)
+end
 
-local u = 2
-local d = 2
-
-hs.hotkey.bind({"cmd", "alt"}, "k", function()
+resizeUp = function()
   d = 2
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -100,9 +99,9 @@ hs.hotkey.bind({"cmd", "alt"}, "k", function()
    else
     u = 1
   end
-end)
+end
 
-hs.hotkey.bind({"cmd", "alt"}, "j", function()
+resizeDown = function()
   u = 2
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -119,4 +118,16 @@ hs.hotkey.bind({"cmd", "alt"}, "j", function()
    else
     d = 1
   end
-end)
+end
+
+hs.hotkey.bind({"cmd", "alt"}, "h", resizeLeft)
+hs.hotkey.bind({"cmd", "alt"}, "left", resizeLeft)
+
+hs.hotkey.bind({"cmd", "alt"}, "l", resizeRight)
+hs.hotkey.bind({"cmd", "alt"}, "right", resizeRight)
+
+hs.hotkey.bind({"cmd", "alt"}, "k", resizeUp)
+hs.hotkey.bind({"cmd", "alt"}, "up", resizeUp)
+
+hs.hotkey.bind({"cmd", "alt"}, "j", resizeDown)
+hs.hotkey.bind({"cmd", "alt"}, "down", resizeDown)

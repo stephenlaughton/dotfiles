@@ -11,18 +11,18 @@ brew tap caskroom/versions
 
 # apps
 brew cask install 1password
+brew cask install alfred
 brew cask install appcleaner
 brew cask install carbon-copy-cloner
 brew cask install daisydisk
 brew cask install dropbox
 brew cask install google-chrome
+brew cask install hammerspoon
 brew cask install istat-menus
 brew cask install iterm2
 brew cask install skype
 brew cask install transmission
 brew cask install vlc
-brew cask install hammerspoon
-brew cask install alfred
 
 echo ""
 echo "Install Extra Dev Stuff? (y/n)"
@@ -45,6 +45,8 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew install chruby
     brew install ruby-install
     brew install m-cli
+    brew install git-flow
+    brew install yarn
 
     # dev casks
     brew cask install dash
