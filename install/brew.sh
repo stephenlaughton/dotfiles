@@ -5,6 +5,7 @@
 brew install git
 brew install vim --with-lua
 brew install zsh
+brew install zplug
 
 # get cask versions also
 brew tap caskroom/versions
