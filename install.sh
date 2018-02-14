@@ -18,10 +18,6 @@ if [ "$(uname)" == "Darwin" ]; then
 
     echo "updating OSX settings"
     source installosx.sh
-
-    echo "installing node (from nvm)"
-    nvm install stable
-    nvm alias default stable
 fi
 
 

@@ -3,6 +3,7 @@
 
 # development tools
 brew install git
+brew install node
 brew install vim --with-lua
 brew install zsh
 brew install zplug
@@ -48,6 +49,10 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew install m-cli
     brew install git-flow
     brew install yarn
+    brew install grep
+    brew install watchman
+    brew install exa
+    brew install fish
 
     # dev casks
     brew cask install dash
