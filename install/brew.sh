@@ -60,4 +60,5 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew cask install firefox
     brew cask install visual-studio-code-insiders
     brew cask install slack
+    brew cask install docker
 fi
