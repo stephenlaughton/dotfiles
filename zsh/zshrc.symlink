@@ -82,6 +82,8 @@ if [[ -s "$DOTFILES/zsh/functions.zsh" ]]; then
   source "$DOTFILES/zsh/functions.zsh"
 fi
 
+alias code='code-insiders'
+
 # Completions
 compinit
 
