@@ -75,6 +75,7 @@ if [[ -s ~/.brewaccess ]]; then
   source ~/.brewaccess
 fi
 
+# Alias gcam because it nice
 unalias g
 alias gcam='git add . && git commit -am'
 # Source functions.
@@ -82,7 +83,12 @@ if [[ -s "$DOTFILES/zsh/functions.zsh" ]]; then
   source "$DOTFILES/zsh/functions.zsh"
 fi
 
+# Alias code since i use insiders
 alias code='code-insiders'
+
+
+# Alias exa
+alias exa='exa -bghHliS --git'
 
 # Completions
 compinit
