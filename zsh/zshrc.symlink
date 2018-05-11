@@ -59,8 +59,8 @@ source $(brew --prefix chruby)/share/chruby/chruby.sh
 source $(brew --prefix chruby)/share/chruby/auto.sh
 
 # Set NVM
-# export NVM_DIR=~/.nvm
-# source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # Set JS Api url
 export JS_API_URL="192.168.1.101"
