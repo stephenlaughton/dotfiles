@@ -88,7 +88,7 @@ alias code='code-insiders'
 
 
 # Alias exa
-alias exa='exa -bghHliS --git'
+alias ll='exa'
 
 # Completions
 compinit
