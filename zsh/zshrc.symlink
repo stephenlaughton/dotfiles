@@ -59,8 +59,8 @@ source $(brew --prefix chruby)/share/chruby/chruby.sh
 source $(brew --prefix chruby)/share/chruby/auto.sh
 
 # Set NVM
-# export NVM_DIR=~/.nvm
-# source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # Set Node
 export PATH="/usr/local/opt/node@8/bin:$PATH"
@@ -69,9 +69,10 @@ export PATH="/usr/local/opt/node@8/bin:$PATH"
 export JS_API_URL="192.168.1.101"
 
 # Android crap
-export ANDROID_HOME=${HOME}/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Source Homebrew Access Token
 if [[ -s ~/.brewaccess ]]; then
