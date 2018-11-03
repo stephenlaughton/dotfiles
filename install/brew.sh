@@ -11,7 +11,6 @@ brew install zplug
 brew tap caskroom/versions
 
 # apps
-brew cask install 1password
 brew cask install alfred
 brew cask install appcleaner
 brew cask install carbon-copy-cloner
