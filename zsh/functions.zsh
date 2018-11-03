@@ -55,6 +55,13 @@ function g() {
     fi
 }
 
+# clear out mistakenly installed homebrew node
+function clearHomebrewNode() {
+    brew uninstall --ignore-dependencies node
+    rm -rf /usr/local/lib/node_modules/npm
+    rm -rf /usr/local/bin/npm /usr/local/lib/node_modules/npm/bin/npm-cli.js
+}
+
 # reload!
 function reload!() {
     source ~/.zshrc
