@@ -3,7 +3,6 @@
 
 # development tools
 brew install git
-brew install node
 brew install vim --with-lua
 brew install zsh
 brew install zplug
