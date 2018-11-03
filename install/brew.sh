@@ -46,7 +46,7 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew install ruby-install
     brew install m-cli
     brew install git-flow
-    brew install yarn
+    brew install yarn --without-node
     brew install grep
     brew install watchman
     brew install exa
