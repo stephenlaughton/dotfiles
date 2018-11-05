@@ -63,7 +63,9 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 # Set Node
-export PATH="/usr/local/opt/node@8/bin:$PATH"
+# export PATH="/usr/local/opt/node@8/bin:$PATH"
+
+# Set Stupid Java
 
 # Set JS Api url
 export JS_API_URL="192.168.1.101"
