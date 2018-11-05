@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>build</key>
-	<real>947</real>
+	<real>966</real>
 	<key>license</key>
 	<dict>
 		<key>email</key>
@@ -13,27 +13,6 @@
 	</dict>
 	<key>preferences</key>
 	<dict>
-		<key>Battery_MenubarItems</key>
-		<array>
-			<dict>
-				<key>internal</key>
-				<true/>
-				<key>key</key>
-				<string>D867137S2QNFWLKFN</string>
-				<key>name</key>
-				<string>Internal Battery</string>
-				<key>subtype</key>
-				<integer>-1</integer>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>key</key>
-				<string>88-6b-6e-f3-1b-d7</string>
-				<key>name</key>
-				<string>Beb’s Beats Solo³</string>
-			</dict>
-		</array>
 		<key>Battery_MenubarMode</key>
 		<array>
 			<dict>
@@ -43,26 +22,8 @@
 				<string>E49F81DE-5AF1-4914-8C46-3C95AC1156D7</string>
 			</dict>
 		</array>
-		<key>Battery_MenubarModeAirpods</key>
-		<array>
-			<dict>
-				<key>key</key>
-				<string>3</string>
-				<key>uuid</key>
-				<string>AC55F8A4-B320-4F80-B6F6-0ECC9CB4AED0</string>
-			</dict>
-		</array>
-		<key>Battery_MenubarModeBluetooth</key>
-		<array>
-			<dict>
-				<key>key</key>
-				<string>3</string>
-				<key>uuid</key>
-				<string>E225B33F-B8C3-4A58-9228-1FE7ED0279E8</string>
-			</dict>
-		</array>
 		<key>CPU_CombineLogicalCores</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>CPU_MenubarMode</key>
 		<array>
 			<dict>
@@ -81,13 +42,15 @@
 				<true/>
 				<key>key</key>
 				<string>7A4100AE-534C-3C40-8C70-2BED447AD661</string>
+				<key>name</key>
+				<string>Home</string>
 			</dict>
 		</array>
 		<key>FanControl_Sets</key>
 		<array>
 			<dict>
 				<key>model</key>
-				<string>MacBookPro11,4</string>
+				<string>MacBookPro12,1</string>
 				<key>name</key>
 				<string>Medium</string>
 				<key>speeds</key>
@@ -102,7 +65,7 @@
 						<key>percentage</key>
 						<real>0.5</real>
 						<key>speed</key>
-						<real>4158</real>
+						<integer>3749</integer>
 					</dict>
 				</array>
 				<key>uuid</key>
@@ -110,7 +73,7 @@
 			</dict>
 			<dict>
 				<key>model</key>
-				<string>MacBookPro11,4</string>
+				<string>MacBookPro12,1</string>
 				<key>name</key>
 				<string>High</string>
 				<key>speeds</key>
@@ -125,7 +88,7 @@
 						<key>percentage</key>
 						<real>1</real>
 						<key>speed</key>
-						<real>6156</real>
+						<integer>6199</integer>
 					</dict>
 				</array>
 				<key>uuid</key>
@@ -148,7 +111,9 @@
 		<key>Memory_ProcessCount</key>
 		<integer>10</integer>
 		<key>MenubarSkinColor</key>
-		<integer>7</integer>
+		<integer>0</integer>
+		<key>MenubarSkinColor-Dark</key>
+		<integer>8</integer>
 		<key>MenubarTheme</key>
 		<integer>0</integer>
 		<key>MigratedExtras_5.0</key>
@@ -168,8 +133,6 @@
 				<string>F6037C6A-E4A6-42C6-82FE-5DAAB9D6645B</string>
 			</dict>
 		</array>
-		<key>Sensors-Limits-Updated</key>
-		<true/>
 		<key>Sensors_MenubarMode</key>
 		<array>
 			<dict>
@@ -182,22 +145,81 @@
 		<key>StatusItems-Order</key>
 		<array>
 			<integer>4</integer>
-			<integer>9</integer>
 			<integer>7</integer>
 			<integer>1</integer>
 			<integer>2</integer>
 			<integer>5</integer>
 			<integer>6</integer>
 		</array>
+		<key>Theme-SeperateStyles</key>
+		<false/>
 		<key>Time_Cities</key>
 		<array>
-			<string>-6</string>
-			<string>-7</string>
-			<real>1850147</real>
-			<real>2193733</real>
+			<dict>
+				<key>city</key>
+				<string>Moon</string>
+				<key>country</key>
+				<string></string>
+				<key>identifier</key>
+				<real>-6</real>
+				<key>latitude</key>
+				<real>0.0</real>
+				<key>longitude</key>
+				<real>0.0</real>
+				<key>state</key>
+				<string></string>
+				<key>timezone</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>city</key>
+				<string>Current Location</string>
+				<key>country</key>
+				<string></string>
+				<key>identifier</key>
+				<real>-7</real>
+				<key>latitude</key>
+				<real>0.0</real>
+				<key>longitude</key>
+				<real>0.0</real>
+				<key>state</key>
+				<string></string>
+				<key>timezone</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>city</key>
+				<string>Auckland</string>
+				<key>country</key>
+				<string>New Zealand</string>
+				<key>identifier</key>
+				<real>2193733</real>
+				<key>latitude</key>
+				<real>-36.848529999999997</real>
+				<key>longitude</key>
+				<real>174.76348999999999</real>
+				<key>state</key>
+				<string>Auckland</string>
+				<key>timezone</key>
+				<string>Pacific/Auckland</string>
+			</dict>
+			<dict>
+				<key>city</key>
+				<string>Seoul</string>
+				<key>country</key>
+				<string>South Korea</string>
+				<key>identifier</key>
+				<integer>1835848</integer>
+				<key>latitude</key>
+				<real>37.566000000000003</real>
+				<key>longitude</key>
+				<real>126.97839999999999</real>
+				<key>state</key>
+				<string>Seoul</string>
+				<key>timezone</key>
+				<string>Asia/Seoul</string>
+			</dict>
 		</array>
-		<key>Time_DismissedCalendarAccess</key>
-		<true/>
 		<key>Time_MenubarFormat</key>
 		<array>
 			<dict>
@@ -237,22 +259,9 @@
 			</dict>
 		</array>
 		<key>Weather_MenubarMode</key>
-		<array>
-			<dict>
-				<key>mode</key>
-				<integer>2</integer>
-				<key>uuid</key>
-				<string>59A97E58-DAAC-4A32-B0E2-2B5119A2CCB4</string>
-			</dict>
-			<dict>
-				<key>mode</key>
-				<integer>0</integer>
-				<key>uuid</key>
-				<string>C75B175C-0D96-440D-8AD4-E92238503AC2</string>
-			</dict>
-		</array>
+		<array/>
 	</dict>
 	<key>version</key>
-	<real>6</real>
+	<real>6.0999999046325684</real>
 </dict>
 </plist>

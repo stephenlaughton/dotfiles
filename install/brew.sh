@@ -3,7 +3,6 @@
 
 # development tools
 brew install git
-brew install node
 brew install vim --with-lua
 brew install zsh
 brew install zplug
@@ -12,7 +11,6 @@ brew install zplug
 brew tap caskroom/versions
 
 # apps
-brew cask install 1password
 brew cask install alfred
 brew cask install appcleaner
 brew cask install carbon-copy-cloner
@@ -48,7 +46,7 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew install ruby-install
     brew install m-cli
     brew install git-flow
-    brew install yarn
+    brew install yarn --without-node
     brew install grep
     brew install watchman
     brew install exa
