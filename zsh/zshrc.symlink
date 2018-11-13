@@ -57,6 +57,7 @@ export VISUAL="code --wait"
 # Set chruby
 source $(brew --prefix chruby)/share/chruby/chruby.sh
 source $(brew --prefix chruby)/share/chruby/auto.sh
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Set NVM
 export NVM_DIR=~/.nvm
