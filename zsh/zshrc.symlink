@@ -67,7 +67,6 @@ source $(brew --prefix nvm)/nvm.sh
 # Set Node
 # export PATH="/usr/local/opt/node@8/bin:$PATH"
 
-# Set Stupid Java
 
 # Set JS Api url
 export JS_API_URL="192.168.1.101"
@@ -77,6 +76,9 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+# Set Stupid Java
+JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=${JAVA_HOME}/bin:$PATH
 
 # Source Homebrew Access Token
 if [[ -s ~/.brewaccess ]]; then
