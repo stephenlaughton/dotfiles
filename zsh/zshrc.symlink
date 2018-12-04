@@ -93,9 +93,13 @@ if [[ -s "$DOTFILES/zsh/functions.zsh" ]]; then
   source "$DOTFILES/zsh/functions.zsh"
 fi
 
-# Alias code since i use insiders
-alias code='code-insiders'
+# function to check if exists
+exists() { type -t "$1" > /dev/null 2>&1; }
 
+# Alias code since i use insiders
+if exists code-insiders; then
+  alias code='code-insiders'
+fi
 
 # Alias exa
 alias ll='exa -bghHliSa --git'
