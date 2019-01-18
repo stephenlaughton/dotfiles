@@ -41,7 +41,7 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew install reattach-to-user-namespace
     brew install tmux
     brew install highlight
-    brew install nvm
+    brew install nodenv
     brew install chruby
     brew install ruby-install
     brew install m-cli

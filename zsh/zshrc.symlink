@@ -54,15 +54,15 @@ export EDITOR="code --wait"
 export HOMEBREW_EDITOR="vim"
 export VISUAL="code --wait"
 
-# Set chruby
-source $(brew --prefix chruby)/share/chruby/chruby.sh
-source $(brew --prefix chruby)/share/chruby/auto.sh
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"
+# # Set chruby
+# source $(brew --prefix chruby)/share/chruby/chruby.sh
+# source $(brew --prefix chruby)/share/chruby/auto.sh
+# export PATH="/usr/local/opt/ruby/bin:$PATH"
+# export PATH="/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"
 
-# Set NVM
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# # Set NVM
+eval "$(nodenv init - --no-rehash)"
+export NODENV_VERSION=8.11.4
 
 # Set Node
 # export PATH="/usr/local/opt/node@8/bin:$PATH"
