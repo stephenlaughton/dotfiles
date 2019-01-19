@@ -4,48 +4,52 @@ export DOTFILES=$HOME/.dotfiles
 # ================================================================
 # Plugins
 # ================================================================
-# load zplug if it doesn't exist
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
-# Async for zsh, used by pure
-zplug "mafredri/zsh-async", from:github, defer:0
-# Environment from prezto
-zplug "modules/environment", from:prezto
-# Terminal from prezto for window title etc.
-zplug "modules/terminal", from:prezto
-# Utility from prezto
-zplug "modules/utility", from:prezto
-# Editor from prezto sets editor keybinding style
-zplug "modules/editor", from:prezto
-# History from prezto
-zplug "modules/history", from:prezto
-# Directory from prezto for not having to type cd etc.
-zplug "modules/directory", from:prezto
-# Spectrum from prezto for easy 256 colours
-zplug "modules/spectrum", from:prezto
-# Load completion library for those sweet [tab] squares
-zplug "modules/completion", from:prezto
-# gst, gco, gc -> All the git shortcut goodness
-zplug "modules/git", from:prezto
-# brew shortcuts
-zplug "modules/homebrew", from:prezto
-# Search history
-zplug "modules/history-substring-search", from:prezto, defer:3
-# Auto-suggest previous commands
-zplug "modules/autosuggestions", from:prezto, defer:3
-# Nice syntax highlighting.
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-# Theme!
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
-# Actually install plugins, prompt user input
-if ! zplug check --verbose; then
-    printf "Install zplug plugins? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
 
-zplug load
+### Added by Zplugin's installer
+source '/Users/stephen/.zplugin/bin/zplugin.zsh'
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+### End of Zplugin's installer chunk
+
+# | completions | #
+zplugin ice svn wait"0" silent pick"init.zsh" blockf
+zplugin snippet PZT::modules/completion
+zplugin ice from"gh" wait"!1" silent pick"zsh-completion-generator.plugin.zsh" lucid
+zplugin light RobSis/zsh-completion-generator
+
+# | syntax highlighting | #
+#zplugin ice from"gh" wait"0" zsh-users/zsh-syntax-highlighting
+zplugin ice from"gh" wait"0" atinit"zpcompinit; zpcdreplay" lucid
+zplugin light zdharma/fast-syntax-highlighting
+
+# | history | #
+zplugin ice wait"0" silent pick"history.zsh" lucid
+zplugin snippet OMZ::lib/history.zsh
+zplugin ice wait"0" silent pick"history.plugin.zsh" lucid
+zplugin snippet OMZ::plugins/history/history.plugin.zsh
+# search history via substring
+zplugin ice from"gh" wait"1" silent pick"zsh-history-substring-search.plugin.zsh" lucid
+zplugin light zsh-users/zsh-history-substring-search
+# search through long list of commands with Ctrl+R
+zplugin ice from"gh" wait"1" silent pick"history-search-multi-word.plugin.zsh" lucid
+zplugin light zdharma/history-search-multi-word
+
+# | autosuggestions | #
+zplugin ice wait"0" atload"_zsh_autosuggest_start" lucid
+zplugin light zsh-users/zsh-autosuggestions
+
+# | prompt | #
+zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
+
+# | prezto utils | #
+zplugin ice svn; zplugin snippet PZT::modules/environment
+zplugin ice svn; zplugin snippet PZT::modules/terminal
+zplugin ice svn; zplugin snippet PZT::modules/utility
+zplugin ice svn; zplugin snippet PZT::modules/editor
+zplugin ice svn; zplugin snippet PZT::modules/directory
+zplugin ice svn; zplugin snippet PZT::modules/spectrum
+zplugin ice svn; zplugin snippet PZT::modules/git
+zplugin ice svn; zplugin snippet PZT::modules/homebrew
 
 # Set VSCode as editor
 export EDITOR="code --wait"
@@ -103,7 +107,7 @@ fi
 alias ll='exa -bghHliSa --git'
 
 # Completions
-compinit
+# compinit
 
 # Base16 Shell
 if [ -z "$THEME" ]; then
@@ -131,3 +135,4 @@ alias updatesub='git submodule foreach git pull origin master'
 BASE16_SHELL="$DOTFILES/.config/base16-shell/scripts/$THEME.sh"
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 source $BASE16_SHELL
+
