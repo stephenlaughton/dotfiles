@@ -29,8 +29,6 @@ zplug "modules/completion", from:prezto
 zplug "modules/git", from:prezto
 # brew shortcuts
 zplug "modules/homebrew", from:prezto
-# Syntax highlighting for commands
-# zplug "modules/syntax-highlighting", from:prezto, defer:3
 # Search history
 zplug "modules/history-substring-search", from:prezto, defer:3
 # Auto-suggest previous commands
@@ -60,7 +58,7 @@ export VISUAL="code --wait"
 # export PATH="/usr/local/opt/ruby/bin:$PATH"
 # export PATH="/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"
 
-# # Set NVM
+# Set Nodenv
 eval "$(nodenv init - --no-rehash)"
 export NODENV_VERSION=8.11.4
 
