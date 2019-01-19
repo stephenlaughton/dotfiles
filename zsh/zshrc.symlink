@@ -125,6 +125,9 @@ if [[ -n "$TMUX" ]]; then
     # fi
 fi
 
+# Alias updating submodules
+alias updatesub='git submodule foreach git pull origin master'
+
 BASE16_SHELL="$DOTFILES/.config/base16-shell/scripts/$THEME.sh"
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 source $BASE16_SHELL
