@@ -66,3 +66,8 @@ function clearHomebrewNode() {
 function reload!() {
     source ~/.zshrc
 }
+
+# measure timing
+function timing() {
+    repeat 5 /usr/bin/time zsh -i -c exit
+}
