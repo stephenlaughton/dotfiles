@@ -5,7 +5,8 @@
 brew install git
 brew install vim --with-lua
 brew install zsh
-brew install zplug
+# zplugin
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
 
 # get cask versions also
 brew tap caskroom/versions
@@ -39,14 +40,21 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     # development tools
     brew install hub
     brew install reattach-to-user-namespace
-    brew install tmux
     brew install highlight
+
+    # Node stuff
     brew install nodenv
+    # grab stable version of node
+    nodenv install 8.11.4
+    # convenience plugin for nodenv
+    git clone https://github.com/nodenv/nodenv-package-rehash.git "$(nodenv root)"/plugins/nodenv-package-rehash
+    nodenv package-hooks install --all
+    brew install yarn --without-node
+
     brew install chruby
     brew install ruby-install
     brew install m-cli
     brew install git-flow
-    brew install yarn --without-node
     brew install grep
     brew install watchman
     brew install exa
