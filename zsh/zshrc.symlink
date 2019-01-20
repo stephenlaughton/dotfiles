@@ -117,17 +117,17 @@ if [ -z "$BACKGROUND" ]; then
     export BACKGROUND="dark"
 fi
 
-# Set TMUX theme
-if [[ -n "$TMUX" ]]; then
+# # Set TMUX theme
+# if [[ -n "$TMUX" ]]; then
 
-    tmux setenv -g TMUX_BACKGROUND $BACKGROUND
-    tmux source-file ~/.tmux.conf
-    # if [[ $BACKGROUND == dark ]]; then
+#     tmux setenv -g TMUX_BACKGROUND $BACKGROUND
+#     tmux source-file ~/.tmux.conf
+#     # if [[ $BACKGROUND == dark ]]; then
 
-    # else
-    #     tmux source-file ~/.dotfiles/tmux/light.conf
-    # fi
-fi
+#     # else
+#     #     tmux source-file ~/.dotfiles/tmux/light.conf
+#     # fi
+# fi
 
 # Alias updating submodules
 alias updatesub='git submodule foreach git pull origin master'
