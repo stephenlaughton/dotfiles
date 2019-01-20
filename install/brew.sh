@@ -41,6 +41,7 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew install hub
     brew install reattach-to-user-namespace
     brew install highlight
+    brew install svn
 
     # Node stuff
     brew install nodenv
