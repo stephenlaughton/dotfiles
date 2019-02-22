@@ -52,8 +52,7 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     nodenv package-hooks install --all
     brew install yarn --without-node
 
-    brew install chruby
-    brew install ruby-install
+    brew install ruby
     brew install m-cli
     brew install git-flow
     brew install grep
