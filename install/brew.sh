@@ -50,7 +50,7 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     # convenience plugin for nodenv
     git clone https://github.com/nodenv/nodenv-package-rehash.git "$(nodenv root)"/plugins/nodenv-package-rehash
     nodenv package-hooks install --all
-    brew install yarn --without-node
+    brew install yarn --ignore-dependencies
 
     brew install ruby
     brew install m-cli
