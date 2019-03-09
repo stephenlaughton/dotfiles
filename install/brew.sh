@@ -3,7 +3,7 @@
 
 # development tools
 brew install git
-brew install vim --with-lua
+brew install vim
 brew install zsh
 # zplugin
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
@@ -24,6 +24,7 @@ brew cask install iterm2
 brew cask install skype
 brew cask install transmission
 brew cask install vlc
+brew cask install 1password
 
 echo ""
 echo "Install Extra Dev Stuff? (y/n)"
@@ -64,7 +65,7 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
     brew cask install dash
     brew cask install duet
     brew cask install firefox
-    brew cask install visual-studio-code-insiders
+    brew cask install visual-studio-code
     brew cask install slack
     brew cask install docker
 fi
