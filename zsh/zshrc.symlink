@@ -17,11 +17,6 @@ zplugin snippet PZT::modules/completion
 zplugin ice from"gh" wait"!1" silent pick"zsh-completion-generator.plugin.zsh" lucid
 zplugin light RobSis/zsh-completion-generator
 
-# | syntax highlighting | #
-#zplugin ice from"gh" wait"0" zsh-users/zsh-syntax-highlighting
-zplugin ice from"gh" wait"0" atinit"zpcompinit; zpcdreplay" lucid
-zplugin light zdharma/fast-syntax-highlighting
-
 # | history | #
 zplugin ice wait"0" silent pick"history.zsh" lucid
 zplugin snippet OMZ::lib/history.zsh
@@ -50,6 +45,11 @@ zplugin ice svn; zplugin snippet PZT::modules/directory
 zplugin ice svn; zplugin snippet PZT::modules/spectrum
 zplugin ice svn; zplugin snippet PZT::modules/git
 zplugin ice svn; zplugin snippet PZT::modules/homebrew
+
+# | syntax highlighting | #
+#zplugin ice from"gh" wait"0" zsh-users/zsh-syntax-highlighting
+zplugin ice from"gh" wait"1" atinit"zpcompinit; zpcdreplay" lucid
+zplugin light zdharma/fast-syntax-highlighting
 
 # Set VSCode as editor
 export EDITOR="code --wait"
