@@ -7,3 +7,11 @@ atom/atom.symlink/.apm
 atom/atom.symlink/.node-gyp
 atom/atom.symlink/storage
 atom/atom.symlink/blob-store
+config/config.symlink/fish/completions
+config/config.symlink/fish/conf.d
+config/config.symlink/fish/functions
+config/config.symlink/fish/fish_variables
+config/config.symlink/fish/fishd*
+config/config.symlink/fisher
+
+
