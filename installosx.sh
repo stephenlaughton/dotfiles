@@ -158,5 +158,3 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 echo "Only use UTF-8 in Terminal.app"
 defaults write com.apple.terminal StringEncodings -array 4
 
-echo "Kill affected applications"
-for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done

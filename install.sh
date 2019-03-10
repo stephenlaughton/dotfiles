@@ -21,7 +21,7 @@ if [ "$(uname)" == "Darwin" ]; then
 fi
 
 
-# echo "configuring zsh as default shell"
+# echo "configuring fish as default shell"
 sudo -s
-echo $(which zsh) >> /etc/shells
-chsh -s $(which zsh)
+echo $(which fish) >> /etc/shells
+chsh -s $(which fish)
