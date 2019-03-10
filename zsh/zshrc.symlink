@@ -12,8 +12,8 @@ autoload -Uz _zplugin
 ### End of Zplugin's installer chunk
 
 # | completions | #
-zplugin ice svn wait"0" silent pick"init.zsh" blockf
-zplugin snippet PZT::modules/completion
+zplugin ice from"gh" wait"1" silent pick"zsh-completions.plugin.zsh" lucid
+zplugin light zsh-users/zsh-completions
 zplugin ice from"gh" wait"!1" silent pick"zsh-completion-generator.plugin.zsh" lucid
 zplugin light RobSis/zsh-completion-generator
 
