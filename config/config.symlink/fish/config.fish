@@ -9,8 +9,10 @@ if not functions -q fisher
 end
 
 # Set Nodenv
-status --is-interactive; and source (nodenv init - --no-rehash| psub)
-set NODENV_VERSION "8.11.4"
+if status --is-interactive
+    source (nodenv init - --no-rehash| psub)
+    set NODENV_VERSION 8.11.4
+end
 
 # Base16 Shell
 if status --is-interactive
