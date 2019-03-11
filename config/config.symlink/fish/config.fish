@@ -24,14 +24,11 @@ end
 alias ll='exa -bghHliSa --git'
 
 abbr -a -g e code
+# Alias gcam because it nice
+abbr -a gcam 'git add . && git commit -am'
 
 abbr -e g
-abbr -e gcam
-
-# Alias gcam because it nice
-alias gcam='git add . && git commit -am'
-
-# gg convenience function
+# g convenience function
 function g -d "git <args> or git status"
     if count $argv > /dev/null
         git $argv
