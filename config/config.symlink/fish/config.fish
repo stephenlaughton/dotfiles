@@ -23,6 +23,8 @@ end
 # Alias exa
 alias ll='exa -bghHliSa --git'
 
+abbr -a -g e code
+
 abbr -e g
 abbr -e gcam
 
