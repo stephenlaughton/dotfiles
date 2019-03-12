@@ -20,6 +20,18 @@ if status --is-interactive
     source "$BASE16_SHELL/profile_helper.fish"
 end
 
+# Android crap
+set -x ANDROID_SDK "$HOME/Library/Android/sdk"
+set -x PATH "$ANDROID_SDK/emulator $ANDROID_SDK/tools" $PATH
+set -x ANDROID_HOME "$HOME/Library/Android/sdk"
+set -x PATH $PATH "$ANDROID_HOME/tools"
+set -x PATH $PATH "$ANDROID_HOME/tools/bin"
+set -x PATH $PATH "$ANDROID_HOME/platform-tools"
+
+# Set Stupid Java
+set -x JAVA_HOME "/usr/libexec/java_home"
+set -x PATH "$JAVA_HOME/bin" $PATH
+
 # Alias exa
 alias ll='exa -bghHliSa --git'
 
