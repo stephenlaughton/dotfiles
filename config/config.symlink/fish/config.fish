@@ -36,3 +36,6 @@ function g -d "git <args> or git status"
         git status
     end
 end
+
+# Reload command
+abbr -a -g r! source ~/.config/fish/config.fish
