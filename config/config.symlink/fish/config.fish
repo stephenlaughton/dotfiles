@@ -29,7 +29,7 @@ set -x PATH $PATH "$ANDROID_HOME/tools/bin"
 set -x PATH $PATH "$ANDROID_HOME/platform-tools"
 
 # Set Stupid Java
-set -x JAVA_HOME "/usr/libexec/java_home"
+set -x JAVA_HOME (/usr/libexec/java_home)
 set -x PATH "$JAVA_HOME/bin" $PATH
 
 # Alias exa
