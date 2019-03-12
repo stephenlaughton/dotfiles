@@ -23,7 +23,6 @@ end
 # Alias exa
 alias ll='exa -bghHliSa --git'
 
-abbr -a -g e code
 # Alias gcam because it nice
 abbr -a gcam 'git add . && git commit -am'
 
@@ -34,6 +33,15 @@ function g -d "git <args> or git status"
         git $argv
     else
         git status
+    end
+end
+
+# e convenience function
+function e -d "code <args> or code ."
+    if count $argv > /dev/null
+        code $argv
+    else
+        code .
     end
 end
 
