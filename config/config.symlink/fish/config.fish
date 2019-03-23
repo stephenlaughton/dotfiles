@@ -20,10 +20,21 @@ if status --is-interactive
     source "$BASE16_SHELL/profile_helper.fish"
 end
 
+# Android crap
+set -x ANDROID_SDK "$HOME/Library/Android/sdk"
+set -x PATH "$ANDROID_SDK/emulator $ANDROID_SDK/tools" $PATH
+set -x ANDROID_HOME "$HOME/Library/Android/sdk"
+set -x PATH $PATH "$ANDROID_HOME/tools"
+set -x PATH $PATH "$ANDROID_HOME/tools/bin"
+set -x PATH $PATH "$ANDROID_HOME/platform-tools"
+
+# Set Stupid Java
+set -x JAVA_HOME (/usr/libexec/java_home)
+set -x PATH "$JAVA_HOME/bin" $PATH
+
 # Alias exa
 alias ll='exa -bghHliSa --git'
 
-abbr -a -g e code
 # Alias gcam because it nice
 abbr -a gcam 'git add . && git commit -am'
 
@@ -36,3 +47,15 @@ function g -d "git <args> or git status"
         git status
     end
 end
+
+# e convenience function
+function e -d "code <args> or code ."
+    if count $argv > /dev/null
+        code $argv
+    else
+        code .
+    end
+end
+
+# Reload command
+abbr -a -g r! source ~/.config/fish/config.fish

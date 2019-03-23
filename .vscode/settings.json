@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "*.symlink": "shellscript"
+        "*.symlink": "shellscript",
+        "*.fish": "shellscript"
     }
 }
