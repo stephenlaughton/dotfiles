@@ -25,6 +25,7 @@ brew cask install skype
 brew cask install transmission
 brew cask install vlc
 brew cask install 1password
+brew cask install kap
 
 echo ""
 echo "Install Extra Dev Stuff? (y/n)"
