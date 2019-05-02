@@ -14,3 +14,5 @@ config/config.symlink/fish/fish_variables
 config/config.symlink/fish/fishd*
 config/config.symlink/fisher
 config/config.symlink/configstore
+config/config.symlink/alacritty
+config/config.symlink/gatsby

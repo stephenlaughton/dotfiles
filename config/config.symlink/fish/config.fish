@@ -35,6 +35,9 @@ set -x PATH "$JAVA_HOME/bin" $PATH
 # Alias exa
 alias ll='exa -bghHliSa --git'
 
+# Alias code-insiders
+alias code='code-insiders'
+
 # Alias gcam because it nice
 abbr -a gcam 'git add . && git commit -am'
 
