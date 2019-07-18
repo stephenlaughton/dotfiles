@@ -35,8 +35,20 @@ set -x PATH "$JAVA_HOME/bin" $PATH
 # Alias exa
 alias ll='exa -bghHliSa --git'
 
+# Alias npm list to see all global
+abbr -a npmlist 'npm list -g --depth 0'
+
 # Alias code-insiders
 alias code='code-insiders'
+
+# e convenience function
+function e -d "code <args> or code ."
+    if count $argv > /dev/null
+        code $argv
+    else
+        code .
+    end
+end
 
 # Alias gcam because it nice
 abbr -a gcam 'git add . && git commit -am'
@@ -48,15 +60,6 @@ function g -d "git <args> or git status"
         git $argv
     else
         git status
-    end
-end
-
-# e convenience function
-function e -d "code <args> or code ."
-    if count $argv > /dev/null
-        code $argv
-    else
-        code .
     end
 end
 
