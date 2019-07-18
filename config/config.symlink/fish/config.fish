@@ -41,6 +41,9 @@ alias code='code-insiders'
 # Alias gcam because it nice
 abbr -a gcam 'git add . && git commit -am'
 
+# Alias npm list to see all global
+abbr -a npmlist 'npm list -g --depth 0'
+
 abbr -e g
 # g convenience function
 function g -d "git <args> or git status"
