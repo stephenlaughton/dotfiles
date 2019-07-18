@@ -64,7 +64,6 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
 
     # dev casks
     brew cask install dash
-    brew cask install duet
     brew cask install firefox
     brew cask install visual-studio-code
     brew cask install slack
