@@ -62,3 +62,7 @@ end
 
 # Reload command
 abbr -a -g r! source ~/.config/fish/config.fish
+
+# Ruby
+set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
+set -x PATH $PATH "/usr/local/lib/ruby/gems/2.6.0/bin"

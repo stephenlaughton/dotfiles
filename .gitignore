@@ -16,3 +16,4 @@ config/config.symlink/fisher
 config/config.symlink/configstore
 config/config.symlink/alacritty
 config/config.symlink/gatsby
+config/config.symlink/yarn
