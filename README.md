@@ -20,6 +20,13 @@ Dotfiles for easily setting up a new Jenkins machine with:
 
 # New Install
 
-1. In terminal `mkdir -p Dev/github.com/invoice-simple && cd Dev/github.com/invoice-simple && git clone https://github.com/invoice-simple/dotfiles.git && cd dotfiles && ./install.sh`
+1. In terminal
+    ```
+    mkdir -p Dev/github.com/invoice-simple &&
+    cd Dev/github.com/invoice-simple &&
+    git clone https://github.com/invoice-simple/dotfiles.git &&
+    cd dotfiles &&
+    ./install.sh
+    ```
 2. Wait for a bit and make sure everything installs without errors
 3. Profit
