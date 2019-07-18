@@ -29,7 +29,9 @@ Dotfiles for easily setting up a new Jenkins machine with:
     ./install.sh
     ```
 2. Wait for a bit and make sure everything installs without errors
-3. Profit
+3. Start jenkins and ngrok TODO: explain
+4. Run Jenkins a few times adding permissions every time it fails (TODO: explain and automate)
+5. Profit
 
 ### Extra stuff to automate
 - `npm install -g replace`
