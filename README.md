@@ -30,3 +30,8 @@ Dotfiles for easily setting up a new Jenkins machine with:
     ```
 2. Wait for a bit and make sure everything installs without errors
 3. Profit
+
+### Extra stuff to automate
+- `npm install -g replace`
+- `sudo gem install xcodeproj`
+- `sudo gem install cocoapods`
