@@ -31,9 +31,14 @@ Dotfiles for easily setting up a new Jenkins machine with:
 2. Wait for a bit and make sure everything installs without errors
 3. Start jenkins and ngrok TODO: explain
 4. Run Jenkins a few times adding permissions every time it fails (TODO: explain and automate)
-5. Profit
+5. Set login shell to `zsh`
+6. Set iTerm default shell to `fish`
+7. Run `nodenv init` in `bash`
+8. [Set team for global installed](https://appium.readthedocs.io/en/latest/en/drivers/ios-xcuitest-real-devices/) `WebDriverAgent` (script only changes locally installed)
+9. Profit
 
 ### Extra stuff to automate
 - `npm install -g replace`
+- `npm install -g ios-deploy`
 - `sudo gem install xcodeproj`
 - `sudo gem install cocoapods`

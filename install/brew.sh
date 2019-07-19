@@ -18,9 +18,12 @@ brew install ruby
 brew install m-cli
 brew install grep
 brew install watchman
-brew install exa
+brew install bash
+brew install zsh
 brew install fish
+brew install exa
 brew install carthage
+brew install ideviceinstaller
 brew cask install adoptopenjdk8
 
 # apps
