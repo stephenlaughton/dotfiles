@@ -22,7 +22,8 @@ Dotfiles for easily setting up a new Jenkins machine with:
 
 # New Install
 
-1. In terminal
+1. Install `Xcode`
+2. In terminal
    ```
    mkdir -p Dev/github.com/invoice-simple &&
    cd Dev/github.com/invoice-simple &&
@@ -30,11 +31,14 @@ Dotfiles for easily setting up a new Jenkins machine with:
    cd dotfiles &&
    ./install.sh
    ```
-2. Wait for a bit and make sure everything installs without errors
-3. Set login shell to `zsh`
-4. Set iTerm default shell to `fish`
-5. Run `nodenv init` in `bash`
-6. [Set team for global installed](https://appium.readthedocs.io/en/latest/en/drivers/ios-xcuitest-real-devices/) `WebDriverAgent` (script only changes locally installed)
+3. Wait for a bit and make sure everything installs without errors
+4. Set login shell to `zsh`
+5. Set iTerm default shell to `fish`
+6. Run `nodenv init` in `bash`
+7. `npm install -g replace ios-deploy`
+8. `sudo gem install xcodeproj cocoapods`
+9. [Set team for global installed](https://appium.readthedocs.io/en/latest/en/drivers/ios-xcuitest-real-devices/) `WebDriverAgent` (script only changes locally installed)
+10. Add certs for your apple id in xcode TODO: more detail
 
 # Primary Node
 
@@ -42,10 +46,8 @@ Dotfiles for easily setting up a new Jenkins machine with:
 2. Run Jenkins a few times adding permissions every time it fails (TODO: explain and automate)
 3. Profit
 
-### Extra stuff to automate
+# Secondary Node
 
-- `npm install -g replace`
-- `npm install -g ios-deploy`
-- `sudo gem install xcodeproj`
-- `sudo gem install cocoapods`
-- add certs for your apple id in xcode
+1. Setup SSH access from primary node
+
+### Extra stuff to automate
