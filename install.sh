@@ -17,6 +17,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
         echo "brewing all the things"
         source install/brew.sh
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
     fi
     echo "updating OSX settings"
     source installosx.sh
