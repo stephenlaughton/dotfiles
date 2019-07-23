@@ -35,10 +35,11 @@ Dotfiles for easily setting up a new Jenkins machine with:
 4. Set login shell to `zsh`
 5. Set iTerm default shell to `fish`
 6. Run `nodenv init` in `bash`
-7. `npm install -g replace ios-deploy`
-8. `sudo gem install xcodeproj cocoapods`
-9. [Set team for global installed](https://appium.readthedocs.io/en/latest/en/drivers/ios-xcuitest-real-devices/) `WebDriverAgent` (script only changes locally installed)
-10. Add certs for your apple id in xcode TODO: more detail
+7. Run `nodenv global 8.11.4 && nodenv rehash`
+8. `npm install -g replace ios-deploy`
+9. `sudo gem install xcodeproj cocoapods`
+10. [Set team for global installed](https://appium.readthedocs.io/en/latest/en/drivers/ios-xcuitest-real-devices/) `WebDriverAgent` (script only changes locally installed)
+11. Add certs for your apple id in xcode TODO: more detail
 
 # Primary Node
 
