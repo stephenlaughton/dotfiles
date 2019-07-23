@@ -28,6 +28,7 @@ brew cask install adoptopenjdk8
 
 # apps
 brew cask install alfred
+brew cask install android-studio
 brew cask install appcleaner
 brew cask install google-chrome
 brew cask install hammerspoon
