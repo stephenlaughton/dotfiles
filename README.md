@@ -42,3 +42,5 @@ Dotfiles for easily setting up a new Jenkins machine with:
 - `npm install -g ios-deploy`
 - `sudo gem install xcodeproj`
 - `sudo gem install cocoapods`
+- add certs for your apple id in xcode
+- unlock keychain to bypass security prompt `security unlock-keychain -p YOUR_PASSWORD ~/Library/Keychains/login.keychain`
