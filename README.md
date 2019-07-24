@@ -40,8 +40,12 @@ Dotfiles for easily setting up a new Jenkins machine with:
 9. `npm install -g replace ios-deploy appium`
 10. `sudo gem install xcodeproj cocoapods`
 11. [Set team for global installed](https://appium.readthedocs.io/en/latest/en/drivers/ios-xcuitest-real-devices/) `WebDriverAgent` (script only changes locally installed)
-12. Add certs for your apple id in xcode TODO: more detail
-13. Link `nodenv` node to location where `/bin/sh` can pick it up `ln -s $(which node) /usr/local/bin/node`
+12. Link `nodenv` node to location where `/bin/sh` can pick it up `ln -s $(which node) /usr/local/bin/node`
+13. Add certs for your apple id in xcode by:
+
+    - Signing into your apple developer id
+    - Running `is-mobile` once
+
 14. Build `ios` app at least once and grant codesigning permissions `Allow Always`
 
 # Primary Node
