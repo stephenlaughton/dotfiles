@@ -57,5 +57,10 @@ Dotfiles for easily setting up a new Jenkins machine with:
 # Secondary Node
 
 1. Setup SSH access from primary node
+2. Add the following Environment Vars in Jenkins -> Nodes -> Configure
+    - `ANDROID_HOME`: `/Users/[username]/Library/Android/sdk`
+    - `JAVA_HOME`: `/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home`
+    - `PATH+LOCAL_BIN`: the output of `echo $PATH` when running `zsh` on node host (mac mini)
+    - `THING`: password for the admin user on host node
 
 ### Extra stuff to automate
