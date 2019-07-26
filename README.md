@@ -42,11 +42,10 @@ Dotfiles for easily setting up a new Jenkins machine with:
 11. [Set team for global installed](https://appium.readthedocs.io/en/latest/en/drivers/ios-xcuitest-real-devices/) `WebDriverAgent` (script only changes locally installed)
 12. Link `nodenv` node to location where `/bin/sh` can pick it up `ln -s $(which node) /usr/local/bin/node`
 13. Add certs for your apple id in xcode by:
-
     - Signing into your apple developer id
     - Running `is-mobile` once
-
-14. Build `ios` app at least once and grant codesigning permissions `Allow Always`
+14. Build `ios` app at least once in Xcode on a **device** and grant codesigning permissions `Allow Always`
+15. Build `android` app at least once in Android Studio to accept terms and download required SDKs
 
 # Primary Node
 
