@@ -9,7 +9,7 @@ brew install git
 # Node stuff
 brew install nodenv
 # grab stable version of node
-nodenv install 8.11.4
+nodenv install 10.16.0
 # convenience plugin for nodenv
 git clone https://github.com/nodenv/nodenv-package-rehash.git "$(nodenv root)"/pluginsnodenv-package-rehash
 nodenv package-hooks install --all
