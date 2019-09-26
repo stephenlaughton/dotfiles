@@ -2,5 +2,8 @@
     "files.associations": {
         "*.symlink": "shellscript",
         "*.fish": "shellscript"
-    }
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.requireConfig": false,
+    "editor.formatOnSave": false
 }

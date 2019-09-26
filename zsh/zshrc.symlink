@@ -64,7 +64,7 @@ export VISUAL="code --wait"
 
 # Set Nodenv
 eval "$(nodenv init - --no-rehash)"
-export NODENV_VERSION=8.11.4
+export NODENV_VERSION=10.16.0
 
 # Set Node
 # export PATH="/usr/local/opt/node@8/bin:$PATH"
@@ -138,4 +138,3 @@ alias updatesub='git submodule foreach git pull origin master'
 BASE16_SHELL="$DOTFILES/config/config.symlink/base16-shell/scripts/$THEME.sh"
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 source $BASE16_SHELL
-
