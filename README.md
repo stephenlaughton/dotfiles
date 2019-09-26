@@ -1,6 +1,6 @@
 # dotfiles
 
-Dotfiles for easily setting up a new Jenkins machine with:
+Dotfiles for easily setting up a new Dev machine with:
 
 - homebrew
   - git
@@ -26,9 +26,9 @@ Dotfiles for easily setting up a new Jenkins machine with:
 2. Run `xcode-select --install` to get extra commandline tools
 3. In terminal
    ```
-   mkdir -p Dev/github.com/invoice-simple &&
-   cd Dev/github.com/invoice-simple &&
-   git clone https://github.com/invoice-simple/dotfiles.git &&
+   mkdir -p Dev/github.com/stephenlaughton &&
+   cd Dev/github.com/stephenlaughton &&
+   git clone https://github.com/stephenlaughton/dotfiles.git &&
    cd dotfiles &&
    ./install.sh
    ```
