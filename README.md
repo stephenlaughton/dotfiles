@@ -8,7 +8,7 @@ Dotfiles for easily setting up a new Jenkins machine with:
   - jenkins
   - openjdk flavour java 8
   - fish shell with config
-  - nodenv with node `8.11.4`
+  - nodenv with node `10.16.0`
   - yarn
   - carthage
   - vscode insiders
@@ -36,7 +36,7 @@ Dotfiles for easily setting up a new Jenkins machine with:
 5. Set login shell to `zsh`
 6. Set iTerm default shell to `fish`
 7. Run `nodenv init` in `bash`
-8. Run `nodenv global 8.11.4 && nodenv rehash`
+8. Run `nodenv global 10.16.0 && nodenv rehash`
 9. `npm install -g replace ios-deploy appium`
 10. `sudo gem install xcodeproj cocoapods`
 11. [Set team for global installed](https://appium.readthedocs.io/en/latest/en/drivers/ios-xcuitest-real-devices/) `WebDriverAgent` (script only changes locally installed)

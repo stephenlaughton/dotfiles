@@ -6,6 +6,7 @@ brew tap caskroom/versions
 
 # development tools
 brew install git
+brew install svn
 # Node stuff
 brew install nodenv
 # grab stable version of node
@@ -39,3 +40,4 @@ brew cask install firefox
 brew cask install visual-studio-code-insiders
 brew cask install slack
 brew cask install realm-studio
+brew cask install the-unarchiver
