@@ -22,11 +22,11 @@ for file in $linkables ; do
     echo "Moving any existing dotfiles from ~ to $OLDDOTFILES"
     # allow folder-folder-whatever.symlink to be folder/folder/whatever
     newTarget=${target//-/\/}
-    # mv $target $OLDDOTFILES
+    mv $target $OLDDOTFILES
     echo "creating symlink for $file -> $target -> $newTarget"
-    # ln -fhs $PARENTDIR/$file $newTarget
+    ln -fhs $PARENTDIR/$file $newTarget
 done
 
 # link dotfiles dir to ~/.dotfiles/
 echo "linking this directory to $HOME/.dotfiles"
-# ln -fhs $PARENTDIR $HOME/.dotfiles
+ln -fhs $PARENTDIR $HOME/.dotfiles
