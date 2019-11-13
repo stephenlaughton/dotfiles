@@ -9,22 +9,24 @@ OLDDOTFILES=$HOME/.old_dotfiles
 
 # create dotfiles_old in homedir
 echo "creating $OLDDOTFILES for backup of any existing dotfiles in $HOME"
-mkdir -p $OLDDOTFILES
+# mkdir -p $OLDDOTFILES
 echo "...done"
 
 # move any existing dotfiles into .old_dotfiles and then link
 echo "moving any old dotfiles into .old_dotfiles and creating symlinks"
 pwd
-linkables=$( ls -1 -d **/*.symlink )
+linkables=$( find . -name "*.symlink" )
 echo $linkables
 for file in $linkables ; do
     target="$HOME/.$( basename $file ".symlink" )"
     echo "Moving any existing dotfiles from ~ to $OLDDOTFILES"
-    mv $target $OLDDOTFILES
-    echo "creating symlink for $file"
-    ln -fhs $PARENTDIR/$file $target
+    # allow folder-folder-whatever.symlink to be folder/folder/whatever
+    newTarget=${target//-/\/}
+    # mv $target $OLDDOTFILES
+    echo "creating symlink for $file -> $target -> $newTarget"
+    # ln -fhs $PARENTDIR/$file $newTarget
 done
 
 # link dotfiles dir to ~/.dotfiles/
 echo "linking this directory to $HOME/.dotfiles"
-ln -fhs $PARENTDIR $HOME/.dotfiles
+# ln -fhs $PARENTDIR $HOME/.dotfiles

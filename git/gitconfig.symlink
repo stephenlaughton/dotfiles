@@ -107,7 +107,7 @@
     # do not warn about missing whitespace at EOF
     whitespace = nowarn
 [core]
-	excludesfile = /Users/work/.gitignore_global
+	excludesfile = ~/.gitignore_global
     pager = less -FXRS -x2
 	editor = code --wait
 [rerere]
@@ -133,7 +133,7 @@
 	required = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
