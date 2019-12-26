@@ -135,6 +135,6 @@ fi
 # Alias updating submodules
 alias updatesub='git submodule foreach git pull origin master'
 
-BASE16_SHELL="$DOTFILES/config/config.symlink/base16-shell/scripts/$THEME.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/$THEME.sh"
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 source $BASE16_SHELL

@@ -2,7 +2,7 @@
 # give me what I need, brew!
 
 # get cask versions also
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
 
 # development tools
 brew install git
