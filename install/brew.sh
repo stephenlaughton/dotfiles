@@ -41,3 +41,4 @@ brew cask install visual-studio-code-insiders
 brew cask install slack
 brew cask install realm-studio
 brew cask install the-unarchiver
+brew cask install 1password
