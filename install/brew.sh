@@ -25,6 +25,7 @@ brew install fish
 brew install exa
 brew install carthage
 brew install ideviceinstaller
+brew install scrcpy
 brew cask install adoptopenjdk8
 
 # apps
@@ -42,3 +43,4 @@ brew cask install slack
 brew cask install realm-studio
 brew cask install the-unarchiver
 brew cask install 1password
+brew cask install telegram
