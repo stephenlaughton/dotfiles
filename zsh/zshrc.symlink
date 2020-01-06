@@ -64,7 +64,7 @@ export VISUAL="code --wait"
 
 # Set Nodenv
 eval "$(nodenv init - --no-rehash)"
-export NODENV_VERSION=10.16.0
+export NODENV_VERSION=10.16.3
 
 # Set Node
 # export PATH="/usr/local/opt/node@8/bin:$PATH"
