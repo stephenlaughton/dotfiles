@@ -1,8 +1,9 @@
 #!/bin/sh
 # give me what I need, brew!
 
-# get cask versions also
+# get cask versions and fonts also
 brew tap homebrew/cask-versions
+brew tap homebrew/cask-fonts
 
 # development tools
 brew install git
@@ -44,3 +45,6 @@ brew cask install realm-studio
 brew cask install the-unarchiver
 brew cask install 1password
 brew cask install telegram
+
+# fonts
+brew cask install font-jetbrains-mono
