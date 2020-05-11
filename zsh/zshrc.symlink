@@ -5,51 +5,51 @@ export DOTFILES=$HOME/.dotfiles
 # Plugins
 # ================================================================
 
-### Added by Zplugin's installer
-source $HOME/.zplugin/bin/zplugin.zsh
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
-### End of Zplugin's installer chunk
+### Added by zinit's installer
+source $HOME/.zinit/bin/zinit.zsh
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of zinit's installer chunk
 
 # | completions | #
-zplugin ice from"gh" wait"1" silent pick"zsh-completions.plugin.zsh" lucid
-zplugin light zsh-users/zsh-completions
-zplugin ice from"gh" wait"!1" silent pick"zsh-completion-generator.plugin.zsh" lucid
-zplugin light RobSis/zsh-completion-generator
+zinit ice from"gh" wait"1" silent pick"zsh-completions.plugin.zsh" lucid
+zinit light zsh-users/zsh-completions
+zinit ice from"gh" wait"!1" silent pick"zsh-completion-generator.plugin.zsh" lucid
+zinit light RobSis/zsh-completion-generator
 
 # | history | #
-zplugin ice wait"0" silent pick"history.zsh" lucid
-zplugin snippet OMZ::lib/history.zsh
-zplugin ice wait"0" silent pick"history.plugin.zsh" lucid
-zplugin snippet OMZ::plugins/history/history.plugin.zsh
+zinit ice wait"0" silent pick"history.zsh" lucid
+zinit snippet OMZ::lib/history.zsh
+zinit ice wait"0" silent pick"history.plugin.zsh" lucid
+zinit snippet OMZ::plugins/history/history.plugin.zsh
 # search history via substring
-zplugin ice from"gh" wait"1" silent pick"zsh-history-substring-search.plugin.zsh" lucid
-zplugin light zsh-users/zsh-history-substring-search
+zinit ice from"gh" wait"1" silent pick"zsh-history-substring-search.plugin.zsh" lucid
+zinit light zsh-users/zsh-history-substring-search
 # search through long list of commands with Ctrl+R
-zplugin ice from"gh" wait"1" silent pick"history-search-multi-word.plugin.zsh" lucid
-zplugin light zdharma/history-search-multi-word
+zinit ice from"gh" wait"1" silent pick"history-search-multi-word.plugin.zsh" lucid
+zinit light zdharma/history-search-multi-word
 
 # | autosuggestions | #
-zplugin ice wait"0" atload"_zsh_autosuggest_start" lucid
-zplugin light zsh-users/zsh-autosuggestions
+zinit ice wait"0" atload"_zsh_autosuggest_start" lucid
+zinit light zsh-users/zsh-autosuggestions
 
 # | prompt | #
-zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
+zinit ice pick"async.zsh" src"pure.zsh"; zinit light sindresorhus/pure
 
 # | prezto utils | #
-zplugin ice svn; zplugin snippet PZT::modules/environment
-zplugin ice svn; zplugin snippet PZT::modules/terminal
-zplugin ice svn; zplugin snippet PZT::modules/utility
-zplugin ice svn; zplugin snippet PZT::modules/editor
-zplugin ice svn; zplugin snippet PZT::modules/directory
-zplugin ice svn; zplugin snippet PZT::modules/spectrum
-zplugin ice svn; zplugin snippet PZT::modules/git
-zplugin ice svn; zplugin snippet PZT::modules/homebrew
+zinit ice svn; zinit snippet PZT::modules/environment
+zinit ice svn; zinit snippet PZT::modules/terminal
+zinit ice svn; zinit snippet PZT::modules/utility
+zinit ice svn; zinit snippet PZT::modules/editor
+zinit ice svn; zinit snippet PZT::modules/directory
+zinit ice svn; zinit snippet PZT::modules/spectrum
+zinit ice svn; zinit snippet PZT::modules/git
+zinit ice svn; zinit snippet PZT::modules/homebrew
 
 # | syntax highlighting | #
-#zplugin ice from"gh" wait"0" zsh-users/zsh-syntax-highlighting
-zplugin ice from"gh" wait"1" atinit"zpcompinit; zpcdreplay" lucid
-zplugin light zdharma/fast-syntax-highlighting
+#zinit ice from"gh" wait"0" zsh-users/zsh-syntax-highlighting
+zinit ice from"gh" wait"1" atinit"zpcompinit; zpcdreplay" lucid
+zinit light zdharma/fast-syntax-highlighting
 
 # Set VSCode as editor
 export EDITOR="code --wait"
@@ -138,3 +138,4 @@ alias updatesub='git submodule foreach git pull origin master'
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/$THEME.sh"
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 source $BASE16_SHELL
+### End of Zinit's installer chunk
