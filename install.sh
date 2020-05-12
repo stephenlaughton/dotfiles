@@ -17,19 +17,32 @@ if [ "$(uname)" == "Darwin" ]; then
 
         echo "brewing all the things"
         source install/brew.sh
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
+        echo "install zinit"
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+        echo "install fisher"
+        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
     fi
-    echo "updating OSX settings"
-    source installosx.sh
-fi
-
-
-echo ""
-echo "Change shell? (y/n)"
-read -r response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
-    echo "configuring fish as default shell"
-    sudo -s
-    echo $(which fish) >> /etc/shells
-    chsh -s $(which fish)
+    echo ""
+    echo "Install zinit? (y/n)"
+    read -r response
+    if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
+        echo "installing zinit for fancy zsh"
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+        echo "install fisher"
+        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+    fi
+    echo ""
+    echo "Install fisher? (y/n)"
+    read -r response
+    if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
+        echo "installing fisher for fancy fish"
+        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+    fi
+    echo ""
+    echo "Souppedup OSX? (y/n)"
+    read -r response
+    if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
+        echo "updating OSX settings"
+        source installosx.sh
+    fi
 fi
