@@ -2,11 +2,24 @@
 
 echo "installing dotfiles"
 
-source install/link.sh
-git clone https://github.com/stephenlaughton/base16-shell.git ~/.config/base16-shell
-
 if [ "$(uname)" == "Darwin" ]; then
     echo "running on OSX"
+
+    echo ""
+    echo "Link dotfiles to ~ directory? (y/n)"
+    read -r response
+    if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
+        echo "Linking!"
+        source install/link.sh
+    fi
+
+    echo ""
+    echo "Install Base16? (y/n)"
+    read -r response
+    if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
+        echo "Installing Base16 colourfullness"
+        git clone https://github.com/stephenlaughton/base16-shell.git ~/.config/base16-shell
+    fi
 
     echo ""
     echo "Install homebrew? (y/n)"
@@ -17,11 +30,8 @@ if [ "$(uname)" == "Darwin" ]; then
 
         echo "brewing all the things"
         source install/brew.sh
-        echo "install zinit"
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-        echo "install fisher"
-        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
     fi
+
     echo ""
     echo "Install zinit? (y/n)"
     read -r response
@@ -31,6 +41,7 @@ if [ "$(uname)" == "Darwin" ]; then
         echo "install fisher"
         curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
     fi
+
     echo ""
     echo "Install fisher? (y/n)"
     read -r response
@@ -38,6 +49,7 @@ if [ "$(uname)" == "Darwin" ]; then
         echo "installing fisher for fancy fish"
         curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
     fi
+
     echo ""
     echo "Souppedup OSX? (y/n)"
     read -r response
