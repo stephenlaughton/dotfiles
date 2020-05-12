@@ -9,7 +9,7 @@ OLDDOTFILES=$HOME/.old_dotfiles
 
 # create dotfiles_old in homedir
 echo "creating $OLDDOTFILES for backup of any existing dotfiles in $HOME"
-# mkdir -p $OLDDOTFILES
+mkdir -p $OLDDOTFILES
 echo "...done"
 
 # move any existing dotfiles into .old_dotfiles and then link
