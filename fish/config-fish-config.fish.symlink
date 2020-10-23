@@ -8,6 +8,7 @@ if not functions -q fisher
     fish -c fisher
 end
 
+# TODO: look into volta instead? https://volta.sh/
 # Set Nodenv
 if status --is-interactive
     source (nodenv init - --no-rehash| psub)
