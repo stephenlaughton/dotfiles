@@ -12,7 +12,7 @@ end
 # Set Nodenv
 if status --is-interactive
     source (nodenv init - --no-rehash| psub)
-    # set NODENV_VERSION 10.16.3
+    # set NODENV_VERSION 12.16.1
 end
 
 # Base16 Shell
