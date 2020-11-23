@@ -6,14 +6,6 @@ if [ "$(uname)" == "Darwin" ]; then
     echo "running on OSX"
 
     echo ""
-    echo "Link dotfiles to ~ directory? (y/n)"
-    read -r response
-    if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
-        echo "Linking!"
-        source install/link.sh
-    fi
-
-    echo ""
     echo "Install Base16? (y/n)"
     read -r response
     if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
@@ -38,8 +30,6 @@ if [ "$(uname)" == "Darwin" ]; then
     if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
         echo "installing zinit for fancy zsh"
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-        echo "install fisher"
-        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
     fi
 
     echo ""
@@ -48,6 +38,14 @@ if [ "$(uname)" == "Darwin" ]; then
     if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
         echo "installing fisher for fancy fish"
         curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+    fi
+
+    echo ""
+    echo "Link dotfiles to ~ directory? (y/n)"
+    read -r response
+    if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
+        echo "Linking!"
+        source install/link.sh
     fi
 
     echo ""
