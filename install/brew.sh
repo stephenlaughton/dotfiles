@@ -44,6 +44,11 @@ brew cask install 1password
 brew cask install telegram
 brew cask install figma
 brew cask install notion
+brew cask install discord
+brew cask install notion
+brew cask install responsively
+brew cask install daisydisk
+brew cask install graphiql
 
 # fonts
 brew cask install font-jetbrains-mono
