@@ -18,7 +18,7 @@ if [ "$(uname)" == "Darwin" ]; then
     read -r response
     if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
         echo "installing homebrew"
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
         echo "brewing all the things"
         source install/brew.sh
