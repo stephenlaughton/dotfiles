@@ -139,3 +139,5 @@ BASE16_SHELL="$HOME/.config/base16-shell/scripts/$THEME.sh"
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 source $BASE16_SHELL
 ### End of Zinit's installer chunk
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
