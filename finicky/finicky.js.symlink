@@ -29,5 +29,9 @@ module.exports = {
       match: "https://linear.app/growmaple/*",
       browser: "Linear",
     },
+    {
+      match: "https://www.notion.so/*",
+      browser: "Notion",
+    },
   ],
 };

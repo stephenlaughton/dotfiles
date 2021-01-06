@@ -6,5 +6,5 @@
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "prettier.requireConfig": false,
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
 }
