@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "*.symlink": "shellscript",
-        "*.fish": "shellscript"
+        "*.fish": "shellscript",
+        "finicky.js.symlink": "javascript"
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "prettier.requireConfig": false,
