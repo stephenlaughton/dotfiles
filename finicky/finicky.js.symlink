@@ -26,7 +26,7 @@ module.exports = {
       browser: "Figma",
     },
     {
-      match: "https://linear.app/growmaple/*",
+      match: "https://linear.app/*",
       browser: "Linear",
     },
     {

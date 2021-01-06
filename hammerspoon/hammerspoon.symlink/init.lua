@@ -131,3 +131,7 @@ hs.hotkey.bind({"cmd", "alt"}, "up", resizeUp)
 
 hs.hotkey.bind({"cmd", "alt"}, "j", resizeDown)
 hs.hotkey.bind({"cmd", "alt"}, "down", resizeDown)
+
+hs.urlevent.httpCallback = function(scheme, host, params, fullURL)
+  hs.alert.show("clicked " .. fullURL)
+end
