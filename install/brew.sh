@@ -27,6 +27,7 @@ brew install ruby
 brew install scrcpy
 brew install watchman
 brew install zsh
+brew install blackhole-2ch
 
 # apps
 brew install --cask 1password
