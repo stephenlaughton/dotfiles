@@ -32,17 +32,15 @@ brew install blackhole-2ch
 # apps
 brew install --cask 1password
 brew install --cask alfred
+brew install --cask altair-graphql-client
 brew install --cask android-studio
 brew install --cask appcleaner
 brew install --cask daisydisk
 brew install --cask discord
 brew install --cask figma
-brew install --cask finicky
 brew install --cask firefox
 brew install --cask google-chrome
-brew install --cask graphiql
 brew install --cask hammerspoon
-brew install --cask handbrake
 brew install --cask istat-menus
 brew install --cask kap
 brew install --cask notion
@@ -51,6 +49,7 @@ brew install --cask slack
 brew install --cask telegram
 brew install --cask the-unarchiver
 brew install --cask visual-studio-code-insiders
+brew install --cask vlc
 
 # fonts
-brew install --cask font-jetbrains-mono
+brew install --cask font-jetbrains-mono-nerd-font

@@ -162,22 +162,6 @@
 			</dict>
 			<dict>
 				<key>city</key>
-				<string>Wellington</string>
-				<key>country</key>
-				<string>New Zealand</string>
-				<key>identifier</key>
-				<integer>2179537</integer>
-				<key>latitude</key>
-				<real>-41.286639999999998</real>
-				<key>longitude</key>
-				<real>174.77556999999999</real>
-				<key>state</key>
-				<string>Wellington</string>
-				<key>timezone</key>
-				<string>Pacific/Auckland</string>
-			</dict>
-			<dict>
-				<key>city</key>
 				<string>Ballarat</string>
 				<key>country</key>
 				<string>Australia</string>
@@ -191,6 +175,22 @@
 				<string>Victoria</string>
 				<key>timezone</key>
 				<string>Australia/Melbourne</string>
+			</dict>
+			<dict>
+				<key>city</key>
+				<string>UTC</string>
+				<key>country</key>
+				<string></string>
+				<key>identifier</key>
+				<integer>-5</integer>
+				<key>latitude</key>
+				<integer>0</integer>
+				<key>longitude</key>
+				<real>51.479100000000003</real>
+				<key>state</key>
+				<string></string>
+				<key>timezone</key>
+				<string>UTC</string>
 			</dict>
 		</array>
 		<key>Time_DismissedCalendarAccess</key>
@@ -228,11 +228,11 @@
 		<key>Zarya-TLE</key>
 		<dict>
 			<key>time</key>
-			<real>1606756599.33516</real>
+			<real>1621405722.7794371</real>
 			<key>tle</key>
 			<string>ISS (ZARYA)             
-1 25544U 98067A   20335.58619075  .00005341  00000-0  10461-3 0  9992
-2 25544  51.6473 245.1182 0001968  95.8013 325.6569 15.49119345257812</string>
+1 25544U 98067A   21139.07282891  .00001427  00000-0  34033-4 0  9994
+2 25544  51.6433 126.7254 0003180  17.9724  93.6795 15.49020890284082</string>
 		</dict>
 	</dict>
 	<key>version</key>
