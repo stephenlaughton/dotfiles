@@ -8,7 +8,7 @@ Dotfiles for easily setting up a new Dev machine with:
   - jenkins
   - openjdk flavour java 8
   - fish shell with config
-  - nodenv with node `10.16.0`
+  - nodenv with node `14.17.0`
   - yarn
   - carthage
   - vscode insiders
@@ -16,9 +16,9 @@ Dotfiles for easily setting up a new Dev machine with:
   - firefox
   - android studio
   - istat menu
-  - realm studio
   - slack
   - alfred
+  - linear
 
 # New Install
 
@@ -40,7 +40,7 @@ Dotfiles for easily setting up a new Dev machine with:
 5. Set login shell to `zsh`
 6. Set iTerm default shell to `fish`
 7. Run `nodenv init` in `bash`
-8. Run `nodenv global 10.16.0 && nodenv rehash`
-9. `npm install -g replace ios-deploy`
+8. Run `nodenv global 14 && nodenv rehash`
+9. `npm install -g expo-cli eas-cli yarn`
 10. `sudo gem install xcodeproj cocoapods`
 11. Link `nodenv` node to location where `/bin/sh` can pick it up `ln -s $(which node) /usr/local/bin/node`

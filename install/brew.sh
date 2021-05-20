@@ -11,9 +11,11 @@ brew install svn
 # Node stuff
 brew install nodenv
 # grab stable version of node
-nodenv install 12.16.1
+nodenv install 14.17.0
 # convenience plugin for nodenv
 git clone https://github.com/nodenv/nodenv-package-rehash.git "$(nodenv root)"/pluginsnodenv-package-rehash
+git clone https://github.com/nodenv/nodenv-aliases.git $(nodenv root)/plugins/nodenv-aliases
+nodenv alias --auto
 nodenv package-hooks install --all
 brew install --cask adoptopenjdk8
 brew install bash
@@ -43,6 +45,7 @@ brew install --cask google-chrome
 brew install --cask hammerspoon
 brew install --cask istat-menus
 brew install --cask kap
+brew install --cask linear-linear
 brew install --cask notion
 brew install --cask responsively
 brew install --cask slack
