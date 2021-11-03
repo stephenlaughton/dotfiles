@@ -17,7 +17,7 @@ git clone https://github.com/nodenv/nodenv-package-rehash.git "$(nodenv root)"/p
 git clone https://github.com/nodenv/nodenv-aliases.git $(nodenv root)/plugins/nodenv-aliases
 nodenv alias --auto
 nodenv package-hooks install --all
-brew install --cask temurin
+brew install temurin # java runtime
 brew install bash
 brew install carthage
 brew install exa
@@ -32,27 +32,28 @@ brew install zsh
 brew install blackhole-2ch
 
 # apps
-brew install --cask 1password
-brew install --cask alfred
-brew install --cask altair-graphql-client
-brew install --cask android-studio
-brew install --cask appcleaner
-brew install --cask daisydisk
-brew install --cask discord
-brew install --cask figma
-brew install --cask firefox
-brew install --cask google-chrome
-brew install --cask hammerspoon
-brew install --cask istat-menus
-brew install --cask kap
-brew install --cask linear-linear
-brew install --cask notion
-brew install --cask responsively
-brew install --cask slack
-brew install --cask telegram
-brew install --cask the-unarchiver
-brew install --cask visual-studio-code-insiders
-brew install --cask vlc
+brew install 1password
+brew install alfred
+brew install altair-graphql-client
+brew install android-studio
+brew install appcleaner
+brew install daisydisk
+brew install discord
+brew install figma
+brew install firefox
+brew install google-chrome
+brew install hammerspoon
+brew install istat-menus
+brew install iterm2
+brew install kap
+brew install linear-linear
+brew install notion
+brew install responsively
+brew install slack
+brew install telegram
+brew install the-unarchiver
+brew install visual-studio-code-insiders
+brew install vlc
 
 # fonts
-brew install --cask font-jetbrains-mono-nerd-font
+brew install font-jetbrains-mono-nerd-font
