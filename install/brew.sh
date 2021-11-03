@@ -17,7 +17,7 @@ git clone https://github.com/nodenv/nodenv-package-rehash.git "$(nodenv root)"/p
 git clone https://github.com/nodenv/nodenv-aliases.git $(nodenv root)/plugins/nodenv-aliases
 nodenv alias --auto
 nodenv package-hooks install --all
-brew install --cask adoptopenjdk8
+brew install --cask temurin
 brew install bash
 brew install carthage
 brew install exa
