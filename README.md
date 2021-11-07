@@ -41,6 +41,6 @@ Dotfiles for easily setting up a new Dev machine with:
 6. Set iTerm default shell to `fish`
 7. Run `nodenv init` in `bash`
 8. Run `nodenv global 14 && nodenv rehash`
-9. `npm install -g expo-cli eas-cli yarn`
+9. ` npm install -g yarn firebase-tools nx eas-cli eas-cli-local-build-plugin expo-cli env-cmd sharp-cli all-the-package-names`
 10. `sudo gem install xcodeproj cocoapods`
 11. Link `nodenv` node to location where `/bin/sh` can pick it up `ln -s $(which node) /usr/local/bin/node`
