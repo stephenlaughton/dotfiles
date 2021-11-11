@@ -1,7 +1,13 @@
 if type -q /usr/local/bin/brew
     eval (/usr/local/bin/brew shellenv)
+    set BREW_COMPY_ENV "intel"
+    # Ruby
+    set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 else if type -q /opt/homebrew/bin/brew
     eval (/opt/homebrew/bin/brew shellenv)
+    set BREW_COMPY_ENV "apple"
+    # Ruby
+    set -g fish_user_paths "/opt/homebrew/opt/ruby/bin" $fish_user_paths
 end
 
 # Dotfiles for paths
@@ -73,5 +79,4 @@ end
 abbr -a -g r! source ~/.config/fish/config.fish
 
 # Ruby
-set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
-set -x PATH $PATH "/usr/local/lib/ruby/gems/2.6.0/bin"
+set -g fish_user_paths "/opt/homebrew/opt/ruby/bin" $fish_user_paths
