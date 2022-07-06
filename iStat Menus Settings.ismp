@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>build</key>
-	<string>1157</string>
+	<string>1185</string>
 	<key>license</key>
 	<dict>
 		<key>email</key>
@@ -82,12 +82,14 @@
 			</dict>
 		</array>
 		<key>Menubar-DetectedColor</key>
-		<string>0.92 0.92 0.92 1.00</string>
+		<string>1.00 1.00 1.00 0.90</string>
 		<key>Migrated_6.0</key>
 		<true/>
 		<key>Migrated_6.22</key>
 		<true/>
 		<key>Migrated_6.5</key>
+		<true/>
+		<key>Migrated_6.52</key>
 		<true/>
 		<key>StatusItems-Order</key>
 		<array>
@@ -192,6 +194,38 @@
 				<key>timezone</key>
 				<string>UTC</string>
 			</dict>
+			<dict>
+				<key>city</key>
+				<string>Kalymnos Island</string>
+				<key>country</key>
+				<string>Greece</string>
+				<key>identifier</key>
+				<integer>261506</integer>
+				<key>latitude</key>
+				<real>36.975819999999999</real>
+				<key>longitude</key>
+				<real>26.98105</real>
+				<key>state</key>
+				<string>South Aegean</string>
+				<key>timezone</key>
+				<string>Europe/Athens</string>
+			</dict>
+			<dict>
+				<key>city</key>
+				<string>Gap</string>
+				<key>country</key>
+				<string>France</string>
+				<key>identifier</key>
+				<integer>3016702</integer>
+				<key>latitude</key>
+				<real>44.561509999999998</real>
+				<key>longitude</key>
+				<real>6.0810599999999999</real>
+				<key>state</key>
+				<string>Provence-Alpes-Côte d'Azur</string>
+				<key>timezone</key>
+				<string>Europe/Paris</string>
+			</dict>
 		</array>
 		<key>Time_DismissedCalendarAccess</key>
 		<true/>
@@ -228,14 +262,14 @@
 		<key>Zarya-TLE</key>
 		<dict>
 			<key>time</key>
-			<real>1621405722.7794371</real>
+			<real>1656659349.995157</real>
 			<key>tle</key>
 			<string>ISS (ZARYA)             
-1 25544U 98067A   21139.07282891  .00001427  00000-0  34033-4 0  9994
-2 25544  51.6433 126.7254 0003180  17.9724  93.6795 15.49020890284082</string>
+1 25544U 98067A   22182.05768182  .00007735  00000+0  14443-3 0  9992
+2 25544  51.6442 267.8911 0004512 318.4476 101.3651 15.49784434347339</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>6.51</string>
+	<string>6.61</string>
 </dict>
 </plist>
