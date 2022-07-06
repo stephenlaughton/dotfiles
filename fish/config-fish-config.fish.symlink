@@ -24,7 +24,6 @@ end
 # Set Nodenv
 if status --is-interactive
     source (nodenv init - --no-rehash| psub)
-    # set NODENV_VERSION 12.16.1
 end
 
 # Base16 Shell
@@ -80,3 +79,8 @@ abbr -a -g r! source ~/.config/fish/config.fish
 
 # Ruby
 set -g fish_user_paths "/opt/homebrew/opt/ruby/bin" $fish_user_paths
+
+# Bun
+set -Ux BUN_INSTALL "$HOME/.bun"
+set -px --path PATH "$HOME/.bun/bin"
+
