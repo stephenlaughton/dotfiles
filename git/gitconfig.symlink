@@ -2,6 +2,7 @@
 [user]
 	name = Stephen Laughton
 	email = stephenlaughton@gmail.com
+	signingkey = 4440438C
 [github]
     user = stephenlaughton
 [init]
@@ -100,6 +101,7 @@
 [push]
     # push will only do the current branch, not all branches
 	default = simple
+    autoSetupRemote = true
 [branch]
     # set up 'git pull' to rebase instead of merge
     autosetuprebase = always
@@ -135,7 +137,7 @@
 	template = /Users/work/.stCommitMsg
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

@@ -78,9 +78,20 @@ end
 abbr -a -g r! source ~/.config/fish/config.fish
 
 # Ruby
-set -g fish_user_paths "/opt/homebrew/opt/ruby/bin" $fish_user_paths
+set -g fish_user_paths "/opt/homebrew/opt/ruby@3.1/bin" $fish_user_paths
+set -g fish_user_paths "/Users/steve/.local/share/gem/ruby/3.1.0/bin" $fish_user_paths
 
 # Bun
 set -Ux BUN_INSTALL "$HOME/.bun"
 set -px --path PATH "$HOME/.bun/bin"
 
+# Moon
+set -x PATH "$HOME/.moon/bin" $PATH
+
+
+# proto
+set -gx PROTO_HOME "$HOME/.proto"
+set -gx PATH "$PROTO_HOME/shims:$PROTO_HOME/bin" $PATH
+
+# Rust
+set -gx PATH "$HOME/.cargo/bin" $PATH

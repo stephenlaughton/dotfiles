@@ -1,56 +1,6 @@
 # Dotfiles for paths
 export DOTFILES=$HOME/.dotfiles
 
-# ================================================================
-# Plugins
-# ================================================================
-
-### Added by zinit's installer
-source $HOME/.zinit/bin/zinit.zsh
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-### End of zinit's installer chunk
-
-# | completions | #
-zinit ice from"gh" wait"1" silent pick"zsh-completions.plugin.zsh" lucid
-zinit light zsh-users/zsh-completions
-zinit ice from"gh" wait"!1" silent pick"zsh-completion-generator.plugin.zsh" lucid
-zinit light RobSis/zsh-completion-generator
-
-# | history | #
-zinit ice wait"0" silent pick"history.zsh" lucid
-zinit snippet OMZ::lib/history.zsh
-zinit ice wait"0" silent pick"history.plugin.zsh" lucid
-zinit snippet OMZ::plugins/history/history.plugin.zsh
-# search history via substring
-zinit ice from"gh" wait"1" silent pick"zsh-history-substring-search.plugin.zsh" lucid
-zinit light zsh-users/zsh-history-substring-search
-# search through long list of commands with Ctrl+R
-zinit ice from"gh" wait"1" silent pick"history-search-multi-word.plugin.zsh" lucid
-zinit light zdharma/history-search-multi-word
-
-# | autosuggestions | #
-zinit ice wait"0" atload"_zsh_autosuggest_start" lucid
-zinit light zsh-users/zsh-autosuggestions
-
-# | prompt | #
-zinit ice pick"async.zsh" src"pure.zsh"; zinit light sindresorhus/pure
-
-# | prezto utils | #
-zinit ice svn; zinit snippet PZT::modules/environment
-zinit ice svn; zinit snippet PZT::modules/terminal
-zinit ice svn; zinit snippet PZT::modules/utility
-zinit ice svn; zinit snippet PZT::modules/editor
-zinit ice svn; zinit snippet PZT::modules/directory
-zinit ice svn; zinit snippet PZT::modules/spectrum
-zinit ice svn; zinit snippet PZT::modules/git
-zinit ice svn; zinit snippet PZT::modules/homebrew
-
-# | syntax highlighting | #
-#zinit ice from"gh" wait"0" zsh-users/zsh-syntax-highlighting
-zinit ice from"gh" wait"1" atinit"zpcompinit; zpcdreplay" lucid
-zinit light zdharma/fast-syntax-highlighting
-
 # Set VSCode as editor
 export EDITOR="code --wait"
 export HOMEBREW_EDITOR="vim"
@@ -91,7 +41,7 @@ if [[ -s ~/.brewaccess ]]; then
 fi
 
 # Alias gcam because it nice
-unalias g
+# unalias g
 alias gcam='git add . && git commit -am'
 # Source functions.
 if [[ -s "$DOTFILES/zsh/functions.zsh" ]]; then
@@ -138,6 +88,11 @@ alias updatesub='git submodule foreach git pull origin master'
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/$THEME.sh"
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 source $BASE16_SHELL
+
 ### End of Zinit's installer chunk
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# proto
+export PROTO_HOME="$HOME/.proto"
+export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH"
