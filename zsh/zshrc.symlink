@@ -56,8 +56,8 @@ if exists code-insiders; then
   alias code='code-insiders'
 fi
 
-# Alias exa
-alias ll='exa -bghHliSa --git'
+# Alias eza
+alias ll='eza -bghHliSa --git'
 
 # Completions
 # compinit

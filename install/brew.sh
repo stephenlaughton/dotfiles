@@ -20,7 +20,7 @@ nodenv package-hooks install --all
 brew install temurin11 # java runtime
 brew install bash
 brew install carthage
-brew install exa
+brew install eza
 brew install fish
 brew install grep
 brew install ideviceinstaller
