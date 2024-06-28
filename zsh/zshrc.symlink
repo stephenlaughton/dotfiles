@@ -32,8 +32,8 @@ export VISUAL="code --wait"
 # export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Set Stupid Java
-JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=${JAVA_HOME}/bin:$PATH
+# JAVA_HOME=$(/usr/libexec/java_home)
+# export PATH=${JAVA_HOME}/bin:$PATH
 
 # Source Homebrew Access Token
 if [[ -s ~/.brewaccess ]]; then
