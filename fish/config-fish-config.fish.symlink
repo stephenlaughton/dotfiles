@@ -22,9 +22,9 @@ end
 
 # TODO: look into volta instead? https://volta.sh/
 # Set Nodenv
-if status --is-interactive
-    source (nodenv init - --no-rehash| psub)
-end
+# if status --is-interactive
+#     source (nodenv init - --no-rehash| psub)
+# end
 
 # Base16 Shell
 if status --is-interactive
@@ -33,16 +33,16 @@ if status --is-interactive
 end
 
 # Android crap
-set -x ANDROID_SDK "$HOME/Library/Android/sdk"
-set -x PATH "$ANDROID_SDK/emulator $ANDROID_SDK/tools" $PATH
-set -x ANDROID_HOME "$HOME/Library/Android/sdk"
-set -x PATH $PATH "$ANDROID_HOME/tools"
-set -x PATH $PATH "$ANDROID_HOME/tools/bin"
-set -x PATH $PATH "$ANDROID_HOME/platform-tools"
+# set -x ANDROID_SDK "$HOME/Library/Android/sdk"
+# set -x PATH "$ANDROID_SDK/emulator $ANDROID_SDK/tools" $PATH
+# set -x ANDROID_HOME "$HOME/Library/Android/sdk"
+# set -x PATH $PATH "$ANDROID_HOME/tools"
+# set -x PATH $PATH "$ANDROID_HOME/tools/bin"
+# set -x PATH $PATH "$ANDROID_HOME/platform-tools"
 
 # Set Stupid Java
-set -x JAVA_HOME (/usr/libexec/java_home)
-set -x PATH "$JAVA_HOME/bin" $PATH
+# set -x JAVA_HOME (/usr/libexec/java_home)
+# set -x PATH "$JAVA_HOME/bin" $PATH
 
 # Alias eza
 alias ll='eza -bghHliSa --git'

@@ -13,7 +13,7 @@ export VISUAL="code --wait"
 # export PATH="/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"
 
 # Set Nodenv
-eval "$(nodenv init - --no-rehash)"
+# eval "$(nodenv init - --no-rehash)"
 # export NODENV_VERSION=12.16.1
 
 # Set Node
@@ -21,15 +21,15 @@ eval "$(nodenv init - --no-rehash)"
 
 
 # Set JS Api url
-export JS_API_URL="192.168.1.101"
+# export JS_API_URL="192.168.1.101"
 
 # Android crap
-export ANDROID_SDK=$HOME/Library/Android/sdk
-export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export ANDROID_SDK=$HOME/Library/Android/sdk
+# export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
+# export ANDROID_HOME=$HOME/Library/Android/sdk
+# export PATH=$PATH:$ANDROID_HOME/tools
+# export PATH=$PATH:$ANDROID_HOME/tools/bin
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Set Stupid Java
 JAVA_HOME=$(/usr/libexec/java_home)
