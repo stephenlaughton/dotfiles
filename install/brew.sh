@@ -33,7 +33,7 @@ brew install blackhole-2ch
 
 # apps
 brew install 1password
-brew install alfred
+# brew install alfred
 # brew install altair-graphql-client
 brew install android-studio
 brew install appcleaner
@@ -44,7 +44,7 @@ brew install firefox
 brew install google-chrome
 # brew install hammerspoon
 # brew install istat-menus
-brew install iterm2
+# brew install iterm2
 brew install kap
 brew install linear-linear
 brew install insomnia
@@ -53,7 +53,7 @@ brew install responsively
 brew install slack
 # brew install telegram
 brew install the-unarchiver
-brew install visual-studio-code-insiders
+brew install visual-studio-code
 brew install vlc
 
 # fonts
