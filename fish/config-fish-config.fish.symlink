@@ -50,8 +50,11 @@ alias ll='eza -bghHliSa --git'
 # Alias npm list to see all global
 abbr -a npmlist 'npm list -g --depth 0'
 
-# Alias code-insiders
-alias code='code-insiders'
+# Alias code
+alias code='code'
+
+# Alias code insiders
+alias codei='code-insiders'
 
 # e convenience function
 function e -d "code <args> or code ."
