@@ -4,6 +4,10 @@
 <dict>
 	<key>Battery_battery_color</key>
 	<true/>
+	<key>Battery_position</key>
+	<integer>6</integer>
+	<key>Bluetooth_position</key>
+	<integer>7</integer>
 	<key>CPU_barChart_position</key>
 	<integer>0</integer>
 	<key>CPU_bar_chart_box</key>
@@ -24,6 +28,8 @@
 	<integer>2</integer>
 	<key>CPU_pieChart_position</key>
 	<integer>4</integer>
+	<key>CPU_position</key>
+	<integer>0</integer>
 	<key>CPU_splitValue</key>
 	<false/>
 	<key>CPU_tachometer_position</key>
@@ -34,18 +40,25 @@
 	<string>bar_chart</string>
 	<key>Clock_list</key>
 	<data>
-	W3sidHoiOiJsb2NhbCIsIm5hbWUiOiJMb2NhbCB0aW1lIiwiaWQiOiI4NDhFMzJBOC04
-	MDg4LTRBMTEtQUZDOC1DMTU1MDcyMTkzOTYiLCJmb3JtYXQiOiJNTU0gZGQgSEg6bW06
-	c3MiLCJlbmFibGVkIjp0cnVlfSx7ImlkIjoiRjcyOEUzRUUtMjhDRS00MkY2LUFGM0Qt
-	QUUzNzUzNjlENkI0IiwiZm9ybWF0IjoiTU1NIGRkIEhIOm1tOnNzIiwiZW5hYmxlZCI6
-	ZmFsc2UsIm5hbWUiOiJCZXJsaW4iLCJ0eiI6IjEifSx7ImlkIjoiOEQyNUVDRTctOUY0
-	RS00RjdBLTgxNTYtQUM5RDc1NjM3NDA4IiwiZW5hYmxlZCI6ZmFsc2UsIm5hbWUiOiJT
-	ZW91bCIsImZvcm1hdCI6Ik1NTSBkZCBISDptbTpzcyIsInR6IjoiOSJ9XQ==
+	W3siZm9ybWF0IjoiZWVlLk1NTS5kIEhIOm1tOnNzIiwibmFtZSI6IkxvY2FsIHRpbWUi
+	LCJ0eiI6ImxvY2FsIiwiaWQiOiI4NDhFMzJBOC04MDg4LTRBMTEtQUZDOC1DMTU1MDcy
+	MTkzOTYiLCJlbmFibGVkIjp0cnVlfSx7ImZvcm1hdCI6ImVlZS5NTU0uZCBISDptbTpz
+	cyIsInR6IjoiMSIsIm5hbWUiOiJCZXJsaW4iLCJpZCI6IkY3MjhFM0VFLTI4Q0UtNDJG
+	Ni1BRjNELUFFMzc1MzY5RDZCNCIsImVuYWJsZWQiOmZhbHNlfSx7InR6IjoiOSIsIm5h
+	bWUiOiJTZW91bCIsImVuYWJsZWQiOmZhbHNlLCJpZCI6IjhEMjVFQ0U3LTlGNEUtNEY3
+	QS04MTU2LUFDOUQ3NTYzNzQwOCIsImZvcm1hdCI6ImVlZS5NTU0uZCBISDptbTpzcyJ9
+	XQ==
 	</data>
+	<key>Clock_position</key>
+	<integer>8</integer>
 	<key>Clock_sensors_monospacedFont</key>
 	<true/>
 	<key>Clock_state</key>
 	<true/>
+	<key>CombinedModules</key>
+	<false/>
+	<key>Disk_position</key>
+	<integer>3</integer>
 	<key>Disk_state</key>
 	<false/>
 	<key>GPU_barChart_position</key>
@@ -60,6 +73,8 @@
 	<integer>2</integer>
 	<key>GPU_mini_position</key>
 	<integer>3</integer>
+	<key>GPU_position</key>
+	<integer>1</integer>
 	<key>GPU_state</key>
 	<true/>
 	<key>GPU_tachometer_position</key>
@@ -70,8 +85,43 @@
 	<string>{800, 448}</string>
 	<key>NSNavPanelExpandedStateForSaveMode</key>
 	<true/>
+	<key>NSOSPLastRootDirectory</key>
+	<data>
+	Ym9va2gDAAAAAAQQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAIA
+	AAQAAAADAwAAAAQAAAUAAAABAQAAVXNlcnMAAAAFAAAAAQEAAHN0ZXZlAAAAAwAAAAEB
+	AABEZXYACgAAAAEBAABnaXRodWIuY29tAAAPAAAAAQEAAHN0ZXBoZW5sYXVnaHRvbgAI
+	AAAAAQEAAGRvdGZpbGVzGAAAAAEGAAAQAAAAIAAAADAAAAA8AAAAUAAAAGgAAAAIAAAA
+	BAMAAF9CAAAAAAAACAAAAAQDAACVbQAAAAAAAAgAAAAEAwAAVtkGAAAAAAAIAAAABAMA
+	AFfZBgAAAAAACAAAAAQDAABY2QYAAAAAAAgAAAAEAwAAWdkGAAAAAAAYAAAAAQYAAJgA
+	AACoAAAAuAAAAMgAAADYAAAA6AAAAAgAAAAABAAAQcbHrocbNZIYAAAAAQIAAAIAAAAA
+	AAAAHwIAAAAAAAAfAgAAAAAAAAAAAAABBQAACAAAAAQDAAAEAAAAAAAAAAQAAAADAwAA
+	9QEAAAgAAAABCQAAZmlsZTovLy8MAAAAAQEAAE1hY2ludG9zaCBIRAgAAAAEAwAAACBF
+	jNABAAAIAAAAAAQAAEHGvNWFAAAAJAAAAAEBAABCRTdCODYxNS0zQTcyLTQ4NkItQjA3
+	OC1FQTcxQUJCRUMzNUMYAAAAAQIAAIEAAAABAAAA7xMAAAEAAADvEwAAAQAAAAEAAAAB
+	AQAALwAAADAAAAABAgAAZG5pYgAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	cmRsZgIAAAAAAAAA8AAAAP7///8BAAAAAAAAABMAAAAEEAAAeAAAAAAAAAAFEAAA+AAA
+	AAAAAAAQEAAAKAEAAAAAAABAEAAAGAEAAAAAAAACIAAA/AEAAAAAAAAFIAAAbAEAAAAA
+	AAAQIAAAfAEAAAAAAAARIAAAsAEAAAAAAAASIAAAkAEAAAAAAAATIAAAoAEAAAAAAAAg
+	IAAA3AEAAAAAAAAwIAAASAEAAAAAAAABwAAAUAEAAAAAAAARwAAAIAAAAAAAAAASwAAA
+	YAEAAAAAAAAB0AAASAEAAAAAAAAQ0AAABAAAAAAAAAAX8AAAaAAAAAAAAAAi8AAACAIA
+	AAAAAAA=
+	</data>
+	<key>NSStatusItem Preferred Position Battery</key>
+	<integer>648</integer>
+	<key>NSStatusItem Preferred Position CPU</key>
+	<integer>462</integer>
+	<key>NSStatusItem Preferred Position Clock</key>
+	<integer>225</integer>
+	<key>NSStatusItem Preferred Position GPU</key>
+	<integer>504</integer>
+	<key>NSStatusItem Preferred Position Network</key>
+	<integer>573</integer>
+	<key>NSStatusItem Preferred Position RAM</key>
+	<integer>535</integer>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>736 1771 800 448 -144 1117 2560 1415 </string>
+	<string>464 481 800 448 0 0 1728 1079 </string>
+	<key>Network_position</key>
+	<integer>5</integer>
 	<key>RAM_barChart_position</key>
 	<integer>4</integer>
 	<key>RAM_label_position</key>
@@ -84,12 +134,16 @@
 	<integer>1</integer>
 	<key>RAM_pieChart_position</key>
 	<integer>0</integer>
+	<key>RAM_position</key>
+	<integer>2</integer>
 	<key>RAM_tachometer_position</key>
 	<integer>6</integer>
 	<key>RAM_text_position</key>
 	<integer>7</integer>
 	<key>RAM_widget</key>
 	<string>pie_chart</string>
+	<key>Sensors_position</key>
+	<integer>4</integer>
 	<key>runAtLoginInitialized</key>
 	<true/>
 	<key>setupProcess</key>
