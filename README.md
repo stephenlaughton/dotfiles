@@ -24,9 +24,15 @@ cd dotfiles
 - **Theme**: Base16 shell color schemes
 
 ### Development Tools (via Homebrew)
-- **Version Management**: [Proto](https://moonrepo.dev/proto) for Node.js, Go, Rust, and other tools (installed separately)
 - **Languages**: Ruby (via Homebrew)
-- **Package Managers**: Bun (via Proto), npm/yarn (via Proto)
+
+### Version Management (via Proto)
+Proto manages development tools with versions tracked in `proto/.prototools.symlink`:
+- **Node.js**: v22.13.1 with bundled npm
+- **Python**: v3.12.11
+- **Bun**: v1.2.5
+- **Deno**: v2.2.5
+- **Package Managers**: npm (bundled), yarn v3.5.0, pnpm v10.15.1
 - **Mobile**: Android SDK, scrcpy, watchman, ideviceinstaller
 - **Modern CLI Tools**:
   - eza (better ls), bat (better cat), ripgrep (better grep)
@@ -88,8 +94,9 @@ Extensive git aliases and settings:
 The installer (`install.sh`) will prompt for:
 1. Base16 shell colors installation
 2. Homebrew and all packages
-3. Fisher for Fish (auto-installs)
-4. Dotfile symlinking
+3. Proto installation and tools setup
+4. Fisher for Fish (auto-installs)
+5. Dotfile symlinking
 
 **Note**: macOS defaults script (`installosx.sh`) is currently disabled and needs audit before use.
 
@@ -118,9 +125,12 @@ dotfiles/
 ├── fish/                 # Fish shell config
 ├── zsh/                  # Zsh config (backup)
 ├── git/                  # Git configuration
+├── proto/                # Proto version manager config
+│   └── .prototools      # Tool versions
 ├── hammerspoon/          # Vim-style navigation keys (Ctrl+hjkl)
 ├── install/              # Installation scripts
 │   ├── brew.sh          # Homebrew packages
+│   ├── proto.sh         # Proto and tools installation
 │   └── link.sh          # Symlink creator
 ├── iterm/               # iTerm2 settings
 ├── Stats.plist          # Stats app configuration

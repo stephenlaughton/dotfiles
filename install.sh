@@ -38,6 +38,13 @@ if [ "$(uname)" == "Darwin" ]; then
 
 
     echo ""
+    echo "Install Proto (version manager for Node, Python, etc.)? (y/n)"
+    read -r response
+    if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
+        source install/proto.sh
+    fi
+
+    echo ""
     echo "Install fisher? (y/n)"
     read -r response
     if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
