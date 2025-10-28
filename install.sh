@@ -20,17 +20,22 @@ if [ "$(uname)" == "Darwin" ]; then
         echo "installing homebrew"
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+        echo "adding homebrew to PATH"
+        if [[ -f /opt/homebrew/bin/brew ]]; then
+            eval "$(/opt/homebrew/bin/brew shellenv)"
+        elif [[ -f /usr/local/bin/brew ]]; then
+            eval "$(/usr/local/bin/brew shellenv)"
+        fi
+
+        if ! command -v brew &> /dev/null; then
+            echo "ERROR: brew command not found even after installation"
+            exit 1
+        fi
+
         echo "brewing all the things"
         source install/brew.sh
     fi
 
-    echo ""
-    echo "Install zinit? (y/n)"
-    read -r response
-    if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
-        echo "installing zinit for fancy zsh"
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-    fi
 
     echo ""
     echo "Install fisher? (y/n)"

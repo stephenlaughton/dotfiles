@@ -88,9 +88,8 @@ Extensive git aliases and settings:
 The installer (`install.sh`) will prompt for:
 1. Base16 shell colors installation
 2. Homebrew and all packages
-3. Zinit for Zsh (if using Zsh)
-4. Fisher for Fish (auto-installs)
-5. Dotfile symlinking
+3. Fisher for Fish (auto-installs)
+4. Dotfile symlinking
 
 **Note**: macOS defaults script (`installosx.sh`) is currently disabled and needs audit before use.
 

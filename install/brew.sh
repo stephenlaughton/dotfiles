@@ -1,10 +1,6 @@
 #!/bin/sh
 # give me what I need, brew!
 
-# get cask versions and fonts also
-brew tap homebrew/cask-versions
-brew tap homebrew/cask-fonts
-
 # development tools
 brew install git
 # brew install svn  # Uncomment if needed for legacy projects
@@ -42,7 +38,7 @@ brew install --cask firefox
 brew install --cask google-chrome
 brew install --cask hammerspoon   # Vim-style navigation keys
 # brew install --cask istat-menus # Replaced by Stats
-brew install --cask stats                # Open source system monitor
+brew install --cask stats         # Open source system monitor
 brew install --cask ghostty       # GPU-accelerated terminal
 brew install --cask kap
 brew install --cask linear-linear
