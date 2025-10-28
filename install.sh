@@ -48,11 +48,6 @@ if [ "$(uname)" == "Darwin" ]; then
         source install/link.sh
     fi
 
-    echo ""
-    echo "Souppedup OSX? (y/n)"
-    read -r response
-    if [[ $response =~ ^([yY][eE][sS]|[yY])$  ]]; then
-        echo "updating OSX settings"
-        source installosx.sh
-    fi
+    # macOS defaults script disabled - needs audit before use
+    # To manually configure macOS settings, see installosx.sh
 fi

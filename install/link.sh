@@ -20,13 +20,17 @@ echo $linkables
 for file in $linkables ; do
     prefix="./"
     newFile=${file#"$prefix"}
-    target="$HOME/.$( basename $file ".symlink" )"
+    target="$HOME/.$( basename "$file" ".symlink" )"
     echo "Moving any existing dotfiles from ~ to $OLDDOTFILES"
     # allow folder-folder-whatever.symlink to be folder/folder/whatever
     newTarget=${target//-/\/}
-    mv $target $OLDDOTFILES
+    # Create parent directory if needed
+    targetDir=$(dirname "$newTarget")
+    [ ! -d "$targetDir" ] && mkdir -p "$targetDir"
+    # Move existing file/directory if it exists
+    [ -e "$newTarget" ] && mv "$newTarget" "$OLDDOTFILES"
     echo "creating symlink for $newFile -> $target -> $newTarget"
-    ln -fhs $PARENTDIR/$newFile $newTarget
+    ln -fhs "$PARENTDIR/$newFile" "$newTarget"
 done
 
 # link dotfiles dir to ~/.dotfiles/

@@ -7,19 +7,9 @@ brew tap homebrew/cask-fonts
 
 # development tools
 brew install git
-brew install svn
-# Node stuff
-# brew install nodenv
-# # grab stable version of node
-# nodenv install 14.19.3
-# # convenience plugin for nodenv
-# git clone https://github.com/nodenv/nodenv-package-rehash.git "$(nodenv root)"/pluginsnodenv-package-rehash
-# git clone https://github.com/nodenv/nodenv-aliases.git $(nodenv root)/plugins/nodenv-aliases
-# nodenv alias --auto
-# nodenv package-hooks install --all
-# brew install temurin11 # java runtime
+# brew install svn  # Uncomment if needed for legacy projects
 brew install bash
-brew install carthage
+# brew install carthage  # iOS dependency manager - mostly replaced by SPM now
 brew install eza
 brew install fish
 brew install grep
@@ -31,30 +21,39 @@ brew install watchman
 brew install zsh
 brew install blackhole-2ch
 
+# modern CLI tools
+brew install bat         # better cat with syntax highlighting
+brew install ripgrep     # better grep
+brew install fd          # better find
+brew install jq          # JSON processor
+brew install gh          # GitHub CLI
+
 # apps
-brew install 1password
-# brew install alfred
-# brew install altair-graphql-client
-brew install android-studio
-brew install appcleaner
-brew install daisydisk
-# brew install discord
-brew install figma
-brew install firefox
-brew install google-chrome
-# brew install hammerspoon
-# brew install istat-menus
-# brew install iterm2
-brew install kap
-brew install linear-linear
-brew install insomnia
-brew install notion
-brew install responsively
-brew install slack
-# brew install telegram
-brew install the-unarchiver
-brew install visual-studio-code
-brew install vlc
+brew install --cask 1password
+# brew install --cask alfred  # Replaced by Raycast
+brew install --cask raycast       # Alfred/Spotlight replacement + window management
+# brew install --cask altair-graphql-client
+brew install --cask android-studio
+brew install --cask appcleaner
+brew install --cask daisydisk
+# brew install --cask discord
+brew install --cask figma
+brew install --cask firefox
+brew install --cask google-chrome
+brew install --cask hammerspoon   # Vim-style navigation keys
+# brew install --cask istat-menus # Replaced by Stats
+brew install --cask stats                # Open source system monitor
+brew install --cask ghostty       # GPU-accelerated terminal
+brew install --cask kap
+brew install --cask linear-linear
+brew install --cask insomnia
+brew install --cask notion
+brew install --cask responsively
+brew install --cask slack
+# brew install --cask telegram
+brew install --cask the-unarchiver
+brew install --cask visual-studio-code
+brew install --cask vlc
 
 # fonts
 brew install font-jetbrains-mono-nerd-font

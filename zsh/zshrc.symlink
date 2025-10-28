@@ -6,18 +6,6 @@ export EDITOR="code --wait"
 export HOMEBREW_EDITOR="vim"
 export VISUAL="code --wait"
 
-# # Set chruby
-# source $(brew --prefix chruby)/share/chruby/chruby.sh
-# source $(brew --prefix chruby)/share/chruby/auto.sh
-# export PATH="/usr/local/opt/ruby/bin:$PATH"
-# export PATH="/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"
-
-# Set Nodenv
-# eval "$(nodenv init - --no-rehash)"
-# export NODENV_VERSION=12.16.1
-
-# Set Node
-# export PATH="/usr/local/opt/node@8/bin:$PATH"
 
 
 # Set JS Api url
@@ -31,9 +19,6 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# Set Stupid Java
-# JAVA_HOME=$(/usr/libexec/java_home)
-# export PATH=${JAVA_HOME}/bin:$PATH
 
 # Source Homebrew Access Token
 if [[ -s ~/.brewaccess ]]; then
@@ -51,11 +36,6 @@ fi
 # function to check if exists
 exists() { type "$1" > /dev/null; }
 
-# Alias code since i use insiders
-if exists code-insiders; then
-  alias code='code-insiders'
-fi
-
 # Alias eza
 alias ll='eza -bghHliSa --git'
 
@@ -70,24 +50,12 @@ if [ -z "$BACKGROUND" ]; then
     export BACKGROUND="dark"
 fi
 
-# # Set TMUX theme
-# if [[ -n "$TMUX" ]]; then
-
-#     tmux setenv -g TMUX_BACKGROUND $BACKGROUND
-#     tmux source-file ~/.tmux.conf
-#     # if [[ $BACKGROUND == dark ]]; then
-
-#     # else
-#     #     tmux source-file ~/.dotfiles/tmux/light.conf
-#     # fi
-# fi
 
 # Alias updating submodules
 alias updatesub='git submodule foreach git pull origin master'
 
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/$THEME.sh"
-# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-source $BASE16_SHELL
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 ### End of Zinit's installer chunk
 export PATH="/usr/local/sbin:$PATH"

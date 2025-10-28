@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+# DEPRECATED: This script needs a full audit before use
+# Many of these settings may be outdated for current macOS versions
+# Use at your own risk or configure macOS settings manually
+
 echo "Finder: show all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
