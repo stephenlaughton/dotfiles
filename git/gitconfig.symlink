@@ -131,8 +131,9 @@
     cmd = code --wait --diff $LOCAL $REMOTE
 [filter "lfs"]
 	clean = git-lfs clean -- %f
-	smudge = git lfs smudge -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 [commit]
 	template = /Users/work/.stCommitMsg
 [difftool "sourcetree"]

@@ -100,3 +100,23 @@ set -gx PATH "$PROTO_HOME/tools/node/globals/bin" $PATH
 
 # Rust
 set -gx PATH "$HOME/.cargo/bin" $PATH
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/steve/.lmstudio/bin
+# End of LM Studio CLI section
+
+
+# Go path
+set -x GOPATH $HOME/go
+set -x PATH $PATH $GOPATH/bin
+
+# opencode
+set -gx PATH $PATH /Users/steve/.opencode/bin
+
+# LocalAI global configuration
+set -gx LOCALAI_MODELS_PATH "$HOME/LocalAI/models"
+set -gx LOCALAI_BACKENDS_PATH "$HOME/LocalAI/backends"
+set -gx LOCALAI_CONFIG_DIR "$HOME/LocalAI/configuration"
+set -gx LOCALAI_ADDRESS "0.0.0.0:8080"
+set -gx LOCALAI_F16 "true"
+set -gx LOCALAI_THREADS "8"

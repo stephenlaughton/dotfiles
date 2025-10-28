@@ -96,3 +96,26 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 # proto
 export PROTO_HOME="$HOME/.proto"
 export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH"
+
+# global node modules with proto
+export PATH="$PROTO_HOME/tools/node/globals/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/steve/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# Go path
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
+# opencode
+export PATH=/Users/steve/.opencode/bin:$PATH
+
+# LocalAI global configuration
+export LOCALAI_MODELS_PATH="$HOME/LocalAI/models"
+export LOCALAI_BACKENDS_PATH="$HOME/LocalAI/backends"
+export LOCALAI_CONFIG_DIR="$HOME/LocalAI/configuration"
+export LOCALAI_ADDRESS="0.0.0.0:8080"
+export LOCALAI_F16="true"
+export LOCALAI_THREADS="8"
