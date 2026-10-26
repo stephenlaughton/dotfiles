@@ -34,7 +34,41 @@ set -x PATH "$ANDROID_SDK/emulator" "$ANDROID_SDK/tools" $PATH
 set -x ANDROID_HOME "$HOME/Library/Android/sdk"
 set -x PATH $PATH "$ANDROID_HOME/tools"
 set -x PATH $PATH "$ANDROID_HOME/tools/bin"
-set -x PATH $PATH "$ANDROID_HOME/platform-tools"
+# platform-tools goes FIRST, not last: a second adb of a different version
+# anywhere on PATH makes every client kill and restart the server, and wireless
+# connections (unlike USB ones) do not survive that. The Homebrew cask
+# android-platform-tools was removed for the same reason. Mirrors zshrc.
+set -x PATH "$ANDROID_HOME/platform-tools" $PATH
+
+# Reconnect the Pixel over wireless adb. Mirrors the zshrc function.
+#
+# Tries the fixed tcpip port first (established once over USB with
+# `adb tcpip 5555`), then falls back to resolving the rotating
+# wireless-debugging port over Bonjour. dns-sd does that resolution rather than
+# `adb mdns`, because adb's own discovery sees nothing unless the app that
+# spawned it holds macOS Local Network permission — an Apple binary is exempt,
+# adb is not.
+function pixel --description 'Connect to the Pixel over wireless adb'
+    set -l ip (test -n "$PIXEL_IP"; and echo $PIXEL_IP; or echo 192.168.50.9)
+    if adb connect "$ip:5555" 2>/dev/null | string match -qr '^(connected|already connected)'
+        adb devices -l
+        return 0
+    end
+    # The instance name is the LAST field of the browse line, not the first
+    # thing matching /adb-/ — that would match inside "_adb-tls-connect._tcp.".
+    set -l instance (dns-sd -t 5 -B _adb-tls-connect._tcp local 2>/dev/null | awk '/ adb-/{print $NF; exit}')
+    if test -z "$instance"
+        echo "pixel: no wireless-debugging service on the network — is it switched on?" >&2
+        return 1
+    end
+    set -l port (dns-sd -t 5 -L "$instance" _adb-tls-connect._tcp local 2>/dev/null | string match -r 'can be reached at \S+:(\d+)' -g | head -n1)
+    if test -z "$port"
+        echo "pixel: found $instance but could not resolve its port" >&2
+        return 1
+    end
+    adb connect "$ip:$port"
+    adb devices -l
+end
 
 
 # Alias eza
@@ -103,6 +137,9 @@ set -x PATH $PATH $GOPATH/bin
 # opencode
 set -gx PATH $PATH /Users/steve/.opencode/bin
 
+# amp
+set -gx PATH $PATH /Users/steve/.amp/bin
+
 # LocalAI global configuration
 set -gx LOCALAI_MODELS_PATH "$HOME/LocalAI/models"
 set -gx LOCALAI_BACKENDS_PATH "$HOME/LocalAI/backends"
@@ -110,3 +147,16 @@ set -gx LOCALAI_CONFIG_DIR "$HOME/LocalAI/configuration"
 set -gx LOCALAI_ADDRESS "0.0.0.0:8080"
 set -gx LOCALAI_F16 "true"
 set -gx LOCALAI_THREADS "8"
+
+# uv (Python)
+source "$HOME/.local/bin/env.fish"
+
+# mise (version manager)
+mise activate fish | source
+
+# direnv: per-directory env (e.g. life repo picks the personal Claude account)
+if status is-interactive
+    direnv hook fish | source
+end
+# Billie Claude account (Max), even inside folders where direnv selects the personal one
+alias claude-billie 'env -u CLAUDE_CONFIG_DIR claude'

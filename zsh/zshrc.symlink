@@ -17,7 +17,43 @@ export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+# platform-tools goes FIRST, not last: a second adb of a different version
+# anywhere on PATH makes every client kill and restart the server, and wireless
+# connections (unlike USB ones) do not survive that. The Homebrew cask
+# android-platform-tools was removed for the same reason.
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+
+# Reconnect the Pixel over wireless adb.
+#
+# Tries the fixed tcpip port first (established once over USB with
+# `adb tcpip 5555`), then falls back to resolving the rotating
+# wireless-debugging port over Bonjour. dns-sd does that resolution rather than
+# `adb mdns`, because adb's own discovery sees nothing unless the app that
+# spawned it holds macOS Local Network permission — an Apple binary is exempt,
+# adb is not.
+pixel() {
+  local ip=${PIXEL_IP:-192.168.50.9}
+  if adb connect "$ip:5555" 2>/dev/null | grep -qE "^(connected|already connected)"; then
+    adb devices -l
+    return 0
+  fi
+  local instance port
+  # The instance name is the LAST field of the browse line. The leading space in
+  # / adb-/ matters: without it this matches inside "_adb-tls-connect._tcp".
+  instance=$(dns-sd -t 5 -B _adb-tls-connect._tcp local 2>/dev/null | awk '/ adb-/{print $NF; exit}')
+  if [[ -z $instance ]]; then
+    echo "pixel: no wireless-debugging service on the network — is it switched on?" >&2
+    return 1
+  fi
+  port=$(dns-sd -t 5 -L "$instance" _adb-tls-connect._tcp local 2>/dev/null |
+    awk '/can be reached/{n=split($0,a,":"); split(a[n],b," "); print b[1]; exit}')
+  if [[ -z $port ]]; then
+    echo "pixel: found $instance but could not resolve its port" >&2
+    return 1
+  fi
+  adb connect "$ip:$port"
+  adb devices -l
+}
 
 
 # Source Homebrew Access Token
@@ -87,3 +123,17 @@ export LOCALAI_CONFIG_DIR="$HOME/LocalAI/configuration"
 export LOCALAI_ADDRESS="0.0.0.0:8080"
 export LOCALAI_F16="true"
 export LOCALAI_THREADS="8"
+
+. "$HOME/.local/bin/env"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Amp CLI
+export PATH="/Users/steve/.amp/bin:$PATH"
+
+# mise (version manager)
+eval "$(mise activate zsh)"
+
+# direnv: per-directory env (e.g. life repo picks the personal Claude account)
+eval "$(direnv hook zsh)"
+# Billie Claude account (Max), even inside folders where direnv selects the personal one
+alias claude-billie='env -u CLAUDE_CONFIG_DIR claude'
