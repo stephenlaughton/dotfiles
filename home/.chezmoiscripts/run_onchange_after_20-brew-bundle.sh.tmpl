@@ -1,0 +1,12 @@
+#!/bin/bash
+# Installs everything in the Brewfiles. chezmoi reruns this whenever one changes:
+# Brewfile {{ include "../Brewfile" | sha256sum }}
+# Brewfile.{{ .profile }} {{ include (printf "../Brewfile.%s" .profile) | sha256sum }}
+set -euo pipefail
+eval "$(/opt/homebrew/bin/brew shellenv)"
+cd {{ .chezmoi.workingTree | quote }}
+
+echo "==> brew bundle (shared)"
+brew bundle --file=Brewfile
+echo "==> brew bundle ({{ .profile }})"
+brew bundle --file=Brewfile.{{ .profile }}

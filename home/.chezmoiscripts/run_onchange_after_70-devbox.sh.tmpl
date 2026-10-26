@@ -1,0 +1,29 @@
+{{ if eq .profile "devbox" -}}
+#!/bin/bash
+# Headless dev box: never sleep, restart after a power cut, accept SSH, run
+# Tailscale. Uses sudo. Reruns when edited.
+set -uo pipefail
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+echo "==> Power: no sleep, wake on network, restart after power loss"
+sudo pmset -a sleep 0 disksleep 0 womp 1 autorestart 1 powernap 0
+
+echo "==> Remote Login (SSH)"
+sudo systemsetup -setremotelogin on >/dev/null 2>&1 || true
+if nc -z localhost 22 2>/dev/null; then
+    echo "    SSH is on."
+else
+    echo "    Couldn't turn on Remote Login from the terminal (macOS wants Full Disk Access for that)."
+    echo "    Turn it on in System Settings > General > Sharing > Remote Login."
+fi
+
+echo "==> Tailscale"
+if ! pgrep -x tailscaled >/dev/null; then
+    sudo tailscaled install-system-daemon
+fi
+if tailscale status >/dev/null 2>&1; then
+    echo "    Tailscale is connected."
+else
+    echo "    Log in with: sudo tailscale up --ssh"
+fi
+{{ end -}}

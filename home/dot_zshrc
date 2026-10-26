@@ -1,0 +1,42 @@
+# Interactive zsh. Fish is the main shell; this keeps macOS's default shell
+# usable. PATH setup lives in ~/.zshenv.
+
+export EDITOR=vim
+export VISUAL=vim
+export HOMEBREW_EDITOR=vim
+
+# Homebrew access token, kept out of git
+if [[ -s ~/.brewaccess ]]; then
+  source ~/.brewaccess
+fi
+
+# Functions, plus laptop-only setup (chezmoi installs laptop.zsh on the laptop only)
+for f in ~/.config/zsh/functions.zsh ~/.config/zsh/laptop.zsh; do
+  [[ -s $f ]] && source $f
+done
+
+# function to check if exists
+exists() { type "$1" > /dev/null; }
+
+alias gcam='git add . && git commit -am'
+alias ll='eza -bghHliSa --git'
+alias updatesub='git submodule foreach git pull origin master'
+
+# Base16 Shell
+: ${THEME:=base16-flat}
+: ${BACKGROUND:=dark}
+export THEME BACKGROUND
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/$THEME.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# mise (version manager)
+if (( $+commands[mise] )); then
+  eval "$(mise activate zsh)"
+fi
+
+# direnv: per-directory env (e.g. life repo picks the personal Claude account)
+if (( $+commands[direnv] )); then
+  eval "$(direnv hook zsh)"
+fi
+# Billie Claude account (Max), even inside folders where direnv selects the personal one
+alias claude-billie='env -u CLAUDE_CONFIG_DIR claude'

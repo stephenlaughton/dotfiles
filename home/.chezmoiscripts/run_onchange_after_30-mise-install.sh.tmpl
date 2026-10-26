@@ -1,0 +1,9 @@
+#!/bin/bash
+# Installs the tool versions in the mise config. Reruns when the config changes:
+# {{ include "private_dot_config/mise/config.toml" | sha256sum }}
+# {{ include "private_dot_config/mise/conf.d/laptop.toml" | sha256sum }}
+set -euo pipefail
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+echo "==> mise install"
+mise install --yes

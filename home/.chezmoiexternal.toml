@@ -1,0 +1,5 @@
+# Git repos chezmoi clones into place and refreshes weekly.
+[".config/base16-shell"]
+    type = "git-repo"
+    url = "https://github.com/stephenlaughton/base16-shell.git"
+    refreshPeriod = "168h"

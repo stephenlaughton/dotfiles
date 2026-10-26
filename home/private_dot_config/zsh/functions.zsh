@@ -35,7 +35,7 @@ function dark() {
 
 # list and change theme
 function themes() {
-    basename `ls  $DOTFILES/.config/base16-shell/scripts/*.sh`
+    basename -a ~/.config/base16-shell/scripts/*.sh
     echo "Current theme is $THEME"
 }
 
@@ -53,13 +53,6 @@ function g() {
         # otherwise, run git status
         git status
     fi
-}
-
-# clear out mistakenly installed homebrew node
-function clearHomebrewNode() {
-    brew uninstall --ignore-dependencies node
-    rm -rf /usr/local/lib/node_modules/npm
-    rm -rf /usr/local/bin/npm /usr/local/lib/node_modules/npm/bin/npm-cli.js
 }
 
 # reload!

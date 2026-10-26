@@ -22,5 +22,3 @@ tscommand*.txt
 *.codekit
 
 **/.claude/settings.local.json
-
-**/.claude/settings.local.json

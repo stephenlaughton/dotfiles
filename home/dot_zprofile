@@ -1,0 +1,5 @@
+# Login shells. macOS's /etc/zprofile runs path_helper, which moves the system
+# directories in front of everything ~/.zshenv added, so put Homebrew back first.
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi

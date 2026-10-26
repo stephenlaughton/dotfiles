@@ -1,0 +1,18 @@
+# Read by every zsh, including the non-interactive ones that `ssh host command`
+# starts (remote tools and agents run commands that way). Keep it to PATH setup
+# so tools are found however you connect.
+
+typeset -U path  # no duplicate PATH entries
+
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+export GOPATH=$HOME/go
+path=($HOME/.local/bin $HOME/.cargo/bin $HOME/.bun/bin $path $GOPATH/bin)
+
+# mise shims let non-interactive shells find node, python, etc.
+# .zshrc switches interactive shells to full `mise activate`.
+if (( $+commands[mise] )); then
+  eval "$(mise activate zsh --shims)"
+fi

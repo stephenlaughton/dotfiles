@@ -1,0 +1,21 @@
+{{ if eq .profile "laptop" -}}
+#!/bin/bash
+# macOS settings for the laptop. These match what the MacBook already had in
+# Oct 2026, so applying them there changes nothing. Reruns when edited.
+set -euo pipefail
+echo "==> macOS defaults"
+
+# Show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# Fast key repeat, short delay before it starts
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+# No autocorrect
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+# Finder status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+# Auto-hide the Dock
+defaults write com.apple.dock autohide -bool true
+
+killall Finder Dock 2>/dev/null || true
+{{ end -}}

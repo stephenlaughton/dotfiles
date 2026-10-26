@@ -1,0 +1,8 @@
+{{- /* Target paths to skip, per machine profile. */ -}}
+{{ if ne .profile "laptop" }}
+.hammerspoon
+.config/fish/laptop.fish
+.config/zsh/laptop.zsh
+.config/mise/conf.d/laptop.toml
+Library
+{{ end }}

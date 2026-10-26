@@ -1,159 +1,77 @@
 # Stephen's Dotfiles
 
-Modern macOS development environment with Fish shell as primary, automated setup for web, mobile, and AI/ML development.
+macOS dotfiles managed with [chezmoi](https://www.chezmoi.io), Homebrew Bundle
+and [mise](https://mise.jdx.dev). Fish is the main shell; zsh stays usable as
+macOS's default.
 
-## Quick Start
+There are two machine profiles, picked once when a machine is set up:
 
-```bash
-# Prerequisites: Install Xcode and accept terms
-xcode-select --install
+- **laptop**: the MacBook Pro. Gets everything, including GUI apps, Android and
+  mobile tooling, Hammerspoon, Ghostty config and macOS settings.
+- **devbox**: the headless Mac mini. Gets the shells, CLI tools and agents,
+  plus Tailscale, SSH and power settings.
 
-# Clone and install
-mkdir -p ~/Dev/github.com/stephenlaughton
-cd ~/Dev/github.com/stephenlaughton
-git clone https://github.com/stephenlaughton/dotfiles.git
-cd dotfiles
-./install.sh
+## Set up a new Mac
+
+```sh
+xcode-select --install   # git and compilers; wait for it to finish
+
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b ~/.local/bin \
+  init --apply --source ~/Dev/github.com/stephenlaughton/dotfiles stephenlaughton
 ```
 
-## What Gets Installed
+That clones this repo to `~/Dev/github.com/stephenlaughton/dotfiles`, asks
+whether the machine is a laptop or a devbox, links the dotfiles, and runs the
+setup scripts: Homebrew, `brew bundle`, `mise install`, Fisher plugins,
+Claude Code, then the macOS settings (laptop) or the devbox setup. The repo is
+public, so nothing needs a login until you run `gh auth login` afterwards.
 
-### Shell Environment
-- **Primary Shell**: Fish with Fisher package manager
-- **Backup Shell**: Zsh configuration
-- **Theme**: Base16 shell color schemes
+Then:
 
-### Development Tools (via Homebrew)
-- **Languages**: Ruby (via Homebrew)
+- Run `tide configure` in fish to set up the prompt.
+- **Devbox:** run `sudo tailscale up --ssh` to join the tailnet. If the script
+  couldn't turn on Remote Login, switch it on in System Settings > General >
+  Sharing. On macOS 26 Tahoe, Remote Login also lets you unlock FileVault over
+  SSH after a reboot.
 
-### Version Management (via Proto)
-Proto manages development tools with versions tracked in `proto/.prototools.symlink`:
-- **Node.js**: v22.13.1 with bundled npm
-- **Python**: v3.12.11
-- **Bun**: v1.2.5
-- **Deno**: v2.2.5
-- **Package Managers**: npm (bundled), yarn v3.5.0, pnpm v10.15.1
-- **Mobile**: Android SDK, scrcpy, watchman, ideviceinstaller
-- **Modern CLI Tools**:
-  - eza (better ls), bat (better cat), ripgrep (better grep)
-  - fd (better find), jq (JSON processor), gh (GitHub CLI)
-  - m-cli (macOS utility)
-- **AI/ML**: LocalAI configuration, LM Studio, OpenCode
+## Day to day
 
-### Applications (via Homebrew Cask)
-- **Terminal**: Ghostty (GPU-accelerated terminal)
-- **Development**: Visual Studio Code, Android Studio, Linear, Insomnia
-- **Productivity**: Raycast (Alfred/Spotlight replacement + window management), Notion
-- **Browsers**: Google Chrome, Firefox, Responsively
-- **Design**: Figma
-- **Utilities**:
-  - 1Password, AppCleaner, DaisyDisk, The Unarchiver
-  - Hammerspoon (vim-style navigation), Stats (system monitor)
-- **Communication**: Slack
-- **Media**: VLC, Kap (screen recording), BlackHole (audio routing)
-- **Fonts**: JetBrains Mono Nerd Font
+Most files in `~` are symlinks into this repo, as with the old `link.sh`, so
+editing `~/.zshrc` edits the repo. Commit and push from here as usual.
 
-## Fish Shell Configuration
+| Task | Command |
+|---|---|
+| See what would change | `chezmoi diff` |
+| Apply the repo to `~` (also reruns setup scripts whose inputs changed) | `chezmoi apply` |
+| Pull the latest and apply | `chezmoi update` |
+| Start managing a new file | `chezmoi add ~/.config/foo/bar.toml` |
+| Add a Homebrew package | edit `Brewfile` (or `Brewfile.laptop` / `Brewfile.devbox`), then `chezmoi apply` |
+| Add a global tool version | `mise use -g node@24` (writes to the repo's mise config) |
 
-Fish is the primary shell with these features:
-
-### Auto-bootstrapping
-- Fisher package manager installs automatically on first run
-- Base16 shell theming (if installed)
-
-### Key Functions & Abbreviations
-- `g` - Git status or pass-through to git
-- `e` - Opens VS Code (current dir or specified files)
-- `gcam` - Git add all and commit
-- `ll` - Enhanced ls with git info (via eza)
-- `r!` - Reload Fish configuration
-- `npmlist` - Show global npm packages
-
-### Environment Setup
-- Proto for Node.js management with global modules support
-- Android SDK paths (emulator, platform-tools)
-- Go workspace ($GOPATH)
-- Rust/Cargo binaries
-- Bun, Moon tooling
-- LocalAI configuration
-- LM Studio CLI
-
-## Git Configuration
-
-Extensive git aliases and settings:
-- **Security**: Uses macOS keychain for credentials
-- **Editor**: VS Code as default editor
-- **Aliases**:
-  - `git lg` - Pretty log graph
-  - `git cleanup` - Prune and clean repository
-  - `git undo` - Soft reset last commit
-  - Many more (see `git la` for full list)
-
-## Installation Options
-
-The installer (`install.sh`) will prompt for:
-1. Base16 shell colors installation
-2. Homebrew and all packages
-3. Proto installation and tools setup
-4. Fisher for Fish (auto-installs)
-5. Dotfile symlinking
-
-**Note**: macOS defaults script (`installosx.sh`) is currently disabled and needs audit before use.
-
-## Post-Installation
-
-1. Set Fish as default shell:
-   ```bash
-   echo /usr/local/bin/fish | sudo tee -a /etc/shells
-   chsh -s /usr/local/bin/fish
-   ```
-
-2. Configure git identity:
-   ```fish
-   git config --global user.name "Your Name"
-   git config --global user.email "your.email@example.com"
-   ```
-
-3. Set up SSH keys for GitHub
-
-4. Install any additional Fisher plugins as needed
-
-## Directory Structure
+## Layout
 
 ```
-dotfiles/
-├── fish/                 # Fish shell config
-├── zsh/                  # Zsh config (backup)
-├── git/                  # Git configuration
-├── proto/                # Proto version manager config
-│   └── .prototools      # Tool versions
-├── hammerspoon/          # Vim-style navigation keys (Ctrl+hjkl)
-├── install/              # Installation scripts
-│   ├── brew.sh          # Homebrew packages
-│   ├── proto.sh         # Proto and tools installation
-│   └── link.sh          # Symlink creator
-├── iterm/               # iTerm2 settings
-├── Stats.plist          # Stats app configuration
-├── iStat Menus Settings.ismp  # Legacy iStat config
-└── installosx.sh        # macOS defaults (deprecated)
+Brewfile                 Homebrew packages for every machine
+Brewfile.laptop          GUI apps, mobile tooling, VS Code extensions
+Brewfile.devbox          Tailscale daemon, Docker CLI
+extras/                  App exports (Raycast, iStat, Stats, Terminal, iTerm); not applied
+home/                    What chezmoi puts in ~ (set by .chezmoiroot)
+  .chezmoi.toml.tmpl       asks for the machine profile on `chezmoi init`
+  .chezmoiignore           files the devbox skips
+  .chezmoiexternal.toml    base16-shell, cloned into ~/.config/base16-shell
+  .chezmoiscripts/         setup scripts (Homebrew, bundle, mise, fisher, macOS, devbox)
+  dot_zshenv, dot_zshrc    -> ~/.zshenv, ~/.zshrc, and so on
+  private_dot_config/      -> ~/.config (fish, zsh, mise)
+  private_Library/         -> ~/Library (Ghostty config)
 ```
 
-## Updating
+chezmoi's file naming: `dot_` becomes a leading `.`; `private_` keeps a folder
+readable only by you; files ending `.tmpl` are templates.
 
-```bash
-cd ~/.dotfiles
-git pull
-./install.sh  # Re-run relevant sections
-fisher update # Update Fish plugins
-```
+Shell setup:
 
-## Future Improvements
-
-- [ ] Migrate to chezmoi or yadm for better templating and secrets management
-- [ ] Audit and modernize macOS defaults script
-- [ ] Add automated backup of existing dotfiles
-- [ ] Document Fisher plugins setup
-
-## License
-
-MIT
+- `~/.zshenv` holds the PATH setup (Homebrew, mise shims, `~/.local/bin`). zsh
+  reads it even for non-interactive commands like `ssh mini some-command`, so
+  remote tools find everything.
+- `laptop.fish` and `laptop.zsh` hold the laptop-only parts: Android, the
+  `pixel` adb helper, LocalAI, and VS Code as the editor.

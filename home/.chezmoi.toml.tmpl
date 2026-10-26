@@ -1,0 +1,12 @@
+{{- /* Generates ~/.config/chezmoi/chezmoi.toml on `chezmoi init`. Asks once per machine. */ -}}
+{{- $profile := promptChoiceOnce . "profile" "What kind of machine is this" (list "laptop" "devbox") -}}
+
+# Use the repo wherever it was cloned, e.g. ~/Dev/github.com/stephenlaughton/dotfiles
+sourceDir = {{ .chezmoi.workingTree | quote }}
+
+# Plain files become symlinks into the repo, so editing ~/.zshrc edits the repo
+# (like the old link.sh). Templates are still rendered and copied.
+mode = "symlink"
+
+[data]
+    profile = {{ $profile | quote }}

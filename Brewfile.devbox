@@ -1,0 +1,8 @@
+# Dev box (headless Mac mini) only.
+
+# The open-source Tailscale daemon. Unlike the GUI apps it runs without a
+# logged-in user and supports Tailscale SSH.
+brew "tailscale"
+
+# Docker CLI for colima (the laptop gets it from Docker Desktop)
+brew "docker"

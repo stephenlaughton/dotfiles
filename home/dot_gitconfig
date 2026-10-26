@@ -5,13 +5,10 @@
 	signingkey = 4440438C
 [github]
     user = stephenlaughton
-[init]
-    templatedir = ~/.dotfiles/git/templates
 [alias]
     # list all aliases
     la = "!git config -l | grep alias | cut -c 7-"
     delete-merged-branches = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
-    diff = diff --ignore-space-at-eol -b -w --ignore-blank-lines
     cnv = commit --no-verify
     co = checkout
     cob = checkout -b
@@ -109,9 +106,8 @@
     # do not warn about missing whitespace at EOF
     whitespace = nowarn
 [core]
-	excludesfile = /Users/steve/.gitignore_global
+	excludesfile = ~/.gitignore_global
     pager = less -FXRS -x2
-	editor = code --wait
 [rerere]
     enabled = true
 [gitsh]
@@ -134,12 +130,6 @@
 	smudge = git-lfs smudge -- %f
 	required = true
 	process = git-lfs filter-process
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [credential "https://github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential

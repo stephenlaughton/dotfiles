@@ -1,0 +1,29 @@
+# Global tool versions for every machine, managed by mise (https://mise.jdx.dev).
+# Projects can pin their own versions in a mise.toml or .tool-versions file.
+# `mise use -g <tool>@<version>` edits this file.
+
+[tools]
+node = "24"
+python = "3.12"
+bun = "1"
+deno = "2"
+pnpm = "10"
+uv = "latest"
+zig = "latest"
+"aqua:moonrepo/moon" = "1"
+
+# Global CLIs. Installing them through mise keeps them working across
+# Node/Python upgrades, unlike `npm i -g`.
+"npm:@openai/codex" = "latest"
+"npm:@google/gemini-cli" = "latest"
+"npm:@charmland/crush" = "latest"
+"npm:@earendil-works/pi-coding-agent" = "latest"
+"npm:octofriend" = "latest"
+"npm:typescript-language-server" = "latest"
+"pipx:mistral-vibe" = "latest"
+
+# Go tooling
+"go:golang.org/x/tools/gopls" = "latest"
+"go:github.com/go-delve/delve/cmd/dlv" = "latest"
+"go:mvdan.cc/gofumpt" = "latest"
+"go:github.com/golangci/golangci-lint/v2/cmd/golangci-lint" = "latest"

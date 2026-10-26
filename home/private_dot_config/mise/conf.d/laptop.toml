@@ -1,0 +1,6 @@
+# Laptop-only global tools. chezmoi installs this file on the "laptop" profile only.
+[tools]
+"npm:@elgato/cli" = "latest"
+"npm:@swmansion/argent" = "latest"
+"npm:eas-cli" = "latest"
+"pipx:abogen" = "latest"
