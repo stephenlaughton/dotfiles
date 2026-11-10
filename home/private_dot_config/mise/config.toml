@@ -22,8 +22,24 @@ zig = "latest"
 "npm:typescript-language-server" = "latest"
 "pipx:mistral-vibe" = "latest"
 
+# Service CLIs the Billie monorepo needs globally (added 2026-11-10). Repo-pinned
+# CLIs (supabase, wrangler, convex in the monorepo's package.json) stay pinned
+# there; these are for running them outside a repo and for the ones it doesn't pin.
+"npm:eas-cli" = "latest"   # was global npm via proto, stuck on 22.0.0
+supabase = "latest"        # aqua:supabase/cli
+stripe = "latest"          # aqua:stripe/stripe-cli
+# Infisical and the 1Password CLI come from the Brewfile.
+
 # Go tooling
 "go:golang.org/x/tools/gopls" = "latest"
 "go:github.com/go-delve/delve/cmd/dlv" = "latest"
 "go:mvdan.cc/gofumpt" = "latest"
 "go:github.com/golangci/golangci-lint/v2/cmd/golangci-lint" = "latest"
+
+[settings]
+# Supply-chain cooldown: don't install a tool version published less than two
+# weeks ago. Needs mise 2026.5 or later (the setting was renamed from
+# install_before then); the mise installed on 2026-11-10 was 2026.2.11, so
+# `brew upgrade mise` first.
+minimum_release_age = "14d"
+

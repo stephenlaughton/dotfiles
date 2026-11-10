@@ -34,6 +34,14 @@ Then:
   Sharing. On macOS 26 Tahoe, Remote Login also lets you unlock FileVault over
   SSH after a reboot.
 
+## Status (2026-11-10)
+
+Not adopted yet: this branch isn't applied to either Mac, and Stephen isn't ready to switch. Still to sort out when he does:
+
+- **proto** still manages Node, Bun, Deno and Yarn on the Macs today (`~/.proto`, set up in the old fish and zsh configs), and the Billie monorepo pins its versions in `.prototools`. Moving the monorepo to a `mise.toml` is a separate change in that repo.
+- Global npm installs currently live in proto's `~/.proto/tools/node/globals` (eas-cli and codex). Remove them once mise provides the same CLIs.
+- The `minimum_release_age` cooldown in the mise config needs a newer mise than the one installed.
+
 ## Day to day
 
 Most files in `~` are symlinks into this repo, as with the old `link.sh`, so
